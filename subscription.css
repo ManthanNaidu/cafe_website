@@ -1,0 +1,888 @@
+/* =========================================================
+   BREWBLISS COFFEE CO.
+   SUBSCRIPTION PAGE
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #102719;
+
+    color: #ffffff;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   MAIN PAGE
+========================================================= */
+
+.new-page {
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding:
+        70px 5% 60px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(180, 138, 76, 0.14),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(180, 138, 76, 0.10),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #0c2014,
+            #102719,
+            #173522
+        );
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.new-page-content {
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   PAGE LABEL
+========================================================= */
+
+.page-label {
+    display: inline-block;
+
+    margin-bottom: 14px;
+
+    color: #d3b477;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
+
+.new-page-content > h1 {
+    margin: 0 0 18px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(40px, 6vw, 70px);
+
+    font-weight: 700;
+
+    line-height: 1.05;
+
+    letter-spacing: -1.5px;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.new-page-content > p {
+    width: 100%;
+
+    max-width: 650px;
+
+    margin:
+        0 auto 50px;
+
+    color: #d3dcd5;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   SUBSCRIPTION PLANS
+========================================================= */
+
+.subscription-plans {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+
+    margin-bottom: 50px;
+}
+
+
+/* =========================================================
+   PLAN CARD
+========================================================= */
+
+.plan-card {
+    position: relative;
+
+    min-height: 330px;
+
+    padding:
+        40px 28px 32px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #ffffff;
+
+    color: #17271c;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.3);
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.18);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.plan-card:hover {
+    transform: translateY(-9px);
+
+    box-shadow:
+        0 22px 45px rgba(0, 0, 0, 0.28);
+}
+
+
+/* =========================================================
+   PLAN TITLE
+========================================================= */
+
+.plan-card h2 {
+    margin-bottom: 14px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 25px;
+
+    line-height: 1.2;
+
+    color: #17301f;
+}
+
+
+/* =========================================================
+   PLAN DESCRIPTION
+========================================================= */
+
+.plan-card p {
+    width: 100%;
+
+    max-width: 260px;
+
+    min-height: 48px;
+
+    margin:
+        0 auto 22px;
+
+    color: #666666;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.plan-card strong {
+    display: block;
+
+    margin-bottom: 25px;
+
+    color: #a67c3d;
+
+    font-size: 23px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   CHOOSE PLAN BUTTON
+========================================================= */
+
+.plan-card button {
+    min-width: 145px;
+
+    min-height: 42px;
+
+    padding:
+        0 20px;
+
+    border:
+        1px solid #b48a4c;
+
+    border-radius: 4px;
+
+    background: #b48a4c;
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.4px;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.plan-card button:hover {
+    background: #8d6738;
+
+    border-color: #8d6738;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 18px rgba(0, 0, 0, 0.18);
+}
+
+
+.plan-card button:active {
+    transform: translateY(0);
+
+    box-shadow: none;
+}
+
+
+.plan-card button:focus-visible {
+    outline:
+        3px solid rgba(180, 138, 76, 0.45);
+
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   MOST POPULAR CARD
+========================================================= */
+
+.plan-card.popular {
+    border:
+        2px solid #b48a4c;
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+
+.plan-card.popular:hover {
+    transform: translateY(-15px);
+
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.30);
+}
+
+
+/* =========================================================
+   MOST POPULAR LABEL
+========================================================= */
+
+.popular-label {
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    padding:
+        7px 15px;
+
+    border-radius: 30px;
+
+    background: #b48a4c;
+
+    color: #ffffff;
+
+    white-space: nowrap;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.8px;
+
+    box-shadow:
+        0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================================
+   BACK TO HOME BUTTON
+========================================================= */
+
+.back-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 43px;
+
+    padding:
+        0 24px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.5);
+
+    border-radius: 4px;
+
+    color: #ffffff;
+
+    background: transparent;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.3px;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.back-button:hover {
+    background: #ffffff;
+
+    color: #17301f;
+
+    border-color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+.back-button:active {
+    transform: translateY(0);
+}
+
+
+.back-button:focus-visible {
+    outline:
+        3px solid rgba(255, 255, 255, 0.35);
+
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+   1200px+
+========================================================= */
+
+@media (min-width: 1200px) {
+
+    .new-page {
+        padding:
+            80px 5% 70px;
+    }
+
+
+    .subscription-plans {
+        gap: 25px;
+    }
+
+
+    .plan-card {
+        min-height: 350px;
+
+        padding:
+            45px 32px 35px;
+    }
+
+
+    .plan-card h2 {
+        font-size: 27px;
+    }
+}
+
+
+/* =========================================================
+   LAPTOP
+   992px - 1199px
+========================================================= */
+
+@media (min-width: 992px)
+and (max-width: 1199px) {
+
+    .new-page {
+        padding:
+            65px 5%;
+    }
+
+
+    .subscription-plans {
+        gap: 18px;
+    }
+
+
+    .plan-card {
+        min-height: 320px;
+
+        padding:
+            35px 22px;
+    }
+
+
+    .plan-card h2 {
+        font-size: 23px;
+    }
+
+
+    .plan-card strong {
+        font-size: 21px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   768px - 991px
+========================================================= */
+
+@media (min-width: 768px)
+and (max-width: 991px) {
+
+    .new-page {
+        padding:
+            60px 5%;
+    }
+
+
+    .new-page-content > h1 {
+        font-size: 48px;
+    }
+
+
+    .new-page-content > p {
+        font-size: 14px;
+
+        margin-bottom: 42px;
+    }
+
+
+    .subscription-plans {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 18px;
+    }
+
+
+    .plan-card {
+        min-height: 310px;
+
+        padding:
+            35px 22px;
+    }
+
+
+    .plan-card.popular {
+        transform: none;
+    }
+
+
+    .plan-card.popular:hover {
+        transform: translateY(-8px);
+    }
+
+
+    .plan-card:last-child {
+        grid-column:
+            1 / -1;
+
+        width: 50%;
+
+        margin: 0 auto;
+    }
+}
+
+
+/* =========================================================
+   LARGE MOBILE
+   576px - 767px
+========================================================= */
+
+@media (min-width: 576px)
+and (max-width: 767px) {
+
+    .new-page {
+        min-height: 100vh;
+
+        padding:
+            55px 6%;
+    }
+
+
+    .page-label {
+        font-size: 9px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .new-page-content > h1 {
+        font-size: 42px;
+    }
+
+
+    .new-page-content > p {
+        font-size: 13px;
+
+        margin-bottom: 38px;
+    }
+
+
+    .subscription-plans {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+
+    .plan-card {
+        width: 100%;
+
+        min-height: 290px;
+    }
+
+
+    .plan-card.popular {
+        transform: none;
+    }
+
+
+    .plan-card.popular:hover {
+        transform: translateY(-8px);
+    }
+
+
+    .plan-card:last-child {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   BELOW 576px
+========================================================= */
+
+@media (max-width: 575px) {
+
+    .new-page {
+        min-height: 100vh;
+
+        padding:
+            45px 5% 40px;
+    }
+
+
+    .page-label {
+        margin-bottom: 12px;
+
+        font-size: 8px;
+
+        letter-spacing: 1.8px;
+    }
+
+
+    .new-page-content > h1 {
+        margin-bottom: 15px;
+
+        font-size: 36px;
+
+        letter-spacing: -0.8px;
+    }
+
+
+    .new-page-content > p {
+        max-width: 450px;
+
+        margin-bottom: 35px;
+
+        font-size: 12px;
+
+        line-height: 1.65;
+    }
+
+
+    .subscription-plans {
+        grid-template-columns: 1fr;
+
+        gap: 17px;
+
+        margin-bottom: 38px;
+    }
+
+
+    .plan-card {
+        min-height: 285px;
+
+        padding:
+            38px 20px 28px;
+    }
+
+
+    .plan-card h2 {
+        font-size: 23px;
+    }
+
+
+    .plan-card p {
+        font-size: 12px;
+
+        margin-bottom: 18px;
+    }
+
+
+    .plan-card strong {
+        margin-bottom: 22px;
+
+        font-size: 21px;
+    }
+
+
+    .plan-card button {
+        min-height: 40px;
+
+        min-width: 135px;
+
+        font-size: 9px;
+    }
+
+
+    .plan-card.popular {
+        transform: none;
+    }
+
+
+    .plan-card.popular:hover {
+        transform: translateY(-7px);
+    }
+
+
+    .popular-label {
+        padding:
+            6px 12px;
+
+        font-size: 7px;
+    }
+
+
+    .back-button {
+        min-height: 40px;
+
+        padding:
+            0 20px;
+
+        font-size: 9px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   BELOW 380px
+========================================================= */
+
+@media (max-width: 379px) {
+
+    .new-page {
+        padding:
+            38px 5% 35px;
+    }
+
+
+    .page-label {
+        font-size: 7px;
+
+        letter-spacing: 1.4px;
+    }
+
+
+    .new-page-content > h1 {
+        font-size: 31px;
+    }
+
+
+    .new-page-content > p {
+        font-size: 11px;
+
+        margin-bottom: 30px;
+    }
+
+
+    .subscription-plans {
+        gap: 15px;
+
+        margin-bottom: 32px;
+    }
+
+
+    .plan-card {
+        min-height: 270px;
+
+        padding:
+            35px 16px 25px;
+    }
+
+
+    .plan-card h2 {
+        font-size: 21px;
+    }
+
+
+    .plan-card p {
+        font-size: 11px;
+
+        max-width: 220px;
+    }
+
+
+    .plan-card strong {
+        font-size: 19px;
+    }
+
+
+    .plan-card button {
+        min-height: 38px;
+
+        min-width: 125px;
+
+        font-size: 8px;
+    }
+
+
+    .popular-label {
+        font-size: 6px;
+
+        padding:
+            6px 10px;
+    }
+
+
+    .back-button {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+    }
+}
