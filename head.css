@@ -1,0 +1,409 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: white;
+    color: #222;
+}
+
+
+/* =========================
+   TOP OFFER BAR
+========================= */
+
+.top-bar {
+    width: 100%;
+    min-height: 36px;
+
+    background-color: #0d281a;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 40px;
+
+    font-size: 12px;
+}
+
+
+.offer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* =========================
+   HEADER / NAVIGATION
+========================= */
+
+.header {
+    width: 100%;
+    min-height: 70px;
+
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 40px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    width: 230px;
+}
+
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+
+    background-color: #72545f;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+}
+
+
+.logo-name {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    color: #1d1d1d;
+}
+
+
+.logo-subtitle {
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    color: #555;
+
+    margin-top: 2px;
+}
+
+
+/* =========================
+   NAVIGATION MENU
+========================= */
+
+.navigation {
+    display: flex;
+
+    align-items: center;
+
+    gap: 32px;
+
+    list-style: none;
+}
+
+
+.navigation li a {
+    text-decoration: none;
+
+    color: #222;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    transition: 0.3s;
+}
+
+
+.navigation li a:hover {
+    color: #b08447;
+}
+
+
+.navigation .sale a {
+    color: #aa7d3d;
+}
+
+
+/* =========================
+   RIGHT SIDE ICONS
+========================= */
+
+.icons {
+    width: 180px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 24px;
+}
+
+
+.icon {
+    text-decoration: none;
+
+    color: #111;
+
+    font-size: 23px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.icon:hover {
+    color: #a67d40;
+}
+
+
+/* =========================
+   CART
+========================= */
+
+.cart {
+    position: relative;
+}
+
+
+.cart-count {
+    position: absolute;
+
+    top: -9px;
+    right: -9px;
+
+    width: 16px;
+    height: 16px;
+
+    background-color: #a78348;
+
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 9px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================
+   DEMO SECTIONS
+========================= */
+
+.demo-section {
+    min-height: 400px;
+
+    padding: 80px 40px;
+
+    text-align: center;
+
+    border-bottom: 1px solid #eee;
+}
+
+
+.demo-section h1 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 40px;
+
+    margin-bottom: 15px;
+
+    color: #0d281a;
+}
+
+
+.demo-section p {
+    font-size: 16px;
+
+    color: #666;
+}
+
+
+/* =========================
+   TABLET RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .top-bar {
+        padding: 0 20px;
+    }
+
+
+    .header {
+        padding: 0 20px;
+    }
+
+
+    .logo {
+        width: 170px;
+    }
+
+
+    .navigation {
+        gap: 16px;
+    }
+
+
+    .icons {
+        width: 130px;
+
+        gap: 15px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    .top-bar {
+        height: 32px;
+
+        padding: 0 12px;
+
+        font-size: 8px;
+    }
+
+
+    .offer:nth-child(2) {
+        display: none;
+    }
+
+
+    .header {
+        height: auto;
+
+        min-height: 70px;
+
+        padding: 10px 15px;
+
+        flex-wrap: wrap;
+    }
+
+
+    .logo {
+        width: auto;
+    }
+
+
+    .navigation {
+        order: 3;
+
+        width: 100%;
+
+        margin-top: 12px;
+
+        overflow-x: auto;
+
+        justify-content: flex-start;
+
+        padding-bottom: 5px;
+
+        gap: 20px;
+    }
+
+
+    .navigation li {
+        white-space: nowrap;
+    }
+
+
+    .icons {
+        width: auto;
+
+        gap: 12px;
+    }
+
+
+    .demo-section {
+        padding: 60px 20px;
+    }
+
+
+    .demo-section h1 {
+        font-size: 30px;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 450px) {
+
+    .top-bar {
+        justify-content: center;
+    }
+
+
+    .offer:nth-child(3) {
+        display: none;
+    }
+
+
+    .logo-name {
+        font-size: 21px;
+    }
+
+
+    .logo-icon {
+        width: 35px;
+        height: 35px;
+
+        font-size: 18px;
+    }
+
+
+    .icon {
+        font-size: 20px;
+    }
+
+}
