@@ -1,42 +1,20 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <title>COSMIC CAFE | Coffee Co.</title>
 
-    <title>COSMIC CAFE</title>
-
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,500&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet"
-    >
-
-
-    <!-- =====================================================
-         ALL CSS — UNIFIED INTO ONE FILE
-    ====================================================== -->
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-
-        /* =====================================================
-           GLOBAL
-        ====================================================== */
-
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         html {
@@ -44,166 +22,119 @@
         }
 
         body {
-            margin: 0;
-            font-family: 'Inter', Arial, sans-serif;
-            background: #ffffff;
-            color: #17271c;
-            overflow-x: hidden;
+            font-family: "Inter", Arial, sans-serif;
+            color: #142218;
+            background: #fff;
+            line-height: 1.5;
         }
 
         a {
-            text-decoration: none;
             color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
         }
 
         img {
-            max-width: 100%;
             display: block;
+            max-width: 100%;
         }
 
-
         /* =====================================================
-           TOP OFFER BAR
+           TOP BAR
         ====================================================== */
 
         .top-bar {
-            width: 100%;
-            min-height: 40px;
-
-            padding: 0 5%;
-
+            min-height: 42px;
+            background: #102319;
+            color: #fff;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-
+            justify-content: space-around;
             gap: 20px;
-
-            background: #102719;
-            color: #ffffff;
-
-            font-size: 10px;
+            padding: 8px 30px;
+            font-size: 11px;
             font-weight: 600;
-            letter-spacing: 0.3px;
+            letter-spacing: .2px;
         }
 
         .offer {
             display: flex;
             align-items: center;
-            gap: 7px;
-
-            white-space: nowrap;
+            justify-content: center;
+            gap: 8px;
+            text-align: center;
         }
 
-
         /* =====================================================
-           HEADER / NAVIGATION
+           HEADER
         ====================================================== */
 
         .header {
-            width: 100%;
             min-height: 82px;
-
-            padding: 0 5%;
-
             display: flex;
             align-items: center;
             justify-content: space-between;
-
-            gap: 30px;
-
-            background: #ffffff;
-
-            border-bottom: 1px solid #eeeeee;
-
-            position: relative;
-            z-index: 100;
+            gap: 25px;
+            padding: 12px 42px;
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-
-
-        /* LOGO */
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 9px;
-
-            min-width: 190px;
+            min-width: 180px;
         }
 
         .logo-icon {
             font-size: 38px;
-
-            transform: rotate(-10deg);
+            margin-right: 8px;
+            line-height: 1;
         }
 
         .logo-name {
-            font-family: Georgia, "Times New Roman", serif;
-
-            font-size: 26px;
+            font-family: "Fraunces", Georgia, serif;
+            font-size: 28px;
+            font-weight: 500;
             line-height: 1;
-            font-weight: 700;
         }
 
         .logo-subtitle {
-            margin-top: 4px;
-
-            font-size: 8px;
-            letter-spacing: 3px;
+            font-size: 9px;
             font-weight: 700;
+            letter-spacing: 2px;
+            margin-top: 4px;
         }
-
-
-        /* NAVIGATION */
 
         .navigation {
             list-style: none;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
-            gap: 28px;
-        }
-
-        .navigation li {
-            list-style: none;
+            gap: 30px;
+            flex: 1;
         }
 
         .navigation a {
-            position: relative;
-
-            font-size: 10px;
+            font-size: 12px;
             font-weight: 700;
-
-            color: #222222;
+            transition: color .2s ease;
         }
 
-        .navigation a::after {
-            content: "";
-
-            position: absolute;
-
-            left: 0;
-            bottom: -7px;
-
-            width: 0;
-            height: 2px;
-
-            background: #b48a4c;
-
-            transition: width 0.25s ease;
-        }
-
-        .navigation a:hover::after {
-            width: 100%;
+        .navigation a:hover {
+            color: #b5894f;
         }
 
         .sale a {
-            color: #b48a4c;
+            color: #b5894f;
         }
-
-
-        /* HEADER ICONS */
 
         .icons {
             display: flex;
@@ -212,1572 +143,882 @@
         }
 
         .icon {
+            font-size: 25px;
             position: relative;
-
-            font-size: 23px;
-
-            transition:
-                color 0.25s ease,
-                transform 0.25s ease;
-        }
-
-        .icon:hover {
-            color: #b48a4c;
-
-            transform: translateY(-2px);
+            line-height: 1;
         }
 
         .cart-count {
             position: absolute;
-
-            top: -7px;
-            right: -8px;
-
-            min-width: 15px;
-            height: 15px;
-
+            right: -9px;
+            top: -8px;
+            min-width: 17px;
+            height: 17px;
+            padding: 0 4px;
+            border-radius: 50%;
+            background: #b5894f;
+            color: #fff;
+            font-size: 9px;
             display: flex;
             align-items: center;
             justify-content: center;
-
-            border-radius: 50%;
-
-            background: #b48a4c;
-
-            color: #ffffff;
-
-            font-size: 8px;
             font-weight: 700;
         }
 
-
         /* =====================================================
-           HERO SECTION
+           HERO
         ====================================================== */
 
         .hero {
-            width: 100%;
-            height: 530px;
-
             position: relative;
-
+            min-height: 500px;
             overflow: hidden;
-
-            background: #102719;
-            color: #ffffff;
+            background: #102319;
         }
 
-        .hero input {
+        .hero-slide {
             display: none;
-        }
-
-        .slides {
-            width: 100%;
-            height: 100%;
-
+            min-height: 500px;
             position: relative;
         }
 
-        .slide {
-            position: absolute;
-
-            inset: 0;
-
-            width: 100%;
-            height: 100%;
-
-            opacity: 0;
-
-            pointer-events: none;
-
-            transition:
-                opacity 0.6s ease;
+        .hero-slide.active {
+            display: flex;
         }
 
-        #slide1:checked ~ .slides .slide1,
-        #slide2:checked ~ .slides .slide2,
-        #slide3:checked ~ .slides .slide3 {
-            opacity: 1;
-
-            pointer-events: auto;
-        }
-
-        .slide-media {
-            width: 100%;
-            height: 100%;
-
+        .hero-media {
             position: absolute;
             inset: 0;
         }
 
-        .slide-media img {
+        .hero-media img {
             width: 100%;
             height: 100%;
-
             object-fit: cover;
         }
 
-
-        /* HERO OVERLAY */
-
-        .overlay {
+        .hero-overlay {
             position: absolute;
-
             inset: 0;
-
-            pointer-events: none;
+            background: linear-gradient(
+                90deg,
+                rgba(8, 28, 18, .96) 0%,
+                rgba(8, 28, 18, .78) 38%,
+                rgba(8, 28, 18, .20) 75%,
+                rgba(8, 28, 18, .08) 100%
+            );
         }
-
-        .overlay-side {
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(16,39,25,0.98) 0%,
-                    rgba(16,39,25,0.88) 25%,
-                    rgba(16,39,25,0.25) 65%,
-                    transparent 100%
-                );
-        }
-
-        .overlay-bottom {
-            background:
-                linear-gradient(
-                    0deg,
-                    rgba(16,39,25,0.88),
-                    transparent 65%
-                );
-        }
-
-
-        /* HERO CONTENT */
 
         .hero-content {
-            position: absolute;
-
-            z-index: 5;
-
-            left: 5%;
-
-            top: 50%;
-
-            transform: translateY(-50%);
-
-            width: 45%;
-
-            max-width: 570px;
+            position: relative;
+            z-index: 2;
+            width: min(570px, 90%);
+            margin-left: 7%;
+            padding: 110px 0 80px;
+            color: #fff;
         }
 
         .eyebrow {
-            display: flex;
-            align-items: center;
-
-            gap: 10px;
-
-            margin-bottom: 16px;
-
-            color: #d3b477;
-
-            font-size: 10px;
-
-            font-weight: 600;
-
-            letter-spacing: 0.7px;
-
-            text-transform: uppercase;
-        }
-
-        .rule {
-            width: 25px;
-            height: 1px;
-
-            background: #d3b477;
+            color: #d0aa6f;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 17px;
         }
 
         .hero-content h1 {
-            margin-bottom: 18px;
-
-            font-family: 'Fraunces', Georgia, serif;
-
-            font-size: clamp(45px, 5vw, 72px);
-
-            line-height: 0.98;
-
-            letter-spacing: -2px;
+            font-family: "Fraunces", Georgia, serif;
+            font-size: clamp(48px, 6vw, 76px);
+            font-weight: 400;
+            line-height: .98;
+            margin-bottom: 22px;
         }
 
         .hero-content h1 em {
-            color: #d3a866;
-
+            color: #c59a5a;
             font-style: normal;
         }
 
-        .description {
-            max-width: 450px;
-
-            margin-bottom: 25px;
-
-            color: #e4e9e5;
-
-            font-size: 13px;
-
-            line-height: 1.7;
+        .hero-description {
+            max-width: 470px;
+            color: rgba(255,255,255,.88);
+            font-size: 15px;
+            margin-bottom: 30px;
         }
 
-
-        /* HERO BUTTONS */
-
-        .buttons {
+        .hero-buttons {
             display: flex;
-            align-items: center;
-
-            gap: 16px;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
         .btn {
             display: inline-flex;
-
             align-items: center;
             justify-content: center;
-
-            min-height: 42px;
-
+            min-height: 44px;
             padding: 0 22px;
-
-            font-size: 10px;
-
-            font-weight: 600;
-
-            transition:
-                background 0.25s ease,
-                color 0.25s ease,
-                border-color 0.25s ease,
-                transform 0.25s ease;
-        }
-
-        .btn-primary {
-            background: #b48a4c;
-
-            color: #ffffff;
-
-            border: 1px solid #b48a4c;
-        }
-
-        .btn-primary:hover {
-            background: #8d6738;
-
-            border-color: #8d6738;
-
-            transform: translateY(-2px);
-        }
-
-        .btn-text {
-            color: #ffffff;
-
-            border: 1px solid rgba(255,255,255,0.75);
-        }
-
-        .btn-text:hover {
-            background: #ffffff;
-
-            color: #17301f;
-
-            transform: translateY(-2px);
-        }
-
-        .btn-text span {
-            margin-left: 8px;
-        }
-
-
-        /* CENTERED HERO */
-
-        .hero-content--centered {
-            left: 50%;
-
-            width: 60%;
-
-            text-align: center;
-
-            transform: translate(-50%, -50%);
-        }
-
-        .eyebrow--centered {
-            justify-content: center;
-        }
-
-        .buttons--centered {
-            justify-content: center;
-        }
-
-
-        /* HERO CARD */
-
-        .card {
-            position: absolute;
-
-            z-index: 5;
-
-            left: 8%;
-
-            top: 50%;
-
-            transform: translateY(-50%);
-
-            width: 420px;
-
-            padding: 42px;
-
-            background: rgba(16,39,25,0.78);
-
-            backdrop-filter: blur(5px);
-
-            color: #ffffff;
-        }
-
-        .bracket {
-            position: absolute;
-
-            width: 30px;
-            height: 30px;
-        }
-
-        .bracket-tl {
-            top: 15px;
-            left: 15px;
-
-            border-top: 1px solid #d3b477;
-            border-left: 1px solid #d3b477;
-        }
-
-        .bracket-br {
-            bottom: 15px;
-            right: 15px;
-
-            border-bottom: 1px solid #d3b477;
-            border-right: 1px solid #d3b477;
-        }
-
-
-        /* HERO NAVIGATION */
-
-        .hero-nav {
-            position: absolute;
-
-            z-index: 10;
-
-            left: 5%;
-
-            bottom: 30px;
-
-            width: 90%;
-
-            display: flex;
-            align-items: center;
-        }
-
-        .progress-track {
-            display: flex;
-
-            align-items: center;
-
-            gap: 8px;
-        }
-
-        .progress {
-            width: 35px;
-            height: 3px;
-
-            display: block;
-
-            background: rgba(255,255,255,0.35);
-
+            border: 1px solid #c59a5a;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .5px;
+            text-transform: uppercase;
+            transition: all .25s ease;
             cursor: pointer;
         }
 
-        .progress span {
-            display: block;
-
-            width: 0;
-            height: 100%;
-
-            background: #d3b477;
+        .btn-primary {
+            background: #c59a5a;
+            color: #142218;
         }
 
-        #slide1:checked ~ .hero-nav .progress1,
-        #slide2:checked ~ .hero-nav .progress2,
-        #slide3:checked ~ .hero-nav .progress3 {
-            background: #d3b477;
+        .btn-primary:hover {
+            background: #fff;
+            border-color: #fff;
         }
 
+        .btn-outline {
+            color: #fff;
+            border-color: rgba(255,255,255,.8);
+        }
+
+        .btn-outline:hover {
+            background: #fff;
+            color: #142218;
+        }
+
+        .slider-dots {
+            position: absolute;
+            z-index: 5;
+            left: 7%;
+            bottom: 28px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .slider-dot {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            border: 1px solid #fff;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .slider-dot.active {
+            background: #c59a5a;
+            border-color: #c59a5a;
+        }
 
         /* =====================================================
            FEATURES
         ====================================================== */
 
         .features {
-            width: 100%;
-
-            min-height: 78px;
-
-            padding: 13px 5%;
-
             display: grid;
-
-            grid-template-columns:
-                repeat(5, 1fr);
-
-            gap: 20px;
-
-            background: #ffffff;
-
-            border-bottom: 1px solid #eeeeee;
+            grid-template-columns: repeat(5, 1fr);
+            border-bottom: 1px solid #eee;
+            background: #fff;
         }
 
         .feature {
+            min-height: 76px;
+            padding: 15px 18px;
             display: flex;
-
             align-items: center;
             justify-content: center;
-
             gap: 10px;
+            border-right: 1px solid #eee;
         }
 
-        .feature > span {
-            font-size: 22px;
+        .feature:last-child {
+            border-right: none;
+        }
+
+        .feature-icon {
+            font-size: 24px;
         }
 
         .feature strong {
             display: block;
-
-            margin-bottom: 3px;
-
-            font-size: 8px;
-
-            letter-spacing: 0.2px;
+            font-size: 9px;
+            letter-spacing: .4px;
         }
 
         .feature small {
             display: block;
-
-            color: #777777;
-
             font-size: 8px;
+            color: #777;
+            margin-top: 2px;
         }
-
 
         /* =====================================================
-           SHOP BY CATEGORY
+           SECTION HEADINGS
         ====================================================== */
 
-        .main {
-            width: 100%;
-
-            padding: 45px 5% 50px;
-
-            background: #ffffff;
-        }
-
-        .head {
+        .section-heading {
             text-align: center;
-
-            margin-bottom: 25px;
+            padding: 48px 20px 30px;
         }
 
-        .head h2 {
-            font-size: 21px;
-
-            letter-spacing: 0.2px;
+        .section-heading h2 {
+            font-size: 23px;
+            letter-spacing: .5px;
         }
 
-        .head::after {
-            content: "";
-
-            display: block;
-
-            width: 45px;
+        .heading-line {
+            width: 44px;
             height: 3px;
-
-            margin: 9px auto 0;
-
-            background: #b48a4c;
+            background: #b5894f;
+            margin: 10px auto 0;
         }
 
+        /* =====================================================
+           CATEGORIES
+        ====================================================== */
 
-        /* CATEGORY GRID */
+        .category-section {
+            padding-bottom: 30px;
+        }
 
-        .catmain {
-            max-width: 1250px;
-
-            margin: 0 auto 45px;
-
+        .category-grid {
+            width: min(1380px, 94%);
+            margin: 0 auto;
             display: grid;
-
-            grid-template-columns:
-                repeat(8, 1fr);
-
-            gap: 15px;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 16px;
         }
 
-        .cat1 {
+        .category-card {
             text-align: center;
-
-            transition:
-                transform 0.25s ease;
+            cursor: pointer;
         }
 
-        .cat1:hover {
-            transform: translateY(-5px);
-        }
-
-        .img1 {
-            width: 100px;
-            height: 100px;
-
-            margin: 0 auto 10px;
-
-            object-fit: cover;
-
+        .category-image {
+            width: 100%;
+            aspect-ratio: 1;
+            overflow: hidden;
             border-radius: 50%;
-
-            background: #f3f1ed;
+            background: #f2f0ed;
+            margin-bottom: 10px;
         }
 
-        .bt {
+        .category-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .3s ease;
+        }
+
+        .category-card:hover .category-image img {
+            transform: scale(1.07);
+        }
+
+        .category-card strong {
             display: block;
-
-            margin-bottom: 5px;
-
-            color: #222222;
-
-            font-size: 8px;
-
-            font-weight: 700;
+            font-size: 9px;
+            margin-bottom: 3px;
         }
 
-        .cat1 > div {
-            color: #777777;
-
-            font-size: 8px;
+        .category-card span {
+            font-size: 9px;
+            color: #777;
         }
-
-        .cat1 a:hover .bt {
-            color: #b48a4c;
-        }
-
 
         /* =====================================================
            BEST SELLERS
         ====================================================== */
 
-        .bs {
-            max-width: 1250px;
-
-            margin: 0 auto 18px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
+        .products-section {
+            width: min(1380px, 94%);
+            margin: 0 auto;
+            padding: 15px 0 50px;
         }
 
-        .bs h2 {
+        .products-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+
+        .products-header h2 {
             font-size: 20px;
         }
 
-        .bs a {
-            font-size: 10px;
-
+        .view-all {
+            font-size: 11px;
             font-weight: 700;
         }
 
-        .bs a:hover {
-            color: #b48a4c;
+        .view-all:hover {
+            color: #b5894f;
         }
 
-
-        /* PRODUCT ROW */
-
-        .bsmain {
-            max-width: 1250px;
-
-            margin: 0 auto;
-
+        .product-grid {
             display: grid;
-
-            grid-template-columns:
-                30px
-                repeat(6, 1fr)
-                30px;
-
+            grid-template-columns: repeat(6, 1fr);
             gap: 12px;
-
-            align-items: stretch;
         }
 
-        .s1 {
+        .product-card {
+            background: #f7f7f5;
             position: relative;
-
-            background: #f8f8f8;
-
-            border-radius: 5px;
-
             overflow: hidden;
-
-            padding-bottom: 14px;
-
-            transition:
-                transform 0.25s ease,
-                box-shadow 0.25s ease;
+            border-radius: 4px;
+            transition: transform .25s ease, box-shadow .25s ease;
         }
 
-        .s1:hover {
-            transform: translateY(-5px);
-
-            box-shadow:
-                0 10px 25px rgba(0,0,0,0.10);
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,.09);
         }
 
-        .hrt {
+        .heart {
             position: absolute;
-
-            top: 8px;
-            right: 9px;
-
-            z-index: 5;
-
-            font-size: 19px;
-
-            color: #333333;
-
+            top: 9px;
+            right: 10px;
+            z-index: 3;
+            border: 0;
+            background: transparent;
+            font-size: 21px;
+            color: #536158;
             cursor: pointer;
         }
 
-        .img2 {
+        .heart.active {
+            color: #b25a4c;
+        }
+
+        .product-image {
             width: 100%;
+            aspect-ratio: 1 / 1.08;
+            background: #f1efeb;
+            overflow: hidden;
+        }
 
-            height: 180px;
-
+        .product-image img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-
-            background: #f0eee9;
+            transition: transform .3s ease;
         }
 
-        .info {
-            padding: 10px;
+        .product-card:hover .product-image img {
+            transform: scale(1.04);
         }
 
-        .info a:hover {
-            color: #a67c3d;
+        .product-info {
+            padding: 12px 11px 15px;
         }
 
-        .bld {
-            margin-bottom: 4px;
-
-            font-size: 9px;
-
-            line-height: 1.3;
-        }
-
-        .info b {
+        .product-name {
             font-size: 11px;
+            font-weight: 600;
         }
 
-        .arrow {
-            min-height: 100%;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
+        .product-type {
+            font-size: 10px;
+            color: #666;
+            margin-bottom: 3px;
         }
 
-        .arrow div {
-            width: 25px;
-            height: 25px;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            border: 1px solid #dddddd;
-
-            border-radius: 50%;
-
-            color: #333333;
-
-            font-size: 18px;
-
-            cursor: pointer;
-
-            transition:
-                background 0.2s ease,
-                color 0.2s ease;
+        .price {
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 3px;
         }
 
-        .arrow div:hover {
-            background: #102719;
-
-            color: #ffffff;
+        .rating {
+            font-size: 10px;
+            letter-spacing: 1px;
         }
 
+        .rating span {
+            letter-spacing: 0;
+            color: #333;
+            margin-left: 3px;
+        }
 
         /* =====================================================
-           SECTION 4 — PROMOTIONS & TRUST
+           ALL PRODUCTS
+        ====================================================== */
+
+        #all-products {
+            background: #fafaf8;
+            padding-top: 10px;
+        }
+
+        .all-products-grid {
+            width: min(1280px, 92%);
+            margin: 0 auto;
+            padding-bottom: 60px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        /* =====================================================
+           PROMOTIONS & TRUST
         ====================================================== */
 
         .promotions-section {
-            width: 100%;
-
-            background: #ffffff;
+            width: min(1380px, 94%);
+            margin: 0 auto;
+            padding: 10px 0 0;
         }
 
         .promotion-container {
-            width: 92%;
-            max-width: 1250px;
-
-            margin: 0 auto;
-
-            padding: 30px 0;
-
             display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
-            gap: 18px;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
         }
 
         .promotion-card {
-            position: relative;
-
             min-height: 205px;
-
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
             overflow: hidden;
-
-            border-radius: 5px;
-
-            display: flex;
-
-            align-items: center;
-
-            isolation: isolate;
-
-            transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease;
-        }
-
-        .promotion-card:hover {
-            transform: translateY(-4px);
-
-            box-shadow:
-                0 15px 35px rgba(0,0,0,0.15);
+            border-radius: 4px;
+            position: relative;
         }
 
         .subscribe-card {
-            background: #102719;
-
-            color: #ffffff;
+            background: #102b1c;
+            color: #fff;
         }
 
         .discount-card {
-            background: #eee6d9;
-
-            color: #171717;
+            background: #eee7dd;
+            color: #142218;
         }
 
         .promotion-content {
+            padding: 30px 20px 25px 30px;
             position: relative;
-
-            z-index: 5;
-
-            width: 60%;
-
-            padding:
-                25px 10px 25px 28px;
+            z-index: 2;
         }
 
         .small-label {
-            margin-bottom: 8px;
-
             font-size: 9px;
-
-            font-weight: 700;
-
-            letter-spacing: 0.6px;
-        }
-
-        .subscribe-card .small-label {
-            color: #d3b477;
-        }
-
-        .discount-card .small-label {
-            color: #555555;
+            letter-spacing: .7px;
+            margin-bottom: 8px;
         }
 
         .promotion-content h2 {
-            margin-bottom: 9px;
-
-            font-family: 'Fraunces', Georgia, serif;
-
-            font-size: clamp(20px, 2vw, 29px);
-
+            font-family: "Inter", Arial, sans-serif;
+            font-size: 23px;
             line-height: 1.05;
+            margin-bottom: 10px;
         }
 
         .promotion-description {
-            margin-bottom: 17px;
-
             font-size: 11px;
-
-            line-height: 1.55;
-        }
-
-        .subscribe-card .promotion-description {
-            color: #e7e7e7;
-        }
-
-        .discount-card .promotion-description {
-            color: #303030;
+            margin-bottom: 16px;
         }
 
         .promotion-button {
             display: inline-flex;
-
             align-items: center;
             justify-content: center;
-
             min-height: 37px;
-
-            padding: 0 17px;
-
-            background: #b48a4c;
-
-            border: 1px solid #b48a4c;
-
-            border-radius: 3px;
-
-            color: #ffffff;
-
+            padding: 0 15px;
+            background: #c59a5a;
+            color: #142218;
             font-size: 9px;
-
             font-weight: 700;
-
-            transition:
-                background 0.25s ease,
-                transform 0.25s ease;
+            text-transform: uppercase;
+            transition: background .2s ease;
         }
 
         .promotion-button:hover {
-            background: #8d6738;
-
-            transform: translateY(-2px);
+            background: #fff;
         }
 
         .promotion-image {
-            position: absolute;
-
-            top: 0;
-            right: 0;
-
-            width: 48%;
-            height: 100%;
+            min-height: 205px;
         }
 
         .promotion-image img {
             width: 100%;
             height: 100%;
-
             object-fit: cover;
-
-            transition:
-                transform 0.6s ease;
         }
-
-        .promotion-card:hover .promotion-image img {
-            transform: scale(1.07);
-        }
-
-        .promotion-image::before {
-            content: "";
-
-            position: absolute;
-
-            inset: 0;
-
-            z-index: 2;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(16,39,25,0.9),
-                    rgba(16,39,25,0.4) 30%,
-                    transparent 65%
-                );
-        }
-
-        .discount-card .promotion-image::before {
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(238,230,217,0.95),
-                    rgba(238,230,217,0.4) 30%,
-                    transparent 65%
-                );
-        }
-
-
-        /* FEATURED BAR */
 
         .featured-section {
-            min-height: 72px;
-
-            padding:
-                14px 5%;
-
-            border-top:
-                1px solid #e3e3e3;
-
-            border-bottom:
-                1px solid #e3e3e3;
-
             display: flex;
-
             align-items: center;
-
-            justify-content: center;
-
-            gap: 38px;
-
-            background: #ffffff;
+            gap: 35px;
+            padding: 18px 15px;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            margin-top: 16px;
         }
 
         .featured-heading {
             font-size: 9px;
-
             font-weight: 700;
-
             white-space: nowrap;
         }
 
         .featured-brands {
-            width: min(900px, 100%);
-
+            width: 100%;
             display: flex;
-
+            justify-content: space-around;
             align-items: center;
-
-            justify-content: space-between;
-
-            gap: 28px;
+            gap: 20px;
         }
 
         .brand {
-            font-family:
-                Georgia,
-                "Times New Roman",
-                serif;
-
-            font-size: 16px;
-
+            font-family: Georgia, serif;
+            font-size: 17px;
             font-weight: 700;
-
+            color: #222;
+            transition: color .2s ease;
             white-space: nowrap;
-
-            transition:
-                color 0.25s ease,
-                transform 0.25s ease;
         }
 
         .brand:hover {
-            color: #9c743c;
+            color: #b5894f;
+        }
 
-            transform: translateY(-2px);
+        .food-wine {
+            font-size: 15px;
         }
 
         .bon-appetit {
             font-weight: 400;
         }
 
+        .mens-health {
+            font-size: 14px;
+        }
+
         .delicious {
+            font-size: 15px;
             font-weight: 400;
         }
 
+        .inc {
+            font-size: 18px;
+        }
 
         /* =====================================================
            FOOTER
         ====================================================== */
 
         .footer {
-            width: 100%;
-
-            background: #102719;
-
-            color: #ffffff;
-
-            padding:
-                45px 5%
-                20px;
+            margin-top: 0;
+            background: #102319;
+            color: #fff;
         }
 
         .footer-container {
-            max-width: 1250px;
-
+            width: min(1380px, 94%);
             margin: 0 auto;
-
+            padding: 48px 0 35px;
             display: grid;
-
-            grid-template-columns:
-                1.5fr
-                1fr
-                1fr
-                1fr
-                1.3fr;
-
+            grid-template-columns: 1.5fr repeat(3, 1fr) 1.4fr;
             gap: 35px;
         }
 
         .footer-brand h2 {
-            margin-bottom: 15px;
-
-            font-family:
-                Georgia,
-                "Times New Roman",
-                serif;
-
-            font-size: 25px;
+            font-family: "Fraunces", Georgia, serif;
+            font-size: 28px;
+            margin-bottom: 10px;
         }
 
-        .footer-brand p {
-            max-width: 250px;
-
-            margin-bottom: 18px;
-
-            color: #c8d0c9;
-
-            font-size: 10px;
-
-            line-height: 1.7;
+        .footer-brand p,
+        .newsletter p {
+            color: #bfc8c0;
+            font-size: 11px;
+            max-width: 240px;
         }
 
         .social-icons {
             display: flex;
-
-            align-items: center;
-
             gap: 12px;
+            margin-top: 20px;
         }
 
         .social-icons a {
-            width: 27px;
-            height: 27px;
-
+            width: 30px;
+            height: 30px;
             display: flex;
-
             align-items: center;
             justify-content: center;
-
+            border: 1px solid rgba(255,255,255,.25);
             border-radius: 50%;
-
-            background: #ffffff;
+            font-size: 12px;
+            transition: background .2s ease;
         }
 
-        .social-icons img {
-            width: 16px;
-            height: 16px;
-
-            object-fit: contain;
+        .social-icons a:hover {
+            background: #c59a5a;
+            color: #142218;
         }
 
         .footer-column {
             display: flex;
-
             flex-direction: column;
-
-            gap: 9px;
+            gap: 8px;
         }
 
         .footer-column h3 {
-            margin-bottom: 7px;
-
-            color: #d3b477;
-
-            font-size: 9px;
-
-            letter-spacing: 0.5px;
+            font-size: 10px;
+            letter-spacing: .8px;
+            margin-bottom: 5px;
         }
 
         .footer-column a {
-            color: #c8d0c9;
-
-            font-size: 9px;
-
-            transition:
-                color 0.2s ease;
+            color: #c5cdc7;
+            font-size: 10px;
+            transition: color .2s ease;
         }
 
         .footer-column a:hover {
-            color: #ffffff;
-        }
-
-
-        /* NEWSLETTER */
-
-        .newsletter p {
-            margin-bottom: 12px;
-
-            color: #c8d0c9;
-
-            font-size: 9px;
-
-            line-height: 1.5;
+            color: #d0aa6f;
         }
 
         .email-box {
-            width: 100%;
-
             display: flex;
-
-            border:
-                1px solid rgba(255,255,255,0.25);
+            margin-top: 15px;
+            max-width: 270px;
         }
 
         .email-box input {
-            width: 100%;
-
             min-width: 0;
-
-            padding:
-                11px;
-
-            border: none;
-
+            flex: 1;
+            height: 40px;
+            padding: 0 12px;
+            border: 1px solid rgba(255,255,255,.25);
+            background: rgba(255,255,255,.06);
+            color: #fff;
             outline: none;
+        }
 
-            background: #ffffff;
-
-            color: #222222;
-
-            font-size: 10px;
+        .email-box input::placeholder {
+            color: #9ba59e;
         }
 
         .email-box button {
-            width: 42px;
-
-            border: none;
-
-            background: #b48a4c;
-
-            color: #ffffff;
-
-            cursor: pointer;
-
+            width: 44px;
+            border: 0;
+            background: #c59a5a;
+            color: #142218;
             font-size: 18px;
+            cursor: pointer;
         }
-
-        .email-box button:hover {
-            background: #8d6738;
-        }
-
-
-        /* FOOTER BOTTOM */
 
         .footer-bottom {
-            max-width: 1250px;
-
-            margin:
-                35px auto 0;
-
-            padding-top: 18px;
-
-            border-top:
-                1px solid rgba(255,255,255,0.15);
-
+            width: min(1380px, 94%);
+            margin: 0 auto;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,.12);
             display: flex;
-
             align-items: center;
-
             justify-content: space-between;
-
             gap: 20px;
-
-            color: #aeb8b0;
-
-            font-size: 8px;
+            color: #9ba59e;
+            font-size: 9px;
         }
 
         .footer-links {
             display: flex;
-
-            gap: 15px;
+            gap: 20px;
         }
 
         .footer-links a:hover {
-            color: #ffffff;
+            color: #fff;
         }
 
         .payment {
             display: flex;
-
             align-items: center;
-
-            gap: 10px;
+            gap: 12px;
+            font-size: 12px;
+            color: #fff;
         }
-
-        .payment img {
-            width: 45px;
-            height: 25px;
-
-            object-fit: contain;
-
-            background: #ffffff;
-
-            border-radius: 3px;
-        }
-
 
         /* =====================================================
-           TABLET
+           CART TOAST
         ====================================================== */
 
-        @media (max-width: 1023px) {
+        .toast {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            z-index: 3000;
+            background: #102319;
+            color: #fff;
+            padding: 13px 18px;
+            border-left: 4px solid #c59a5a;
+            box-shadow: 0 10px 30px rgba(0,0,0,.2);
+            font-size: 12px;
+            transform: translateY(120px);
+            opacity: 0;
+            pointer-events: none;
+            transition: all .3s ease;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* =====================================================
+           RESPONSIVE - TABLET
+        ====================================================== */
+
+        @media (max-width: 1100px) {
+            .header {
+                padding: 12px 25px;
+            }
 
             .navigation {
                 gap: 17px;
             }
 
-            .navigation a {
-                font-size: 9px;
+            .category-grid {
+                grid-template-columns: repeat(4, 1fr);
+                row-gap: 24px;
             }
 
-            .features {
-                grid-template-columns:
-                    repeat(3, 1fr);
-            }
-
-            .feature:nth-child(4),
-            .feature:nth-child(5) {
-                display: none;
-            }
-
-            .catmain {
-                grid-template-columns:
-                    repeat(4, 1fr);
-
-                row-gap: 25px;
-            }
-
-            .bsmain {
-                grid-template-columns:
-                    repeat(3, 1fr);
-            }
-
-            .bsmain .arrow {
-                display: none;
+            .product-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
 
             .footer-container {
-                grid-template-columns:
-                    repeat(3, 1fr);
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .footer-brand,
+            .newsletter {
+                grid-column: span 3;
+            }
+
+            .all-products-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
-
         /* =====================================================
-           TABLET / SMALL LAPTOP
+           RESPONSIVE - MOBILE
         ====================================================== */
 
-        @media (max-width: 900px) {
-
+        @media (max-width: 760px) {
             .top-bar {
+                min-height: auto;
+                padding: 7px 10px;
+                gap: 5px;
                 font-size: 8px;
             }
 
+            .top-bar .offer:nth-child(2) {
+                display: none;
+            }
+
             .header {
-                min-height: 72px;
+                min-height: 70px;
+                padding: 10px 15px;
+                gap: 10px;
             }
 
             .logo {
                 min-width: auto;
             }
 
+            .logo-icon {
+                font-size: 28px;
+            }
+
             .logo-name {
                 font-size: 22px;
-            }
-
-            .navigation {
-                gap: 13px;
-            }
-
-            .icons {
-                gap: 12px;
-            }
-
-            .hero {
-                height: 470px;
-            }
-
-            .hero-content {
-                width: 55%;
-            }
-
-            .hero-content h1 {
-                font-size: 47px;
-            }
-
-            .promotion-content {
-                width: 63%;
-                padding-left: 21px;
-            }
-
-            .promotion-content h2 {
-                font-size: 19px;
-            }
-
-            .promotion-image {
-                width: 44%;
-            }
-
-            .featured-section {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            .featured-brands {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 16px 28px;
-            }
-        }
-
-
-        /* =====================================================
-           MOBILE
-        ====================================================== */
-
-        @media (max-width: 767px) {
-
-            .top-bar {
-                min-height: 32px;
-
-                padding:
-                    6px 4%;
-
-                justify-content: center;
-            }
-
-            .offer {
-                display: none;
-            }
-
-            .offer:first-child {
-                display: flex;
-            }
-
-
-            /* HEADER */
-
-            .header {
-                min-height: 70px;
-
-                padding:
-                    0 5%;
-            }
-
-            .logo-name {
-                font-size: 21px;
             }
 
             .logo-subtitle {
                 font-size: 7px;
             }
 
-            .logo-icon {
-                font-size: 31px;
-            }
-
             .navigation {
                 display: none;
             }
 
             .icons {
-                margin-left: auto;
-
-                gap: 11px;
+                gap: 12px;
             }
 
             .icon {
-                font-size: 20px;
+                font-size: 21px;
             }
 
-
-            /* HERO */
-
-            .hero {
-                height: 620px;
+            .hero,
+            .hero-slide {
+                min-height: 570px;
             }
 
-            .slide {
-                display: flex;
-
-                flex-direction: column;
-            }
-
-            .slide-media {
-                position: absolute;
+            .hero-overlay {
+                background: linear-gradient(
+                    0deg,
+                    rgba(8,28,18,.95) 0%,
+                    rgba(8,28,18,.60) 50%,
+                    rgba(8,28,18,.15) 100%
+                );
             }
 
             .hero-content {
-                left: 7%;
-
-                top: auto;
-                bottom: 60px;
-
-                width: 86%;
-
-                transform: none;
+                width: 88%;
+                margin: 0 auto;
+                padding: 300px 0 60px;
             }
 
             .hero-content h1 {
-                font-size: 43px;
+                font-size: 48px;
             }
 
-            .description {
-                font-size: 12px;
+            .hero-description {
+                font-size: 13px;
             }
-
-            .buttons {
-                flex-wrap: wrap;
-            }
-
-            .btn {
-                min-height: 40px;
-
-                padding:
-                    0 16px;
-            }
-
-            .card {
-                left: 5%;
-
-                top: auto;
-                bottom: 55px;
-
-                width: 90%;
-
-                padding: 30px;
-            }
-
-            .hero-content--centered {
-                left: 7%;
-
-                width: 86%;
-
-                transform: none;
-
-                text-align: center;
-            }
-
-            .eyebrow--centered {
-                justify-content: center;
-            }
-
-            .buttons--centered {
-                justify-content: center;
-            }
-
-
-            /* FEATURES */
 
             .features {
-                grid-template-columns:
-                    repeat(2, 1fr);
-
-                padding:
-                    18px 5%;
+                grid-template-columns: 1fr;
             }
 
             .feature {
                 justify-content: flex-start;
+                padding-left: 25%;
+                border-right: none;
+                border-bottom: 1px solid #eee;
             }
 
-            .feature:nth-child(4),
-            .feature:nth-child(5) {
-                display: flex;
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+                width: 88%;
             }
 
-
-            /* CATEGORY */
-
-            .main {
-                padding:
-                    35px 5%
-                    40px;
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            .catmain {
-                grid-template-columns:
-                    repeat(2, 1fr);
-
-                row-gap: 25px;
+            .all-products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                width: 92%;
             }
 
-            .img1 {
-                width: 90px;
-                height: 90px;
+            .products-section {
+                width: 90%;
             }
-
-
-            /* BEST SELLERS */
-
-            .bsmain {
-                grid-template-columns:
-                    repeat(2, 1fr);
-
-                gap: 15px;
-            }
-
-            .s1 {
-                width: 100%;
-            }
-
-            .img2 {
-                height: 200px;
-            }
-
-            .bsmain .arrow {
-                display: none;
-            }
-
-
-            /* PROMOTIONS */
 
             .promotion-container {
-                width: 92%;
-
                 grid-template-columns: 1fr;
-
-                gap: 14px;
-
-                padding:
-                    20px 0;
             }
 
             .promotion-card {
-                min-height: 185px;
+                grid-template-columns: 1fr 1fr;
             }
 
             .promotion-content {
-                width: 65%;
-
-                padding:
-                    20px
-                    5px
-                    20px
-                    18px;
+                padding: 22px 14px 20px 20px;
             }
 
             .promotion-content h2 {
@@ -1788,86 +1029,48 @@
                 font-size: 9px;
             }
 
-            .promotion-image {
-                width: 43%;
-            }
-
             .featured-section {
-                padding:
-                    18px 20px;
+                flex-direction: column;
+                gap: 12px;
             }
 
             .featured-brands {
-                display: grid;
-
-                grid-template-columns:
-                    repeat(2, 1fr);
-
-                gap:
-                    14px 8px;
-
-                text-align: center;
-            }
-
-            .brand {
-                font-size: 12px;
-            }
-
-
-            /* FOOTER */
-
-            .footer {
-                padding:
-                    38px 5%
-                    20px;
+                flex-wrap: wrap;
+                gap: 12px 20px;
             }
 
             .footer-container {
-                grid-template-columns:
-                    repeat(2, 1fr);
-
-                gap:
-                    30px 20px;
+                grid-template-columns: 1fr 1fr;
+                gap: 30px 20px;
             }
 
-            .footer-brand {
-                grid-column:
-                    1 / -1;
+            .footer-brand,
+            .newsletter {
+                grid-column: span 2;
             }
 
             .footer-bottom {
                 flex-direction: column;
-
                 text-align: center;
             }
 
             .footer-links {
+                flex-wrap: wrap;
                 justify-content: center;
             }
         }
 
-
-        /* =====================================================
-           SMALL MOBILE
-        ====================================================== */
-
-        @media (max-width: 450px) {
-
-            .hero {
-                height: 590px;
+        @media (max-width: 430px) {
+            .hero-content {
+                padding-top: 320px;
             }
 
             .hero-content h1 {
-                font-size: 37px;
+                font-size: 40px;
             }
 
-            .hero-content {
-                bottom: 55px;
-            }
-
-            .buttons {
+            .hero-buttons {
                 flex-direction: column;
-
                 align-items: stretch;
             }
 
@@ -1875,2440 +1078,995 @@
                 width: 100%;
             }
 
-            .features {
+            .category-grid {
+                gap: 20px 12px;
+            }
+
+            .product-grid,
+            .all-products-grid {
                 grid-template-columns: 1fr;
             }
 
-            .feature {
-                justify-content: center;
-            }
-
-            .catmain {
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-
-            .img1 {
-                width: 82px;
-                height: 82px;
-            }
-
-            .bsmain {
+            .promotion-card {
                 grid-template-columns: 1fr;
             }
 
-            .promotion-content h2 {
-                font-size: 16px;
+            .promotion-image {
+                min-height: 190px;
             }
 
-            .promotion-button {
-                font-size: 7px;
-
-                padding:
-                    0 9px;
+            .promotion-content {
+                min-height: 190px;
             }
 
             .footer-container {
                 grid-template-columns: 1fr;
             }
 
-            .footer-brand {
-                grid-column: auto;
-            }
-
-            .footer-bottom {
-                gap: 15px;
-            }
-
-            .payment {
-                flex-wrap: wrap;
-
-                justify-content: center;
+            .footer-brand,
+            .newsletter {
+                grid-column: span 1;
             }
         }
-
-
-        /* =====================================================
-           VERY SMALL MOBILE
-        ====================================================== */
-
-        @media (max-width: 360px) {
-
-            .logo-name {
-                font-size: 18px;
-            }
-
-            .logo-icon {
-                font-size: 27px;
-            }
-
-            .icons {
-                gap: 7px;
-            }
-
-            .hero-content h1 {
-                font-size: 33px;
-            }
-
-            .head h2 {
-                font-size: 18px;
-            }
-
-            .bt {
-                font-size: 7px;
-            }
-
-            .promotion-content {
-                padding-left: 14px;
-            }
-
-            .featured-brands {
-                gap:
-                    12px 5px;
-            }
-
-            .brand {
-                font-size: 10px;
-            }
-        }
-
-
-        /* =====================================================
-           REDUCED MOTION
-        ====================================================== */
-
-        @media (prefers-reduced-motion: reduce) {
-
-            html {
-                scroll-behavior: auto;
-            }
-
-            *,
-            *::before,
-            *::after {
-                transition: none !important;
-            }
-        }
-
     </style>
-
 </head>
-
 
 <body>
 
-
     <!-- =====================================================
-         SECTION 1 — TOP BAR + HEADER
+         TOP OFFER BAR
     ====================================================== -->
 
     <div class="top-bar">
-
         <div class="offer">
-            🚚
-            <span>
-                FREE SHIPPING ON ORDERS OVER $49
-            </span>
+            <span>🚚</span>
+            <span>FREE SHIPPING ON ORDERS OVER $49</span>
         </div>
 
         <div class="offer">
-            🏷️
-            <span>
-                10% OFF YOUR FIRST ORDER
-                &nbsp; | &nbsp;
-                USE CODE: BREW10
-            </span>
+            <span>🏷️</span>
+            <span>10% OFF YOUR FIRST ORDER &nbsp; | &nbsp; USE CODE: BREW10</span>
         </div>
 
         <div class="offer">
-            ↻
-            <span>
-                30-DAY HASSLE FREE RETURNS
-            </span>
+            <span>↻</span>
+            <span>30-DAY HASSLE FREE RETURNS</span>
         </div>
-
     </div>
 
 
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
     <header class="header">
 
-
-        <!-- LOGO -->
-
-        <div class="logo">
-
-            <div class="logo-icon">
-                ☕
-            </div>
+        <a href="#home" class="logo">
+            <div class="logo-icon">☕</div>
 
             <div>
-
-                <div class="logo-name">
-                    COSMIC CAFE
-                </div>
-
-                <div class="logo-subtitle">
-                    COFFEE CO.
-                </div>
-
+                <div class="logo-name">COSMIC CAFE</div>
+                <div class="logo-subtitle">COFFEE CO.</div>
             </div>
-
-        </div>
-
-
-        <!-- NAVIGATION -->
+        </a>
 
         <ul class="navigation">
-
-            <li>
-                <a href="#shop">
-                    SHOP
-                </a>
-            </li>
-
-            <li>
-                <a href="#coffee">
-                    COFFEE
-                </a>
-            </li>
-
-            <li>
-                <a href="#equipment">
-                    EQUIPMENT
-                </a>
-            </li>
-
-            <li>
-                <a href="#subscriptions">
-                    SUBSCRIPTIONS
-                </a>
-            </li>
-
-            <li>
-                <a href="#gifts">
-                    GIFTS
-                </a>
-            </li>
-
-            <li class="sale">
-                <a href="#sale">
-                    SALE
-                </a>
-            </li>
-
+            <li><a href="#shop">SHOP</a></li>
+            <li><a href="#coffee">COFFEE</a></li>
+            <li><a href="#equipment">EQUIPMENT</a></li>
+            <li><a href="#subscriptions">SUBSCRIPTIONS</a></li>
+            <li><a href="#gifts">GIFTS</a></li>
+            <li class="sale"><a href="#sale">SALE</a></li>
         </ul>
 
-
-        <!-- SEARCH / ACCOUNT / CART -->
-
         <div class="icons">
-
-            <a href="#search" class="icon">
-                ⌕
-            </a>
-
-            <a href="#account" class="icon">
-                ♙
-            </a>
-
-            <a href="#cart" class="icon cart">
-
+            <a href="#all-products" class="icon" aria-label="Search">⌕</a>
+            <a href="#footer" class="icon" aria-label="Account">♙</a>
+            <a href="#cart" class="icon" aria-label="Cart">
                 🛒
-
-                <span class="cart-count">
-                    0
-                </span>
-
+                <span class="cart-count" id="cartCount">0</span>
             </a>
-
         </div>
 
     </header>
 
 
-
     <!-- =====================================================
-         SECTION 2 — HERO
+         HERO
     ====================================================== -->
 
-    <section class="hero">
+    <main id="home">
 
+        <section class="hero" id="shop">
 
-        <input
-            type="radio"
-            name="slider"
-            id="slide1"
-            checked
-        >
+            <div class="hero-slide active">
 
-        <input
-            type="radio"
-            name="slider"
-            id="slide2"
-        >
-
-        <input
-            type="radio"
-            name="slider"
-            id="slide3"
-        >
-
-
-        <div class="slides">
-
-
-            <!-- SLIDE 1 -->
-
-            <div class="slide slide1">
-
-                <div class="slide-media">
-
-                    <img
-                        src="coffee.jpg"
-                        alt="Coffee"
-                    >
-
+                <div class="hero-media">
+                    <img src="colombia.jpg" alt="Freshly roasted coffee">
                 </div>
 
-                <div class="overlay overlay-side"></div>
-
+                <div class="hero-overlay"></div>
 
                 <div class="hero-content">
-
-                    <p class="eyebrow">
-
-                        <span class="rule"></span>
-
-                        Roasted in small batches, weekly
-
-                    </p>
-
+                    <p class="eyebrow">FRESHLY ROASTED, PERFECTLY CRAFTED</p>
 
                     <h1>
-                        Good Coffee.
-                        <br>
-                        <em>Better days.</em>
+                        Good Coffee.<br>
+                        <em>Better Days.</em>
                     </h1>
 
-
-                    <p class="description">
-
-                        Single-origin beans, bought straight
-                        from the farms that grow them. We roast
-                        in small batches, here, every week.
-
+                    <p class="hero-description">
+                        Premium single-origin coffee, ethically sourced
+                        and roasted in small batches for exceptional flavor.
                     </p>
 
-
-                    <div class="buttons">
-
-                        <a
-                            href="#shop"
-                            class="btn btn-primary"
-                        >
-                            Shop coffee
+                    <div class="hero-buttons">
+                        <a href="#all-products" class="btn btn-primary">
+                            SHOP COFFEE
                         </a>
 
-                        <a
-                            href="#subscriptions"
-                            class="btn btn-text"
-                        >
-                            Explore subscriptions
-                            <span>&rarr;</span>
+                        <a href="#subscriptions" class="btn btn-outline">
+                            EXPLORE SUBSCRIPTIONS
                         </a>
-
                     </div>
-
                 </div>
-
             </div>
 
 
+            <div class="hero-slide">
 
-            <!-- SLIDE 2 -->
-
-            <div class="slide slide2">
-
-                <div class="slide-media">
-
-                    <img
-                        src="coffee2.jpg"
-                        alt="Coffee and cookies"
-                    >
-
+                <div class="hero-media">
+                    <img src="HOUSE BLEND.jpg" alt="House Blend coffee">
                 </div>
 
+                <div class="hero-overlay"></div>
 
-                <div class="card">
-
-                    <span class="bracket bracket-tl"></span>
-
-                    <span class="bracket bracket-br"></span>
-
-
-                    <p class="eyebrow">
-
-                        <span class="rule"></span>
-
-                        Coffee, and something sweet
-                        on the side
-
-                    </p>
-
+                <div class="hero-content">
+                    <p class="eyebrow">COFFEE MADE FOR MOMENTS</p>
 
                     <h1>
-                        Coffee.
-                        <br>
-                        <em>Made for moments.</em>
+                        Coffee.<br>
+                        <em>Made for Moments.</em>
                     </h1>
 
-
-                    <p class="description">
-
-                        Get a rich cup and something sweet
-                        from the case next door. Simple as that.
-
+                    <p class="hero-description">
+                        Rich blends and carefully selected beans made
+                        for your everyday coffee ritual.
                     </p>
 
-
-                    <div class="buttons">
-
-                        <a
-                            href="#shop"
-                            class="btn btn-primary"
-                        >
-                            Shop coffee
+                    <div class="hero-buttons">
+                        <a href="#all-products" class="btn btn-primary">
+                            SHOP COFFEE
                         </a>
 
-                        <a
-                            href="#gifts"
-                            class="btn btn-text"
-                        >
-                            View menu
-                            <span>&rarr;</span>
+                        <a href="#promotions" class="btn btn-outline">
+                            VIEW OFFERS
                         </a>
-
                     </div>
-
                 </div>
-
             </div>
 
 
+            <div class="hero-slide">
 
-            <!-- SLIDE 3 -->
-
-            <div class="slide slide3">
-
-                <div class="slide-media">
-
-                    <img
-                        src="./coffee3.jpg"
-                        alt="Milk Cream Coffee"
-                    >
-
+                <div class="hero-media">
+                    <img src="ETHIOPIA YIRGACHEFFE.jpg" alt="Ethiopia Yirgacheffe coffee">
                 </div>
 
+                <div class="hero-overlay"></div>
 
-                <div class="overlay overlay-bottom"></div>
-
-
-                <div class="hero-content hero-content--centered">
-
-                    <p class="eyebrow eyebrow--centered">
-
-                        <span class="rule"></span>
-
-                        Slow-poured, every time
-
-                        <span class="rule"></span>
-
-                    </p>
-
+                <div class="hero-content">
+                    <p class="eyebrow">SINGLE ORIGIN. PURE FLAVOR.</p>
 
                     <h1>
-                        Rich Flavor.
-                        <br>
-                        <em>Pure comfort.</em>
+                        Rich Flavor.<br>
+                        <em>Pure Comfort.</em>
                     </h1>
 
-
-                    <p class="description">
-
-                        Smooth, creamy, slow-poured —
-                        the kind of cup that makes getting
-                        up early feel worth it.
-
+                    <p class="hero-description">
+                        Discover floral, smooth and balanced notes
+                        from our carefully selected single-origin coffees.
                     </p>
 
-
-                    <div class="buttons buttons--centered">
-
-                        <a
-                            href="#shop"
-                            class="btn btn-primary"
-                        >
-                            Shop now
+                    <div class="hero-buttons">
+                        <a href="#all-products" class="btn btn-primary">
+                            SHOP NOW
                         </a>
 
-                        <a
-                            href="#about"
-                            class="btn btn-text"
-                        >
-                            Our story
-                            <span>&rarr;</span>
+                        <a href="#about" class="btn btn-outline">
+                            OUR STORY
                         </a>
-
                     </div>
-
                 </div>
-
             </div>
 
-        </div>
 
-
-        <!-- HERO NAVIGATION -->
-
-        <div class="hero-nav">
-
-            <div class="progress-track">
-
-                <label
-                    for="slide1"
-                    class="progress progress1"
-                >
-                    <span></span>
-                </label>
-
-                <label
-                    for="slide2"
-                    class="progress progress2"
-                >
-                    <span></span>
-                </label>
-
-                <label
-                    for="slide3"
-                    class="progress progress3"
-                >
-                    <span></span>
-                </label>
-
+            <div class="slider-dots">
+                <button class="slider-dot active" data-slide="0" aria-label="Slide 1"></button>
+                <button class="slider-dot" data-slide="1" aria-label="Slide 2"></button>
+                <button class="slider-dot" data-slide="2" aria-label="Slide 3"></button>
             </div>
 
-        </div>
+        </section>
 
-    </section>
 
+        <!-- =====================================================
+             FEATURES
+        ====================================================== -->
 
+        <section class="features">
 
-    <!-- =====================================================
-         FEATURES / TRUST
-    ====================================================== -->
-
-    <section class="features">
-
-
-        <div class="feature">
-
-            <span>
-                &#128175;
-            </span>
-
-            <div>
-
-                <strong>
-                    FRESHLY ROASTED
-                </strong>
-
-                <small>
-                    Roasted in small batches
-                </small>
-
-            </div>
-
-        </div>
-
-
-        <div class="feature">
-
-            <span>
-                &#9749;
-            </span>
-
-            <div>
-
-                <strong>
-                    ETHICALLY SOURCED
-                </strong>
-
-                <small>
-                    Fairly traded from farmers
-                </small>
-
-            </div>
-
-        </div>
-
-
-        <div class="feature">
-
-            <span>
-                &#128666;
-            </span>
-
-            <div>
-
-                <strong>
-                    FREE SHIPPING
-                </strong>
-
-                <small>
-                    On orders over ₹999
-                </small>
-
-            </div>
-
-        </div>
-
-
-        <div class="feature">
-
-            <span>
-                &#128274;
-            </span>
-
-            <div>
-
-                <strong>
-                    SECURE PAYMENT
-                </strong>
-
-                <small>
-                    Checkout you can actually trust
-                </small>
-
-            </div>
-
-        </div>
-
-
-        <div class="feature">
-
-            <span>
-                &#128257;
-            </span>
-
-            <div>
-
-                <strong>
-                    30-DAY RETURNS
-                </strong>
-
-                <small>
-                    Love it or return it
-                </small>
-
-            </div>
-
-        </div>
-
-
-    </section>
-
-
-
-    <!-- =====================================================
-         SECTION 3 — SHOP BY CATEGORY
-    ====================================================== -->
-
-    <section
-        class="main"
-        id="shop"
-    >
-
-
-        <div class="head">
-
-            <h2>
-                SHOP BY CATEGORY
-            </h2>
-
-        </div>
-
-
-        <div class="catmain">
-
-
-            <div class="cat1">
-
-                <a href="#products">
-
-                    <img
-                        class="img1"
-                        src="images/COFFEE BEANS.jpg"
-                        alt="COFFEE BEANS"
-                    >
-
-                </a>
-
-                <a href="#products">
-
-                    <b class="bt">
-                        COFFEE BEANS
-                    </b>
-
-                </a>
-
+            <div class="feature">
+                <span class="feature-icon">💯</span>
                 <div>
-                    Shop Now
+                    <strong>FRESHLY ROASTED</strong>
+                    <small>Roasted in small batches</small>
                 </div>
-
             </div>
 
-
-
-            <div class="cat1">
-
-                <a href="#products">
-
-                    <img
-                        class="img1"
-                        src="images/GROUND COFFEE.jpg"
-                        alt="GROUND COFFEE"
-                    >
-
-                </a>
-
-                <a href="#products">
-
-                    <b class="bt">
-                        GROUND COFFEE
-                    </b>
-
-                </a>
-
+            <div class="feature">
+                <span class="feature-icon">☕</span>
                 <div>
-                    Shop Now
+                    <strong>ETHICALLY SOURCED</strong>
+                    <small>Fairly traded from farmers</small>
                 </div>
-
             </div>
 
-
-
-            <div class="cat1">
-
-                <a href="#products">
-
-                    <img
-                        class="img1"
-                        src="images/COFFEE CAPSULE.jpg"
-                        alt="COFFEE CAPSULES"
-                    >
-
-                </a>
-
-                <a href="#products">
-
-                    <b class="bt">
-                        COFFEE CAPSULES
-                    </b>
-
-                </a>
-
+            <div class="feature">
+                <span class="feature-icon">🚚</span>
                 <div>
-                    Shop Now
+                    <strong>FREE SHIPPING</strong>
+                    <small>On orders over ₹999</small>
                 </div>
-
             </div>
 
-
-
-            <div
-                class="cat1"
-                id="equipment"
-            >
-
-                <a href="#products">
-
-                    <img
-                        class="img1"
-                        src="images/BREWING EQUIPMENTS.jpg"
-                        alt="BREWING EQUIPMENT"
-                    >
-
-                </a>
-
-                <a href="#products">
-
-                    <b class="bt">
-                        BREWING EQUIPMENT
-                    </b>
-
-                </a>
-
+            <div class="feature">
+                <span class="feature-icon">🔒</span>
                 <div>
-                    Shop Now
+                    <strong>SECURE PAYMENT</strong>
+                    <small>Checkout you can actually trust</small>
                 </div>
-
             </div>
 
-
-
-            <div class="cat1">
-
-                <a href="#products">
-
-                    <img
-                        class="img1"
-                        src="images/MUGS & DRINKWARE.jpg"
-                        alt="MUGS & DRINKWARE"
-                    >
-
-                </a>
-
-                <a href="#products">
-
-                    <b class="bt">
-                        MUGS & DRINKWARE
-                    </b>
-
-                </a>
-
+            <div class="feature">
+                <span class="feature-icon">🔄</span>
                 <div>
-                    Shop Now
+                    <strong>30-DAY RETURNS</strong>
+                    <small>Love it or return it</small>
                 </div>
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SHOP BY CATEGORY
+        ====================================================== -->
+
+        <section class="category-section" id="coffee">
+
+            <div class="section-heading">
+                <h2>SHOP BY CATEGORY</h2>
+                <div class="heading-line"></div>
+            </div>
+
+            <div class="category-grid">
+
+                <a href="#all-products" class="category-card">
+                    <div class="category-image">
+                        <img src="COFFEE BEANS.jpg" alt="Coffee Beans">
+                    </div>
+                    <strong>COFFEE BEANS</strong>
+                    <span>Shop Now</span>
+                </a>
+
+                <a href="#all-products" class="category-card">
+                    <div class="category-image">
+                        <img src="GROUND COFFEE.jpg" alt="Ground Coffee">
+                    </div>
+                    <strong>GROUND COFFEE</strong>
+                    <span>Shop Now</span>
+                </a>
+
+                <a href="#all-products" class="category-card">
+                    <div class="category-image">
+                        <img src="COFFEE CAPSULE.jpg" alt="Coffee Capsules">
+                    </div>
+                    <strong>COFFEE CAPSULES</strong>
+                    <span>Shop Now</span>
+                </a>
+
+                <a href="#equipment" class="category-card">
+                    <div class="category-image">
+                        <img src="BREWING EQUIPMENTS.jpg" alt="Brewing Equipment">
+                    </div>
+                    <strong>BREWING EQUIPMENT</strong>
+                    <span>Shop Now</span>
+                </a>
+
+                <a href="#gifts" class="category-card">
+                    <div class="category-image">
+                        <img src="MUGS & DRINKWARE.jpg" alt="Mugs and Drinkware">
+                    </div>
+                    <strong>MUGS & DRINKWARE</strong>
+                    <span>Shop Now</span>
+                </a>
+
+                <a href="#gifts" class="category-card">
+                    <div class="category-image">
+                        <img src="GIFTS & BUNDLES.jpg" alt="Gifts and Bundles">
+                    </div>
+                    <strong>GIFTS & BUNDLES</strong>
+                    <span>Shop Now</span>
+                </a>
+
+                <a href="#all-products" class="category-card">
+                    <div class="category-image">
+                        <img src="COLD COFFEE.jpg" alt="Cold Brew">
+                    </div>
+                    <strong>COLD BREW</strong>
+                    <span>Shop Now</span>
+                </a>
+
+                <a href="#all-products" class="category-card">
+                    <div class="category-image">
+                        <img src="ACCESSORIES.jpg" alt="Accessories">
+                    </div>
+                    <strong>ACCESSORIES</strong>
+                    <span>Shop Now</span>
+                </a>
 
             </div>
 
+        </section>
 
 
-            <div
-                class="cat1"
-                id="gifts"
-            >
-
-                <a href="#products">
-
-                    <img
-                        class="img1"
-                        src="images/GIFTS & BUNDLES.jpg"
-                        alt="GIFT & BUNDLES"
-                    >
-
-                </a>
-
-                <a href="#products">
-
-                    <b class="bt">
-                        GIFT & BUNDLES
-                    </b>
-
-                </a>
-
-                <div>
-                    Shop Now
-                </div>
-
-            </div>
-
-
-
-            <div class="cat1">
-
-                <a href="#products">
-
-                    <img
-                        class="img1"
-                        src="images/COLD COFFEE.jpg"
-                        alt="COLD BREW"
-                    >
-
-                </a>
-
-                <a href="#products">
-
-                    <b class="bt">
-                        COLD BREW
-                    </b>
-
-                </a>
-
-                <div>
-                    Shop Now
-                </div>
-
-            </div>
-
-
-
-            <div class="cat1">
-
-                <a href="#products">
-
-                    <img
-                        class="img1"
-                        src="images/ACCESSORIES.jpg"
-                        alt="ACCESSORIES"
-                    >
-
-                </a>
-
-                <a href="#products">
-
-                    <b class="bt">
-                        ACCESSORIES
-                    </b>
-
-                </a>
-
-                <div>
-                    Shop Now
-                </div>
-
-            </div>
-
-
-        </div>
-
-
-
-        <!-- =================================================
+        <!-- =====================================================
              BEST SELLERS
-        ================================================== -->
+        ====================================================== -->
 
-        <div
-            id="products"
-        >
+        <section class="products-section" id="equipment">
 
-            <div class="bs">
-
-                <h2>
-                    BEST SELLERS
-                </h2>
-
-                <a href="#all-products">
-                    <div>
-                        VIEW ALL &#10132;
-                    </div>
+            <div class="products-header">
+                <h2>BEST SELLERS</h2>
+                <a href="#all-products" class="view-all">
+                    VIEW ALL &nbsp; → 
                 </a>
+            </div>
+
+            <div class="product-grid">
+
+                <article class="product-card">
+                    <button class="heart" aria-label="Add Colombia Supremo to wishlist">♡</button>
+                    <a href="#all-products">
+                        <div class="product-image">
+                            <img src="fe90ed15-fbf6-47f8-9847-a2dde9e97590.jpg" alt="Colombia Supremo">
+                        </div>
+                    </a>
+                    <div class="product-info">
+                        <div class="product-name">Colombia Supremo</div>
+                        <div class="product-type">Single Origin</div>
+                        <div class="price">$16.99</div>
+                        <div class="rating">★★★★★ <span>(1254)</span></div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <button class="heart" aria-label="Add House Blend to wishlist">♡</button>
+                    <a href="#all-products">
+                        <div class="product-image">
+                            <img src="HOUSE BLEND.jpg" alt="House Blend">
+                        </div>
+                    </a>
+                    <div class="product-info">
+                        <div class="product-name">House Blend</div>
+                        <div class="product-type">Medium Roast</div>
+                        <div class="price">$15.99</div>
+                        <div class="rating">★★★★★ <span>(987)</span></div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <button class="heart" aria-label="Add Ethiopia Yirgacheffe to wishlist">♡</button>
+                    <a href="#all-products">
+                        <div class="product-image">
+                            <img src="ETHIOPIA YIRGACHEFFE.jpg" alt="Ethiopia Yirgacheffe">
+                        </div>
+                    </a>
+                    <div class="product-info">
+                        <div class="product-name">Ethiopia Yirgacheffe</div>
+                        <div class="product-type">Light Roast</div>
+                        <div class="price">$17.99</div>
+                        <div class="rating">★★★★★ <span>(1103)</span></div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <button class="heart" aria-label="Add Pour Over Kettle to wishlist">♡</button>
+                    <a href="#all-products">
+                        <div class="product-image">
+                            <img src="POUR OVER.jpg" alt="Pour Over Kettle">
+                        </div>
+                    </a>
+                    <div class="product-info">
+                        <div class="product-name">Pour Over Kettle</div>
+                        <div class="product-type">600ml</div>
+                        <div class="price">$39.99</div>
+                        <div class="rating">★★★★★ <span>(746)</span></div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <button class="heart" aria-label="Add Ceramic Pour Over to wishlist">♡</button>
+                    <a href="#all-products">
+                        <div class="product-image">
+                            <img src="CERAMIC POUR.jpg" alt="Ceramic Pour Over">
+                        </div>
+                    </a>
+                    <div class="product-info">
+                        <div class="product-name">Ceramic Pour Over</div>
+                        <div class="product-type">Coffee Dripper</div>
+                        <div class="price">$24.99</div>
+                        <div class="rating">★★★★★ <span>(652)</span></div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <button class="heart" aria-label="Add French Press to wishlist">♡</button>
+                    <a href="#all-products">
+                        <div class="product-image">
+                            <img src="FRENCH PRESS.jpg" alt="French Press">
+                        </div>
+                    </a>
+                    <div class="product-info">
+                        <div class="product-name">French Press</div>
+                        <div class="product-type">Coffee Maker</div>
+                        <div class="price">$29.99</div>
+                        <div class="rating">★★★★★ <span>(532)</span></div>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ALL PRODUCTS
+        ====================================================== -->
+
+        <section id="all-products">
+
+            <div class="section-heading">
+                <h2>ALL PRODUCTS</h2>
+                <div class="heading-line"></div>
+            </div>
+
+            <div class="all-products-grid">
+
+                <article class="product-card">
+                    <button class="heart" aria-label="Wishlist">♡</button>
+                    <div class="product-image"><img src="HOUSE BLEND.jpg" alt="House Blend"></div>
+                    <div class="product-info">
+                        <div class="product-name">House Blend</div>
+                        <div class="product-type">Medium Roast</div>
+                        <div class="price">$15.99</div>
+                        <div class="rating">★★★★★ <span>(987)</span></div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <button class="heart" aria-label="Wishlist">♡</button>
+                    <div class="product-image"><img src="ETHIOPIA YIRGACHEFFE.jpg" alt="Ethiopia Yirgacheffe"></div>
+                    <div class="product-info">
+                        <div class="product-name">Ethiopia Yirgacheffe</div>
+                        <div class="product-type">Light Roast</div>
+                        <div class="price">$17.99</div>
+                        <div class="rating">★★★★★ <span>(1103)</span></div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <button class="heart" aria-label="Wishlist">♡</button>
+                    <div class="product-image"><img src="POUR OVER.jpg" alt="Pour Over Kettle"></div>
+                    <div class="product-info">
+                        <div class="product-name">Pour Over Kettle</div>
+                        <div class="product-type">600ml</div>
+                        <div class="price">$39.99</div>
+                        <div class="rating">★★★★★ <span>(746)</span></div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <button class="heart" aria-label="Wishlist">♡</button>
+                    <div class="product-image"><img src="CERAMIC POUR.jpg" alt="Ceramic Pour Over"></div>
+                    <div class="product-info">
+                        <div class="product-name">Ceramic Pour Over</div>
+                        <div class="product-type">Coffee Dripper</div>
+                        <div class="price">$24.99</div>
+                        <div class="rating">★★★★★ <span>(652)</span></div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <button class="heart" aria-label="Wishlist">♡</button>
+                    <div class="product-image"><img src="FRENCH PRESS.jpg" alt="French Press"></div>
+                    <div class="product-info">
+                        <div class="product-name">French Press</div>
+                        <div class="product-type">Coffee Maker</div>
+                        <div class="price">$29.99</div>
+                        <div class="rating">★★★★★ <span>(532)</span></div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <button class="heart" aria-label="Wishlist">♡</button>
+                    <div class="product-image"><img src="fe90ed15-fbf6-47f8-9847-a2dde9e97590.jpg" alt="Colombia Supremo"></div>
+                    <div class="product-info">
+                        <div class="product-name">Colombia Supremo</div>
+                        <div class="product-type">Single Origin</div>
+                        <div class="price">$16.99</div>
+                        <div class="rating">★★★★★ <span>(1254)</span></div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <button class="heart" aria-label="Wishlist">♡</button>
+                    <div class="product-image"><img src="ARABICA.jpg" alt="Arabica Coffee"></div>
+                    <div class="product-info">
+                        <div class="product-name">Arabica Coffee</div>
+                        <div class="product-type">Medium Roast</div>
+                        <div class="price">$15.99</div>
+                        <div class="rating">★★★★★ <span>(987)</span></div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <button class="heart" aria-label="Wishlist">♡</button>
+                    <div class="product-image"><img src="MUG.jpg" alt="Coffee Mug"></div>
+                    <div class="product-info">
+                        <div class="product-name">Coffee Mug</div>
+                        <div class="product-type">Ceramic</div>
+                        <div class="price">$17.99</div>
+                        <div class="rating">★★★★★ <span>(1103)</span></div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <button class="heart" aria-label="Wishlist">♡</button>
+                    <div class="product-image"><img src="ROTATE.jpg" alt="Coffee Grinder"></div>
+                    <div class="product-info">
+                        <div class="product-name">Coffee Grinder</div>
+                        <div class="product-type">Manual</div>
+                        <div class="price">$39.99</div>
+                        <div class="rating">★★★★★ <span>(746)</span></div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <button class="heart" aria-label="Wishlist">♡</button>
+                    <div class="product-image"><img src="COFFMUG.jpg" alt="Coffee Mug"></div>
+                    <div class="product-info">
+                        <div class="product-name">Coffee Mug</div>
+                        <div class="product-type">Coffee Dripper</div>
+                        <div class="price">$24.99</div>
+                        <div class="rating">★★★★★ <span>(652)</span></div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <button class="heart" aria-label="Wishlist">♡</button>
+                    <div class="product-image"><img src="COFFPOWDER.jpg" alt="Coffee Powder"></div>
+                    <div class="product-info">
+                        <div class="product-name">Coffee Powder</div>
+                        <div class="product-type">Fine Roast</div>
+                        <div class="price">$29.99</div>
+                        <div class="rating">★★★★★ <span>(532)</span></div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <button class="heart" aria-label="Wishlist">♡</button>
+                    <div class="product-image"><img src="COFFMAKER.jpg" alt="Coffee Maker"></div>
+                    <div class="product-info">
+                        <div class="product-name">Coffee Maker</div>
+                        <div class="product-type">Automatic</div>
+                        <div class="price">$16.99</div>
+                        <div class="rating">★★★★★ <span>(1254)</span></div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <button class="heart" aria-label="Wishlist">♡</button>
+                    <div class="product-image"><img src="COLDCOFF.jpg" alt="Cold Coffee"></div>
+                    <div class="product-info">
+                        <div class="product-name">Cold Coffee</div>
+                        <div class="product-type">Cold Brew</div>
+                        <div class="price">$15.99</div>
+                        <div class="rating">★★★★★ <span>(987)</span></div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <button class="heart" aria-label="Wishlist">♡</button>
+                    <div class="product-image"><img src="DESINER.jpg" alt="Designer Coffee"></div>
+                    <div class="product-info">
+                        <div class="product-name">Designer Coffee</div>
+                        <div class="product-type">Premium</div>
+                        <div class="price">$17.99</div>
+                        <div class="rating">★★★★★ <span>(1103)</span></div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <button class="heart" aria-label="Wishlist">♡</button>
+                    <div class="product-image"><img src="GROUND.jpg" alt="Ground Coffee"></div>
+                    <div class="product-info">
+                        <div class="product-name">Ground Coffee</div>
+                        <div class="product-type">Medium Roast</div>
+                        <div class="price">$39.99</div>
+                        <div class="rating">★★★★★ <span>(746)</span></div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <button class="heart" aria-label="Wishlist">♡</button>
+                    <div class="product-image"><img src="HOTCOFF.jpg" alt="Hot Coffee"></div>
+                    <div class="product-info">
+                        <div class="product-name">Hot Coffee</div>
+                        <div class="product-type">Single Origin</div>
+                        <div class="price">$16.99</div>
+                        <div class="rating">★★★★★ <span>(1254)</span></div>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PROMOTIONS & TRUST
+        ====================================================== -->
+
+        <section class="promotions-section" id="promotions">
+
+            <div class="promotion-container">
+
+                <div class="promotion-card subscribe-card" id="subscriptions">
+
+                    <div class="promotion-content">
+                        <p class="small-label">NEVER RUN OUT OF COFFEE</p>
+
+                        <h2>SUBSCRIBE &amp; SAVE</h2>
+
+                        <p class="promotion-description">
+                            Save up to 15% on every order<br>
+                            + free shipping.
+                        </p>
+
+                        <a href="#subscription-plans" class="promotion-button">
+                            SHOP SUBSCRIPTIONS
+                        </a>
+                    </div>
+
+                    <div class="promotion-image">
+                        <img src="GIFTS & BUNDLES.jpg" alt="Coffee subscription">
+                    </div>
+
+                </div>
+
+
+                <div class="promotion-card discount-card" id="sale">
+
+                    <div class="promotion-content">
+                        <p class="small-label">LIMITED TIME OFFER</p>
+
+                        <h2>
+                            GET 10% OFF<br>
+                            YOUR FIRST ORDER
+                        </h2>
+
+                        <p class="promotion-description">
+                            Use code: <strong>BREW10</strong> at checkout
+                        </p>
+
+                        <a href="#all-products" class="promotion-button">
+                            SHOP NOW
+                        </a>
+                    </div>
+
+                    <div class="promotion-image">
+                        <img src="COFFMUG.jpg" alt="Coffee with latte art">
+                    </div>
+
+                </div>
 
             </div>
 
 
-            <div class="bsmain">
+            <div class="featured-section">
 
-
-                <div class="arrow">
-                    <b>
-                        <div>
-                            &lsaquo;
-                        </div>
-                    </b>
+                <div class="featured-heading">
+                    AS FEATURED IN
                 </div>
 
-
-                <!-- PRODUCT 1 -->
-
-                <div class="s1">
-
-                    <div class="hrt">
-                        &#9825;
-                    </div>
-
-                    <a href="#all-products">
-
-                        <img
-                            class="img2"
-                            src="images/fe90ed15-fbf6-47f8-9847-a2dde9e97590.jpg"
-                            alt="Colombia Supremo"
-                        >
-
+                <div class="featured-brands">
+                    <a href="https://www.foodandwine.com/" target="_blank" rel="noopener noreferrer" class="brand food-wine">
+                        Food&amp;Wine
                     </a>
 
-                    <div class="info">
-
-                        <a href="#all-products">
-
-                            <div class="bld">
-                                Colombia Supremo
-                            </div>
-
-                        </a>
-
-                        <div class="bld">
-                            Single Origin
-                        </div>
-
-                        <b class="bld">
-                            $16.99
-                        </b>
-
-                        <div>
-                            &#9733;&#9733;&#9733;&#9733;&#9733;
-                            (1254)
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- PRODUCT 2 -->
-
-                <div class="s1">
-
-                    <div class="hrt">
-                        &#9825;
-                    </div>
-
-                    <a href="#all-products">
-
-                        <img
-                            class="img2"
-                            src="images/HOUSE BLEND.jpg"
-                            alt="House Blend"
-                        >
-
+                    <a href="https://www.forbes.com/" target="_blank" rel="noopener noreferrer" class="brand">
+                        Forbes
                     </a>
 
-                    <div class="info">
-
-                        <a href="#all-products">
-
-                            <div class="bld">
-                                House Blend
-                            </div>
-
-                        </a>
-
-                        <div class="bld">
-                            Medium Roast
-                        </div>
-
-                        <b class="bld">
-                            $15.99
-                        </b>
-
-                        <div>
-                            &#9733;&#9733;&#9733;&#9733;&#9733;
-                            (987)
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- PRODUCT 3 -->
-
-                <div class="s1">
-
-                    <div class="hrt">
-                        &#9825;
-                    </div>
-
-                    <a href="#all-products">
-
-                        <img
-                            class="img2"
-                            src="images/ETHIOPIA YIRGACHEFFE.jpg"
-                            alt="Ethiopia Yirgacheffe"
-                        >
-
+                    <a href="https://www.bonappetit.com/" target="_blank" rel="noopener noreferrer" class="brand bon-appetit">
+                        bon appétit
                     </a>
 
-                    <div class="info">
-
-                        <a href="#all-products">
-
-                            <div class="bld">
-                                Ethiopia Yirgacheffe
-                            </div>
-
-                        </a>
-
-                        <div class="bld">
-                            Light Roast
-                        </div>
-
-                        <b class="bld">
-                            $17.99
-                        </b>
-
-                        <div>
-                            &#9733;&#9733;&#9733;&#9733;&#9733;
-                            (1103)
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- PRODUCT 4 -->
-
-                <div class="s1">
-
-                    <div class="hrt">
-                        &#9825;
-                    </div>
-
-                    <a href="#all-products">
-
-                        <img
-                            class="img2"
-                            src="images/POUR OVER.jpg"
-                            alt="Pour Over Kettle"
-                        >
-
+                    <a href="https://www.menshealth.com/" target="_blank" rel="noopener noreferrer" class="brand mens-health">
+                        Men'sHealth
                     </a>
 
-                    <div class="info">
-
-                        <a href="#all-products">
-
-                            <div class="bld">
-                                Pour Over Kettle
-                            </div>
-
-                        </a>
-
-                        <div class="bld">
-                            600ml
-                        </div>
-
-                        <b class="bld">
-                            $39.99
-                        </b>
-
-                        <div>
-                            &#9733;&#9733;&#9733;&#9733;&#9733;
-                            (746)
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- PRODUCT 5 -->
-
-                <div class="s1">
-
-                    <div class="hrt">
-                        &#9825;
-                    </div>
-
-                    <a href="#all-products">
-
-                        <img
-                            class="img2"
-                            src="images/CERAMIC POUR.jpg"
-                            alt="Ceramic Pour Over"
-                        >
-
+                    <a href="https://www.delish.com/" target="_blank" rel="noopener noreferrer" class="brand delicious">
+                        delicious.
                     </a>
 
-                    <div class="info">
-
-                        <a href="#all-products">
-
-                            <div class="bld">
-                                Ceramic Pour Over
-                            </div>
-
-                        </a>
-
-                        <div class="bld">
-                            Coffee Dripper
-                        </div>
-
-                        <b class="bld">
-                            $24.99
-                        </b>
-
-                        <div>
-                            &#9733;&#9733;&#9733;&#9733;&#9733;
-                            (652)
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- PRODUCT 6 -->
-
-                <div class="s1">
-
-                    <div class="hrt">
-                        &#9825;
-                    </div>
-
-                    <a href="#all-products">
-
-                        <img
-                            class="img2"
-                            src="images/FRENCH PRESS.jpg"
-                            alt="French Press"
-                        >
-
+                    <a href="https://www.inc.com/" target="_blank" rel="noopener noreferrer" class="brand inc">
+                        Inc.
                     </a>
+                </div>
 
-                    <div class="info">
+            </div>
 
-                        <a href="#all-products">
+        </section>
 
-                            <div class="bld">
-                                French Press
-                            </div>
 
+        <!-- =====================================================
+             SUBSCRIPTION INFORMATION
+        ====================================================== -->
+
+        <section id="subscription-plans">
+
+            <div class="section-heading">
+                <h2>COFFEE SUBSCRIPTIONS</h2>
+                <div class="heading-line"></div>
+            </div>
+
+            <div class="all-products-grid">
+
+                <article class="product-card">
+                    <div class="product-info" style="padding:30px;">
+                        <div class="product-name" style="font-size:18px;">Classic Plan</div>
+                        <div class="product-type" style="margin:12px 0;">Fresh coffee every month.</div>
+                        <div class="price" style="font-size:18px;">$19.99 / month</div>
+                        <a href="#all-products" class="promotion-button" style="margin-top:15px;">
+                            CHOOSE PLAN
                         </a>
+                    </div>
+                </article>
 
-                        <div class="bld">
-                            Coffee Maker
+                <article class="product-card">
+                    <div class="product-info" style="padding:30px;">
+                        <div class="product-name" style="font-size:18px;">Premium Plan</div>
+                        <div class="product-type" style="margin:12px 0;">
+                            Premium single-origin coffee delivered every month.
                         </div>
+                        <div class="price" style="font-size:18px;">$29.99 / month</div>
+                        <a href="#all-products" class="promotion-button" style="margin-top:15px;">
+                            CHOOSE PLAN
+                        </a>
+                    </div>
+                </article>
 
-                        <b class="bld">
-                            $29.99
-                        </b>
-
-                        <div>
-                            &#9733;&#9733;&#9733;&#9733;&#9733;
-                            (532)
+                <article class="product-card">
+                    <div class="product-info" style="padding:30px;">
+                        <div class="product-name" style="font-size:18px;">Deluxe Plan</div>
+                        <div class="product-type" style="margin:12px 0;">
+                            Premium coffee selection for serious coffee lovers.
                         </div>
-
+                        <div class="price" style="font-size:18px;">$39.99 / month</div>
+                        <a href="#all-products" class="promotion-button" style="margin-top:15px;">
+                            CHOOSE PLAN
+                        </a>
                     </div>
-
-                </div>
-
-
-                <div class="arrow">
-
-                    <b>
-
-                        <div>
-                            &rsaquo;
-                        </div>
-
-                    </b>
-
-                </div>
-
+                </article>
 
             </div>
 
-        </div>
+        </section>
 
-    </section>
 
+        <!-- =====================================================
+             FOOTER
+        ====================================================== -->
 
+        <footer class="footer" id="footer">
 
-    <!-- =====================================================
-         ALL PRODUCTS
-    ====================================================== -->
+            <div class="footer-container">
 
-    <section
-        id="all-products"
-        class="main"
-    >
+                <div class="footer-brand" id="about">
+                    <h2>COSMIC CAFE</h2>
 
-        <div class="head">
-
-            <h2>
-                ALL PRODUCTS
-            </h2>
-
-        </div>
-
-
-        <div class="bsmain"
-             style="
-                grid-template-columns:
-                repeat(4, 1fr);
-             ">
-
-
-            <!-- PRODUCT -->
-
-            <div class="s1">
-
-                <div class="hrt">
-                    &#9825;
-                </div>
-
-                <img
-                    class="img2"
-                    src="images/HOUSE BLEND.jpg"
-                    alt="House Blend"
-                >
-
-                <div class="info">
-
-                    <div class="bld">
-                        House Blend
-                    </div>
-
-                    <div class="bld">
-                        Medium Roast
-                    </div>
-
-                    <b class="bld">
-                        $15.99
-                    </b>
-
-                    <div>
-                        &#9733;&#9733;&#9733;&#9733;&#9733;
-                        (987)
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="s1">
-
-                <div class="hrt">
-                    &#9825;
-                </div>
-
-                <img
-                    class="img2"
-                    src="images/ETHIOPIA YIRGACHEFFE.jpg"
-                    alt="Ethiopia Yirgacheffe"
-                >
-
-                <div class="info">
-
-                    <div class="bld">
-                        Ethiopia Yirgacheffe
-                    </div>
-
-                    <div class="bld">
-                        Light Roast
-                    </div>
-
-                    <b class="bld">
-                        $17.99
-                    </b>
-
-                    <div>
-                        &#9733;&#9733;&#9733;&#9733;&#9733;
-                        (1103)
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="s1">
-
-                <div class="hrt">
-                    &#9825;
-                </div>
-
-                <img
-                    class="img2"
-                    src="images/POUR OVER.jpg"
-                    alt="Pour Over Kettle"
-                >
-
-                <div class="info">
-
-                    <div class="bld">
-                        Pour Over Kettle
-                    </div>
-
-                    <div class="bld">
-                        600ml
-                    </div>
-
-                    <b class="bld">
-                        $39.99
-                    </b>
-
-                    <div>
-                        &#9733;&#9733;&#9733;&#9733;&#9733;
-                        (746)
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="s1">
-
-                <div class="hrt">
-                    &#9825;
-                </div>
-
-                <img
-                    class="img2"
-                    src="images/CERAMIC POUR.jpg"
-                    alt="Ceramic Pour Over"
-                >
-
-                <div class="info">
-
-                    <div class="bld">
-                        Ceramic Pour Over
-                    </div>
-
-                    <div class="bld">
-                        Coffee Dripper
-                    </div>
-
-                    <b class="bld">
-                        $24.99
-                    </b>
-
-                    <div>
-                        &#9733;&#9733;&#9733;&#9733;&#9733;
-                        (652)
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="s1">
-
-                <div class="hrt">
-                    &#9825;
-                </div>
-
-                <img
-                    class="img2"
-                    src="images/FRENCH PRESS.jpg"
-                    alt="French Press"
-                >
-
-                <div class="info">
-
-                    <div class="bld">
-                        French Press
-                    </div>
-
-                    <div class="bld">
-                        Coffee Maker
-                    </div>
-
-                    <b class="bld">
-                        $29.99
-                    </b>
-
-                    <div>
-                        &#9733;&#9733;&#9733;&#9733;&#9733;
-                        (532)
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="s1">
-
-                <div class="hrt">
-                    &#9825;
-                </div>
-
-                <img
-                    class="img2"
-                    src="images/fe90ed15-fbf6-47f8-9847-a2dde9e97590.jpg"
-                    alt="Colombia Supremo"
-                >
-
-                <div class="info">
-
-                    <div class="bld">
-                        Colombia Supremo
-                    </div>
-
-                    <div class="bld">
-                        Single Origin
-                    </div>
-
-                    <b class="bld">
-                        $16.99
-                    </b>
-
-                    <div>
-                        &#9733;&#9733;&#9733;&#9733;&#9733;
-                        (1254)
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="s1">
-
-                <div class="hrt">
-                    &#9825;
-                </div>
-
-                <img
-                    class="img2"
-                    src="images/ARABICA.jpg"
-                    alt="Arabica Coffee"
-                >
-
-                <div class="info">
-
-                    <div class="bld">
-                        Arabica Coffee
-                    </div>
-
-                    <div class="bld">
-                        Medium Roast
-                    </div>
-
-                    <b class="bld">
-                        $15.99
-                    </b>
-
-                    <div>
-                        &#9733;&#9733;&#9733;&#9733;&#9733;
-                        (987)
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="s1">
-
-                <div class="hrt">
-                    &#9825;
-                </div>
-
-                <img
-                    class="img2"
-                    src="images/MUG.jpg"
-                    alt="Coffee Mug"
-                >
-
-                <div class="info">
-
-                    <div class="bld">
-                        Coffee Mug
-                    </div>
-
-                    <div class="bld">
-                        Ceramic
-                    </div>
-
-                    <b class="bld">
-                        $17.99
-                    </b>
-
-                    <div>
-                        &#9733;&#9733;&#9733;&#9733;&#9733;
-                        (1103)
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="s1">
-
-                <div class="hrt">
-                    &#9825;
-                </div>
-
-                <img
-                    class="img2"
-                    src="images/ROTATE.jpg"
-                    alt="Coffee Grinder"
-                >
-
-                <div class="info">
-
-                    <div class="bld">
-                        Coffee Grinder
-                    </div>
-
-                    <div class="bld">
-                        Manual
-                    </div>
-
-                    <b class="bld">
-                        $39.99
-                    </b>
-
-                    <div>
-                        &#9733;&#9733;&#9733;&#9733;&#9733;
-                        (746)
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="s1">
-
-                <div class="hrt">
-                    &#9825;
-                </div>
-
-                <img
-                    class="img2"
-                    src="images/COFFMUG.jpg"
-                    alt="Coffee Mug"
-                >
-
-                <div class="info">
-
-                    <div class="bld">
-                        Coffee Mug
-                    </div>
-
-                    <div class="bld">
-                        Coffee Dripper
-                    </div>
-
-                    <b class="bld">
-                        $24.99
-                    </b>
-
-                    <div>
-                        &#9733;&#9733;&#9733;&#9733;&#9733;
-                        (652)
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="s1">
-
-                <div class="hrt">
-                    &#9825;
-                </div>
-
-                <img
-                    class="img2"
-                    src="images/COFFPOWDER.jpg"
-                    alt="Coffee Powder"
-                >
-
-                <div class="info">
-
-                    <div class="bld">
-                        Coffee Powder
-                    </div>
-
-                    <div class="bld">
-                        Fine Roast
-                    </div>
-
-                    <b class="bld">
-                        $29.99
-                    </b>
-
-                    <div>
-                        &#9733;&#9733;&#9733;&#9733;&#9733;
-                        (532)
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="s1">
-
-                <div class="hrt">
-                    &#9825;
-                </div>
-
-                <img
-                    class="img2"
-                    src="images/COFFMAKER.jpg"
-                    alt="Coffee Maker"
-                >
-
-                <div class="info">
-
-                    <div class="bld">
-                        Coffee Maker
-                    </div>
-
-                    <div class="bld">
-                        Automatic
-                    </div>
-
-                    <b class="bld">
-                        $16.99
-                    </b>
-
-                    <div>
-                        &#9733;&#9733;&#9733;&#9733;&#9733;
-                        (1254)
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="s1">
-
-                <div class="hrt">
-                    &#9825;
-                </div>
-
-                <img
-                    class="img2"
-                    src="images/COLDCOFF.jpg"
-                    alt="Cold Coffee"
-                >
-
-                <div class="info">
-
-                    <div class="bld">
-                        Cold Coffee
-                    </div>
-
-                    <div class="bld">
-                        Cold Brew
-                    </div>
-
-                    <b class="bld">
-                        $15.99
-                    </b>
-
-                    <div>
-                        &#9733;&#9733;&#9733;&#9733;&#9733;
-                        (987)
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="s1">
-
-                <div class="hrt">
-                    &#9825;
-                </div>
-
-                <img
-                    class="img2"
-                    src="images/DESINER.jpg"
-                    alt="Designer Coffee"
-                >
-
-                <div class="info">
-
-                    <div class="bld">
-                        Designer Coffee
-                    </div>
-
-                    <div class="bld">
-                        Premium
-                    </div>
-
-                    <b class="bld">
-                        $17.99
-                    </b>
-
-                    <div>
-                        &#9733;&#9733;&#9733;&#9733;&#9733;
-                        (1103)
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="s1">
-
-                <div class="hrt">
-                    &#9825;
-                </div>
-
-                <img
-                    class="img2"
-                    src="images/GROUND.jpg"
-                    alt="Ground Coffee"
-                >
-
-                <div class="info">
-
-                    <div class="bld">
-                        Ground Coffee
-                    </div>
-
-                    <div class="bld">
-                        Medium Roast
-                    </div>
-
-                    <b class="bld">
-                        $39.99
-                    </b>
-
-                    <div>
-                        &#9733;&#9733;&#9733;&#9733;&#9733;
-                        (746)
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="s1">
-
-                <div class="hrt">
-                    &#9825;
-                </div>
-
-                <img
-                    class="img2"
-                    src="images/HOTCOFF.jpg"
-                    alt="Hot Coffee"
-                >
-
-                <div class="info">
-
-                    <div class="bld">
-                        Hot Coffee
-                    </div>
-
-                    <div class="bld">
-                        Single Origin
-                    </div>
-
-                    <b class="bld">
-                        $16.99
-                    </b>
-
-                    <div>
-                        &#9733;&#9733;&#9733;&#9733;&#9733;
-                        (1254)
-                    </div>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         SECTION 4 — PROMOTIONS & TRUST
-    ====================================================== -->
-
-    <section
-        class="promotions-section"
-        id="promotions"
-    >
-
-
-        <div class="promotion-container">
-
-
-            <!-- SUBSCRIBE -->
-
-            <div class="promotion-card subscribe-card">
-
-                <div class="promotion-content">
-
-                    <p class="small-label">
-                        NEVER RUN OUT OF COFFEE
+                    <p>
+                        Freshly roasted coffee, ethically sourced
+                        and crafted for better days.
                     </p>
 
-                    <h2>
-                        SUBSCRIBE &amp; SAVE
-                    </h2>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Instagram">◎</a>
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                    </div>
+                </div>
 
-                    <p class="promotion-description">
 
-                        Save up to 15% on every order
-                        <br>
-                        + free shipping.
+                <div class="footer-column">
+                    <h3>SHOP</h3>
+                    <a href="#all-products">All Coffee</a>
+                    <a href="#equipment">Best Sellers</a>
+                    <a href="#coffee">Coffee Beans</a>
+                    <a href="#subscriptions">Subscriptions</a>
+                    <a href="#gifts">Gifts</a>
+                </div>
 
+
+                <div class="footer-column">
+                    <h3>CUSTOMER CARE</h3>
+                    <a href="#footer">Contact Us</a>
+                    <a href="#footer">Shipping</a>
+                    <a href="#footer">Returns</a>
+                    <a href="#footer">FAQs</a>
+                    <a href="#footer">Track Your Order</a>
+                </div>
+
+
+                <div class="footer-column" id="gifts">
+                    <h3>ABOUT US</h3>
+                    <a href="#about">Our Story</a>
+                    <a href="#about">Sustainability</a>
+                    <a href="#about">Locations</a>
+                    <a href="#about">Careers</a>
+                </div>
+
+
+                <div class="footer-column newsletter">
+                    <h3>STAY CONNECTED</h3>
+
+                    <p>
+                        Get coffee news and special offers.
                     </p>
 
-                    <a
-                        href="#subscriptions"
-                        class="promotion-button"
-                    >
-                        SHOP SUBSCRIPTIONS
-                    </a>
-
-                </div>
-
-
-                <div class="promotion-image">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=85"
-                        alt="Premium coffee subscription"
-                    >
-
+                    <form class="email-box" id="newsletterForm">
+                        <input
+                            type="email"
+                            placeholder="Your email"
+                            required
+                            aria-label="Your email"
+                        >
+                        <button type="submit">→</button>
+                    </form>
                 </div>
 
             </div>
 
 
-
-            <!-- DISCOUNT -->
-
-            <div class="promotion-card discount-card">
-
-                <div class="promotion-content">
-
-                    <p class="small-label">
-                        LIMITED TIME OFFER
-                    </p>
-
-                    <h2>
-
-                        GET 10% OFF
-                        <br>
-                        YOUR FIRST ORDER
-
-                    </h2>
-
-                    <p class="promotion-description">
-
-                        Use code:
-                        <strong>
-                            BREW10
-                        </strong>
-                        at checkout
-
-                    </p>
-
-                    <a
-                        href="#shop"
-                        class="promotion-button"
-                    >
-                        SHOP NOW
-                    </a>
-
-                </div>
-
-
-                <div class="promotion-image">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85"
-                        alt="Coffee cup with latte art"
-                    >
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-
-
-        <!-- FEATURED IN -->
-
-        <div class="featured-section">
-
-            <div class="featured-heading">
-                AS FEATURED IN
-            </div>
-
-
-            <div class="featured-brands">
-
-                <a
-                    href="https://www.foodandwine.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="brand food-wine"
-                >
-                    Food&amp;Wine
-                </a>
-
-                <a
-                    href="https://www.forbes.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="brand"
-                >
-                    Forbes
-                </a>
-
-                <a
-                    href="https://www.bonappetit.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="brand bon-appetit"
-                >
-                    bon appétit
-                </a>
-
-                <a
-                    href="https://www.menshealth.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="brand"
-                >
-                    Men'sHealth
-                </a>
-
-                <a
-                    href="https://www.delish.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="brand"
-                >
-                    delicious.
-                </a>
-
-                <a
-                    href="https://www.inc.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="brand"
-                >
-                    Inc.
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         SUBSCRIPTIONS ANCHOR
-    ====================================================== -->
-
-    <section
-        id="subscriptions"
-        style="
-            padding:70px 5%;
-            background:#102719;
-            color:#ffffff;
-            text-align:center;
-        "
-    >
-
-        <span
-            style="
-                color:#d3b477;
-                font-size:10px;
-                letter-spacing:2px;
-                font-weight:700;
-            "
-        >
-            COSMIC CAFE
-        </span>
-
-        <h2
-            style="
-                margin:12px 0;
-                font-family:Georgia,serif;
-                font-size:38px;
-            "
-        >
-            Coffee Subscriptions
-        </h2>
-
-        <p
-            style="
-                max-width:600px;
-                margin:0 auto 25px;
-                color:#c8d0c9;
-                line-height:1.7;
-            "
-        >
-            Freshly roasted coffee delivered regularly,
-            so you never run out of your favorite cup.
-        </p>
-
-        <a
-            href="#shop"
-            style="
-                display:inline-flex;
-                padding:13px 25px;
-                background:#b48a4c;
-                color:#ffffff;
-                border-radius:4px;
-                font-size:10px;
-                font-weight:700;
-            "
-        >
-            EXPLORE COFFEE
-        </a>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         SALE ANCHOR
-    ====================================================== -->
-
-    <section
-        id="sale"
-        style="
-            padding:55px 5%;
-            background:#eee6d9;
-            color:#17271c;
-            text-align:center;
-        "
-    >
-
-        <h2
-            style="
-                font-family:Georgia,serif;
-                font-size:35px;
-                margin-bottom:10px;
-            "
-        >
-            Special Offers
-        </h2>
-
-        <p>
-            Use code <strong>BREW10</strong>
-            for 10% off your first order.
-        </p>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         ABOUT ANCHOR
-    ====================================================== -->
-
-    <section
-        id="about"
-        style="
-            padding:65px 5%;
-            background:#f5f1e9;
-            color:#17271c;
-            text-align:center;
-        "
-    >
-
-        <h2
-            style="
-                font-family:Georgia,serif;
-                font-size:35px;
-                margin-bottom:15px;
-            "
-        >
-            Our Story
-        </h2>
-
-        <p
-            style="
-                max-width:650px;
-                margin:0 auto;
-                line-height:1.8;
-                color:#555555;
-            "
-        >
-            COSMIC CAFE is built around the simple idea that
-            good coffee can make ordinary moments feel special.
-            We focus on carefully selected beans, thoughtful
-            roasting and memorable coffee experiences.
-        </p>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
-
-    <footer class="footer">
-
-
-        <div class="footer-container">
-
-
-            <!-- BRAND -->
-
-            <div class="footer-brand">
-
-                <h2>
-                    COSMIC CAFE
-                </h2>
+            <div class="footer-bottom">
 
                 <p>
-
-                    Freshly roasted coffee,
-                    ethically sourced and crafted
-                    for better days.
-
+                    © 2026 COSMIC CAFE Coffee Co. All Rights Reserved.
                 </p>
 
+                <div class="footer-links">
+                    <a href="#footer">Privacy Policy</a>
+                    <a href="#footer">Terms &amp; Conditions</a>
+                </div>
 
-                <div class="social-icons">
-
-                    <a
-                        href="#"
-                        aria-label="Instagram"
-                    >
-
-                        <img
-                            src="https://cdn-icons-png.flaticon.com/128/15707/15707749.png"
-                            alt="Instagram"
-                        >
-
-                    </a>
-
-
-                    <a
-                        href="#"
-                        aria-label="Facebook"
-                    >
-
-                        <img
-                            src="https://cdn-icons-png.flaticon.com/128/15047/15047435.png"
-                            alt="Facebook"
-                        >
-
-                    </a>
-
-
-                    <a
-                        href="#"
-                        aria-label="Twitter"
-                    >
-
-                        <img
-                            src="https://cdn-icons-png.flaticon.com/128/5968/5968830.png"
-                            alt="Twitter"
-                        >
-
-                    </a>
-
+                <div class="payment">
+                    <span>VISA</span>
+                    <span>●●</span>
+                    <span>UPI</span>
+                    <span>PayPal</span>
+                    <span> Pay</span>
                 </div>
 
             </div>
 
+        </footer>
 
+    </main>
 
-            <!-- SHOP -->
 
-            <div class="footer-column">
+    <div class="toast" id="toast"></div>
 
-                <h3>
-                    SHOP
-                </h3>
 
-                <a href="#shop">
-                    All Coffee
-                </a>
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
 
-                <a href="#products">
-                    Best Sellers
-                </a>
+    <script>
+        /* HERO SLIDER */
 
-                <a href="#products">
-                    Coffee Beans
-                </a>
+        const slides = document.querySelectorAll(".hero-slide");
+        const dots = document.querySelectorAll(".slider-dot");
+        let currentSlide = 0;
+        let sliderTimer;
 
-                <a href="#subscriptions">
-                    Subscriptions
-                </a>
+        function showSlide(index) {
+            currentSlide = index;
 
-                <a href="#gifts">
-                    Gifts
-                </a>
+            slides.forEach((slide, i) => {
+                slide.classList.toggle("active", i === index);
+            });
 
-            </div>
+            dots.forEach((dot, i) => {
+                dot.classList.toggle("active", i === index);
+            });
+        }
 
+        function nextSlide() {
+            showSlide((currentSlide + 1) % slides.length);
+        }
 
+        function startSlider() {
+            clearInterval(sliderTimer);
+            sliderTimer = setInterval(nextSlide, 5000);
+        }
 
-            <!-- CUSTOMER CARE -->
+        dots.forEach((dot) => {
+            dot.addEventListener("click", () => {
+                showSlide(Number(dot.dataset.slide));
+                startSlider();
+            });
+        });
 
-            <div class="footer-column">
+        startSlider();
 
-                <h3>
-                    CUSTOMER CARE
-                </h3>
 
-                <a href="#">
-                    Contact Us
-                </a>
+        /* WISHLIST */
 
-                <a href="#">
-                    Shipping
-                </a>
+        document.querySelectorAll(".heart").forEach((heart) => {
+            heart.addEventListener("click", () => {
+                heart.classList.toggle("active");
+                heart.textContent = heart.classList.contains("active") ? "♥" : "♡";
+            });
+        });
 
-                <a href="#">
-                    Returns
-                </a>
 
-                <a href="#">
-                    FAQs
-                </a>
+        /* NEWSLETTER */
 
-                <a href="#">
-                    Track Your Order
-                </a>
+        const newsletterForm = document.getElementById("newsletterForm");
+        const toast = document.getElementById("toast");
 
-            </div>
+        function showToast(message) {
+            toast.textContent = message;
+            toast.classList.add("show");
 
+            setTimeout(() => {
+                toast.classList.remove("show");
+            }, 2800);
+        }
 
+        newsletterForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            showToast("Thank you! You are now subscribed.");
+            newsletterForm.reset();
+        });
 
-            <!-- ABOUT -->
 
-            <div class="footer-column">
+        /* CART ICON */
 
-                <h3>
-                    ABOUT US
-                </h3>
+        let cartCount = 0;
+        const cartElement = document.getElementById("cartCount");
 
-                <a href="#about">
-                    Our Story
-                </a>
-
-                <a href="#">
-                    Sustainability
-                </a>
-
-                <a href="#">
-                    Locations
-                </a>
-
-                <a href="#">
-                    Careers
-                </a>
-
-            </div>
-
-
-
-            <!-- NEWSLETTER -->
-
-            <div class="footer-column newsletter">
-
-                <h3>
-                    STAY CONNECTED
-                </h3>
-
-                <p>
-                    Get coffee news and special offers.
-                </p>
-
-
-                <div class="email-box">
-
-                    <input
-                        type="email"
-                        placeholder="Your email"
-                    >
-
-                    <button>
-                        →
-                    </button>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-
-
-        <!-- FOOTER BOTTOM -->
-
-        <div class="footer-bottom">
-
-            <p>
-                © 2026 COSMIC CAFE.
-                All Rights Reserved.
-            </p>
-
-
-            <div class="footer-links">
-
-                <a href="#">
-                    Privacy Policy
-                </a>
-
-                <a href="#">
-                    Terms &amp; Conditions
-                </a>
-
-            </div>
-
-
-            <div class="payment">
-
-                <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC4mvBvjY8mWM0EVQ68gRbJzAZayakO7ZMB5CdeLnbsA&s=10"
-                    alt="PhonePe"
-                >
-
-                <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6CPEhAxpC6mawzelx5tXOQgJBU9dS7tuXJuDBGeEIcQ&s=10"
-                    alt="Google Pay"
-                >
-
-                <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoResYC9ZPmwkRIgpJzkQSLCKa9tS12lTVsdgLvdzQ-A&s=10"
-                    alt="UPI"
-                >
-
-            </div>
-
-
-        </div>
-
-
-    </footer>
-
+        document.querySelectorAll(".product-card").forEach((card) => {
+            card.addEventListener("dblclick", () => {
+                cartCount++;
+                cartElement.textContent = cartCount;
+                showToast("Product added to cart.");
+            });
+        });
+    </script>
 
 </body>
-
 </html>
-```
