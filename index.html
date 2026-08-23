@@ -1979,6 +1979,18 @@
 
 
         /* =====================================================
+           ALL PRODUCTS — HIDDEN UNTIL VIEW ALL IS CLICKED
+        ====================================================== */
+
+        #all-products {
+            display: none;
+        }
+
+        #all-products.show-all-products {
+            display: block;
+        }
+
+                /* =====================================================
            REDUCED MOTION
         ====================================================== */
 
@@ -2799,7 +2811,7 @@
                     BEST SELLERS
                 </h2>
 
-                <a href="#all-products">
+                <a href="#all-products" id="view-all-btn">
                     <div>
                         VIEW ALL &#10132;
                     </div>
@@ -4396,6 +4408,29 @@
 
             showSlide(0);
             startAutoSlide();
+        });
+    </script>
+
+
+    <script>
+        /* Show ALL PRODUCTS only after VIEW ALL is clicked */
+        document.addEventListener("DOMContentLoaded", function () {
+            const viewAllBtn = document.getElementById("view-all-btn");
+            const allProducts = document.getElementById("all-products");
+
+            if (!viewAllBtn || !allProducts) return;
+
+            viewAllBtn.addEventListener("click", function (event) {
+                event.preventDefault();
+                allProducts.classList.add("show-all-products");
+
+                requestAnimationFrame(function () {
+                    allProducts.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+                });
+            });
         });
     </script>
 
