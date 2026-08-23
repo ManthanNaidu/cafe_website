@@ -856,19 +856,17 @@
 
             cursor: pointer;
         }
-
+                /* PRODUCT IMAGES — EDGE TO EDGE LIKE THE REFERENCE */
         .img2 {
+            display: block;
             width: 100%;
             height: 190px;
-
-            display: block;
-            object-fit: contain;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            object-fit: cover;
             object-position: center center;
-
-            padding: 8px;
-            background: #e9e7e2;
-
-            /* Keep the complete product visible without cropping. */
             box-sizing: border-box;
         }
 
@@ -1752,12 +1750,14 @@
             .s1 {
                 width: 100%;
             }
-
             .img2 {
-                height: 205px;
-                object-fit: contain;
+                width: calc(100% - 56px);
+                max-width: 184px;
+                height: 220px;
+                margin: 10px auto 0;
+                padding: 0;
+                object-fit: cover;
                 object-position: center center;
-                padding: 8px;
             }
 
             .bsmain .arrow {
@@ -2018,6 +2018,33 @@
         /* AUTOMATIC SLIDESHOW PROGRESS */
         .progress span {
             transition: width 5s linear;
+        }
+
+
+                /* FINAL PRODUCT IMAGE STYLE — BEST SELLERS + ALL PRODUCTS */
+        .bsmain .s1 > .img2,
+        .bsmain .s1 > a > .img2 {
+            display: block;
+            width: 100%;
+            max-width: none;
+            height: 190px;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            object-fit: cover;
+            object-position: center center;
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 767px) {
+            .bsmain .s1 > .img2,
+            .bsmain .s1 > a > .img2 {
+                width: 100%;
+                max-width: none;
+                height: 180px;
+                margin: 0;
+            }
         }
 
     </style>
