@@ -4712,8 +4712,6 @@ transition:
         flex: 0 0 150px !important;
     }
 }
-</style>
-
 
 
 /* =========================================================
@@ -4819,6 +4817,11 @@ transition:
     align-items: stretch !important;
 }
 
+/* ALL PRODUCTS contains only product cards; navigation arrows belong to Best Sellers. */
+#all-products .bsmain > .arrow {
+    display: none !important;
+}
+
 /* Best Sellers: six equal product columns between arrows */
 #shop + .main .bsmain,
 .bsmain {
@@ -4869,6 +4872,8 @@ transition:
         gap: 18px !important;
     }
 }
+
+</style>
 
 </body>
 </html>
