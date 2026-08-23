@@ -2703,6 +2703,265 @@ transition:
 }
 </style>
 
+
+<style id="final-all-products-card-fix">
+
+/* ============================================================
+   FINAL ALL PRODUCTS CARD DESIGN
+   Match reference: equal square cards, full image background,
+   black text over image, uniform layout.
+   ============================================================ */
+
+#all-products {
+    width: 100%;
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+}
+
+#all-products .bsmain {
+    width: 100% !important;
+    max-width: 1500px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 22px !important;
+
+    align-items: stretch !important;
+}
+
+/* IDENTICAL CARD SIZE */
+#all-products .bsmain .s1 {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    overflow: hidden !important;
+    border-radius: 10px !important;
+    background: #d9d9d9 !important;
+
+    display: block !important;
+    isolation: isolate !important;
+
+    transition: transform .25s ease, box-shadow .25s ease !important;
+}
+
+/* IMAGE = COMPLETE CARD BACKGROUND */
+#all-products .bsmain .s1 .img2,
+#all-products .bsmain .s1 > img {
+    position: absolute !important;
+    inset: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    min-width: 0 !important;
+    min-height: 0 !important;
+    max-width: none !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+
+    display: block !important;
+
+    /*
+      The supplied product photographs are square product shots.
+      Cover makes the photograph occupy the entire equal-size card
+      without leaving a separate image panel or white area.
+    */
+    object-fit: cover !important;
+    object-position: center center !important;
+
+    background: #d9d9d9 !important;
+}
+
+/* READABILITY OVERLAY — PART OF THE IMAGE CARD */
+#all-products .bsmain .s1::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+
+    height: 39% !important;
+
+    z-index: 1 !important;
+    pointer-events: none !important;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,.12) 22%,
+        rgba(255,255,255,.74) 72%,
+        rgba(215,215,215,.94) 100%
+    ) !important;
+}
+
+/* HEART — SAME POSITION ON EVERY CARD */
+#all-products .bsmain .s1 .hrt {
+    position: absolute !important;
+    top: 12px !important;
+    right: 12px !important;
+
+    width: 38px !important;
+    height: 38px !important;
+
+    z-index: 5 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 50% !important;
+    background: rgba(255,255,255,.94) !important;
+
+    color: #062a20 !important;
+    font-size: 23px !important;
+    line-height: 1 !important;
+
+    box-shadow: 0 1px 5px rgba(0,0,0,.08) !important;
+}
+
+/* TEXT IS INSIDE THE IMAGE CARD */
+#all-products .bsmain .s1 .info {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+
+    width: 100% !important;
+    height: 39% !important;
+
+    z-index: 3 !important;
+
+    margin: 0 !important;
+    padding: 14px 16px 14px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-end !important;
+
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+
+    background: transparent !important;
+    color: #000000 !important;
+}
+
+/* FORCE BLACK TEXT */
+#all-products .bsmain .s1 .info,
+#all-products .bsmain .s1 .info *,
+#all-products .bsmain .s1 .info .bld,
+#all-products .bsmain .s1 .info b,
+#all-products .bsmain .s1 .info div {
+    color: #000000 !important;
+    text-shadow: none !important;
+}
+
+/* PRODUCT NAME + TYPE */
+#all-products .bsmain .s1 .info .bld {
+    margin: 0 0 4px !important;
+    padding: 0 !important;
+
+    font-family: Inter, Arial, sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    line-height: 1.28 !important;
+}
+
+/* PRICE */
+#all-products .bsmain .s1 .info b {
+    margin: 1px 0 7px !important;
+
+    font-family: Inter, Arial, sans-serif !important;
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+}
+
+/* RATING */
+#all-products .bsmain .s1 .info > div:last-child {
+    width: calc(100% + 32px) !important;
+
+    margin: 0 -16px -14px !important;
+    padding: 9px 16px !important;
+
+    box-sizing: border-box !important;
+
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+
+    background: rgba(205,205,205,.72) !important;
+    color: #000000 !important;
+}
+
+/* HOVER — DOES NOT CHANGE CARD GEOMETRY */
+#all-products .bsmain .s1:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 10px 24px rgba(0,0,0,.16) !important;
+}
+
+/* 3 COLUMNS */
+@media (max-width: 1100px) {
+    #all-products .bsmain {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 18px !important;
+    }
+}
+
+/* 2 COLUMNS */
+@media (max-width: 768px) {
+    #all-products {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    #all-products .bsmain {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 16px !important;
+    }
+
+    #all-products .bsmain .s1 .info .bld {
+        font-size: 14px !important;
+    }
+
+    #all-products .bsmain .s1 .info b {
+        font-size: 16px !important;
+    }
+
+    #all-products .bsmain .s1 .info > div:last-child {
+        font-size: 14px !important;
+    }
+}
+
+/* 1 COLUMN */
+@media (max-width: 480px) {
+    #all-products .bsmain {
+        grid-template-columns: 1fr !important;
+        max-width: 430px !important;
+        gap: 18px !important;
+    }
+
+    #all-products .bsmain .s1 {
+        aspect-ratio: 1 / 1 !important;
+    }
+}
+
+</style>
+
 </head>
 
 
