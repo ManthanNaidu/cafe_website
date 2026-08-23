@@ -2100,6 +2100,188 @@ transition:
 
     </style>
 
+
+<style id="product-card-final">
+/* =========================================================
+   PRODUCT CARDS — FINAL UNIFORM VERSION
+   Complete images, no cropping, no stretching, equal cards
+   ========================================================= */
+
+.bsmain .s1 {
+    width: 100% !important;
+    height: 440px !important;
+    min-height: 440px !important;
+    max-height: 440px !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+    background: #f8f8f8 !important;
+    border-radius: 6px !important;
+}
+
+.bsmain .s1 > a,
+.bsmain .s1 > img.img2 {
+    width: 100% !important;
+    height: 290px !important;
+    min-height: 290px !important;
+    max-height: 290px !important;
+    flex: 0 0 290px !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    line-height: 0 !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+    background: #eeeeee !important;
+}
+
+.bsmain .s1 > a > img.img2,
+.bsmain .s1 > img.img2 {
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    box-sizing: border-box !important;
+
+    /* Keep the COMPLETE source image visible. */
+    object-fit: contain !important;
+    object-position: center center !important;
+    background: #eeeeee !important;
+}
+
+.bsmain .s1 > .info {
+    width: 100% !important;
+    height: 150px !important;
+    min-height: 150px !important;
+    max-height: 150px !important;
+    flex: 0 0 150px !important;
+
+    padding: 14px 12px !important;
+    margin: 0 !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+
+    box-sizing: border-box !important;
+    background: #f8f8f8 !important;
+    overflow: hidden !important;
+}
+
+.bsmain .s1 .bld {
+    margin-bottom: 4px !important;
+    line-height: 1.3 !important;
+}
+
+.bsmain .s1 .info > a {
+    display: block !important;
+    width: 100% !important;
+    line-height: normal !important;
+}
+
+.bsmain .s1 .hrt {
+    z-index: 20 !important;
+}
+
+/* ALL PRODUCTS — exactly 4 equal columns on desktop */
+#all-products .bsmain {
+    width: 100% !important;
+    max-width: 1250px !important;
+    margin: 0 auto !important;
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 18px !important;
+    align-items: stretch !important;
+}
+
+/* ALL PRODUCTS has no navigation arrows. */
+#all-products .bsmain > .arrow {
+    display: none !important;
+}
+
+/* BEST SELLERS — 6 cards between the two arrows. */
+#products > .bsmain {
+    grid-template-columns: 30px repeat(6, minmax(0, 1fr)) 30px !important;
+    gap: 12px !important;
+    align-items: stretch !important;
+}
+
+/* Tablet */
+@media (max-width: 1023px) {
+    #products > .bsmain {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 15px !important;
+    }
+
+    #products > .bsmain > .arrow {
+        display: none !important;
+    }
+
+    #all-products .bsmain {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 15px !important;
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .bsmain .s1 {
+        height: 400px !important;
+        min-height: 400px !important;
+        max-height: 400px !important;
+    }
+
+    .bsmain .s1 > a,
+    .bsmain .s1 > img.img2 {
+        height: 250px !important;
+        min-height: 250px !important;
+        max-height: 250px !important;
+        flex: 0 0 250px !important;
+    }
+
+    .bsmain .s1 > .info {
+        height: 150px !important;
+        min-height: 150px !important;
+        max-height: 150px !important;
+        flex: 0 0 150px !important;
+    }
+
+    #products > .bsmain {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 15px !important;
+    }
+
+    #products > .bsmain > .arrow {
+        display: none !important;
+    }
+
+    #all-products .bsmain {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 15px !important;
+    }
+}
+
+/* Small phones */
+@media (max-width: 450px) {
+    #products > .bsmain,
+    #all-products .bsmain {
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+    }
+}
+</style>
 </head>
 
 
@@ -4516,364 +4698,7 @@ transition:
     </script>
 
 
-<style id="uniform-product-cards">
-/* =========================================================
-   FINAL PRODUCT CARD FIX
-   COMPLETE IMAGES + EXACTLY UNIFORM CARDS
-   ========================================================= */
 
-/* Every product card has one fixed total height. */
-.bsmain .s1 {
-    width: 100% !important;
-    height: 440px !important;
-    min-height: 440px !important;
-    max-height: 440px !important;
-
-    display: flex !important;
-    flex-direction: column !important;
-
-    padding: 0 !important;
-    margin: 0 !important;
-
-    overflow: hidden !important;
-    background: #f8f8f8 !important;
-    border-radius: 5px !important;
-
-    box-sizing: border-box !important;
-}
-
-/* The image area is identical on every card. */
-.bsmain .s1 > a {
-    display: block !important;
-
-    width: 100% !important;
-    height: 290px !important;
-    min-height: 290px !important;
-    max-height: 290px !important;
-
-    flex: 0 0 290px !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    background: #eeeeee !important;
-
-    overflow: hidden !important;
-    line-height: 0 !important;
-}
-
-/* Direct images in ALL PRODUCTS use the same image frame. */
-.bsmain .s1 > img.img2 {
-    display: block !important;
-
-    width: 100% !important;
-    height: 290px !important;
-    min-height: 290px !important;
-    max-height: 290px !important;
-
-    flex: 0 0 290px !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    border: 0 !important;
-
-    background: #eeeeee !important;
-
-    object-fit: contain !important;
-    object-position: center center !important;
-
-    box-sizing: border-box !important;
-}
-
-/* Images inside the clickable link also use the complete-image rule. */
-.bsmain .s1 > a > img.img2 {
-    display: block !important;
-
-    width: 100% !important;
-    height: 100% !important;
-
-    min-width: 0 !important;
-    min-height: 0 !important;
-    max-width: 100% !important;
-    max-height: 100% !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    border: 0 !important;
-
-    background: #eeeeee !important;
-
-    /*
-       contain = the entire source image is visible.
-       Nothing is cropped, stretched or cut off.
-    */
-    object-fit: contain !important;
-    object-position: center center !important;
-
-    box-sizing: border-box !important;
-}
-
-/* Every information section has the same height. */
-.bsmain .s1 > .info {
-    width: 100% !important;
-
-    height: 150px !important;
-    min-height: 150px !important;
-    max-height: 150px !important;
-
-    flex: 0 0 150px !important;
-
-    padding: 14px 12px !important;
-
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    justify-content: flex-start !important;
-
-    background: #f8f8f8 !important;
-
-    box-sizing: border-box !important;
-}
-
-/* Keep product information readable and aligned. */
-.bsmain .s1 .bld {
-    margin-bottom: 4px !important;
-    line-height: 1.3 !important;
-}
-
-.bsmain .s1 .info > a {
-    display: block !important;
-    width: 100% !important;
-    line-height: normal !important;
-}
-
-.bsmain .s1 .hrt {
-    z-index: 10 !important;
-}
-
-/* Remove the old mobile crop rule from the original stylesheet. */
-@media (max-width: 767px) {
-    .bsmain .s1 {
-        height: 400px !important;
-        min-height: 400px !important;
-        max-height: 400px !important;
-    }
-
-    .bsmain .s1 > a {
-        height: 250px !important;
-        min-height: 250px !important;
-        max-height: 250px !important;
-        flex: 0 0 250px !important;
-    }
-
-    .bsmain .s1 > img.img2 {
-        height: 250px !important;
-        min-height: 250px !important;
-        max-height: 250px !important;
-        flex: 0 0 250px !important;
-    }
-
-    .bsmain .s1 > .info {
-        height: 150px !important;
-        min-height: 150px !important;
-        max-height: 150px !important;
-        flex: 0 0 150px !important;
-    }
-}
-
-/* Small mobile: one column, still identical card dimensions. */
-@media (max-width: 450px) {
-    .bsmain .s1 {
-        height: 400px !important;
-        min-height: 400px !important;
-        max-height: 400px !important;
-    }
-
-    .bsmain .s1 > a {
-        height: 250px !important;
-        min-height: 250px !important;
-        max-height: 250px !important;
-        flex: 0 0 250px !important;
-    }
-
-    .bsmain .s1 > img.img2 {
-        height: 250px !important;
-        min-height: 250px !important;
-        max-height: 250px !important;
-        flex: 0 0 250px !important;
-    }
-
-    .bsmain .s1 > .info {
-        height: 150px !important;
-        min-height: 150px !important;
-        max-height: 150px !important;
-        flex: 0 0 150px !important;
-    }
-}
-
-
-/* =========================================================
-   FINAL PRODUCT GRID — COMPLETE IMAGES + UNIFORM CARDS
-   ========================================================= */
-
-/* Shared product-card geometry */
-.bsmain .s1 {
-    width: 100% !important;
-    height: 440px !important;
-    min-height: 440px !important;
-    max-height: 440px !important;
-    min-width: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    overflow: hidden !important;
-    box-sizing: border-box !important;
-    background: #f8f8f8 !important;
-    border-radius: 6px !important;
-}
-
-/* Uniform image frame for BOTH linked and direct product images */
-.bsmain .s1 > a,
-.bsmain .s1 > img.img2 {
-    width: 100% !important;
-    height: 290px !important;
-    min-height: 290px !important;
-    max-height: 290px !important;
-    flex: 0 0 290px !important;
-    display: block !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border: 0 !important;
-    line-height: 0 !important;
-    overflow: hidden !important;
-    box-sizing: border-box !important;
-    background: #eeeeee !important;
-}
-
-/* IMPORTANT: contain keeps the COMPLETE source image visible.
-   Nothing is cropped, stretched, or cut off. */
-.bsmain .s1 > a > img.img2,
-.bsmain .s1 > img.img2 {
-    width: 100% !important;
-    height: 100% !important;
-    min-width: 0 !important;
-    min-height: 0 !important;
-    max-width: 100% !important;
-    max-height: 100% !important;
-    display: block !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border: 0 !important;
-    box-sizing: border-box !important;
-    object-fit: contain !important;
-    object-position: center center !important;
-    background: #eeeeee !important;
-}
-
-/* Uniform information section */
-.bsmain .s1 > .info {
-    width: 100% !important;
-    height: 150px !important;
-    min-height: 150px !important;
-    max-height: 150px !important;
-    flex: 0 0 150px !important;
-    padding: 14px 12px !important;
-    margin: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    justify-content: flex-start !important;
-    box-sizing: border-box !important;
-    background: #f8f8f8 !important;
-    overflow: hidden !important;
-}
-
-.bsmain .s1 .bld {
-    margin-bottom: 4px !important;
-    line-height: 1.3 !important;
-}
-
-.bsmain .s1 .info > a {
-    display: block !important;
-    width: 100% !important;
-    line-height: normal !important;
-}
-
-.bsmain .s1 .hrt {
-    z-index: 20 !important;
-}
-
-/* ALL PRODUCTS: exactly four equal columns on desktop */
-#all-products .bsmain {
-    width: 100% !important;
-    max-width: 1250px !important;
-    margin: 0 auto !important;
-    display: grid !important;
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-    gap: 18px !important;
-    align-items: stretch !important;
-}
-
-/* ALL PRODUCTS contains only product cards; navigation arrows belong to Best Sellers. */
-#all-products .bsmain > .arrow {
-    display: none !important;
-}
-
-/* Best Sellers: six equal product columns between arrows */
-#shop + .main .bsmain,
-.bsmain {
-    align-items: stretch;
-}
-
-/* Tablet */
-@media (max-width: 1023px) {
-    #all-products .bsmain {
-        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-        gap: 15px !important;
-    }
-}
-
-/* Mobile */
-@media (max-width: 767px) {
-    .bsmain .s1 {
-        height: 400px !important;
-        min-height: 400px !important;
-        max-height: 400px !important;
-    }
-
-    .bsmain .s1 > a,
-    .bsmain .s1 > img.img2 {
-        height: 250px !important;
-        min-height: 250px !important;
-        max-height: 250px !important;
-        flex: 0 0 250px !important;
-    }
-
-    .bsmain .s1 > .info {
-        height: 150px !important;
-        min-height: 150px !important;
-        max-height: 150px !important;
-        flex: 0 0 150px !important;
-    }
-
-    #all-products .bsmain {
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        gap: 15px !important;
-    }
-}
-
-/* Small phones */
-@media (max-width: 450px) {
-    #all-products .bsmain {
-        grid-template-columns: 1fr !important;
-        gap: 18px !important;
-    }
-}
-
-</style>
 
 </body>
 </html>
