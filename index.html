@@ -856,18 +856,28 @@
 
             cursor: pointer;
         }
-                /* PRODUCT IMAGES — EDGE TO EDGE LIKE THE REFERENCE */
+                /* PRODUCT IMAGES — COMPLETE IMAGE, NO CROP */
         .img2 {
             display: block;
             width: 100%;
-            height: 190px;
+            height: auto;
+            max-width: 100%;
             margin: 0;
             padding: 0;
             border: 0;
             background: transparent;
-            object-fit: cover;
+            object-fit: contain;
             object-position: center center;
             box-sizing: border-box;
+        }
+
+        /* Image links must not add inline spacing */
+        .s1 > a {
+            display: block;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            line-height: 0;
         }
 
         .info {
@@ -2021,30 +2031,28 @@
         }
 
 
-                /* FINAL PRODUCT IMAGE STYLE — BEST SELLERS + ALL PRODUCTS */
+                /* FINAL PRODUCT IMAGE STYLE — COMPLETE IMAGES */
         .bsmain .s1 > .img2,
         .bsmain .s1 > a > .img2 {
             display: block;
             width: 100%;
-            max-width: none;
-            height: 190px;
+            height: auto;
+            max-width: 100%;
             margin: 0;
             padding: 0;
             border: 0;
             background: transparent;
-            object-fit: cover;
+            object-fit: contain;
             object-position: center center;
             box-sizing: border-box;
         }
 
-        @media (max-width: 767px) {
-            .bsmain .s1 > .img2,
-            .bsmain .s1 > a > .img2 {
-                width: 100%;
-                max-width: none;
-                height: 180px;
-                margin: 0;
-            }
+        .bsmain .s1 > a {
+            display: block;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            line-height: 0;
         }
 
     </style>
