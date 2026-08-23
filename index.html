@@ -2195,22 +2195,6 @@ transition:
     z-index: 20 !important;
 }
 
-/* ALL PRODUCTS — exactly 4 equal columns on desktop */
-#all-products .bsmain {
-    width: 100% !important;
-    max-width: 1250px !important;
-    margin: 0 auto !important;
-    display: grid !important;
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-    gap: 18px !important;
-    align-items: stretch !important;
-}
-
-/* ALL PRODUCTS has no navigation arrows. */
-#all-products .bsmain > .arrow {
-    display: none !important;
-}
-
 /* BEST SELLERS — 6 cards between the two arrows. */
 #products > .bsmain {
     grid-template-columns: 30px repeat(6, minmax(0, 1fr)) 30px !important;
@@ -2509,6 +2493,182 @@ transition:
 }
 </style>
 
+<style>
+
+/* =========================================================
+   ALL PRODUCTS — IMAGE CARD + TEXT OVER IMAGE
+   ========================================================= */
+
+#all-products {
+    width: 100%;
+}
+
+#all-products .bsmain {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    align-items: stretch;
+}
+
+/* Every product card has exactly the same geometry */
+#all-products .bsmain .s1 {
+    position: relative;
+    width: 100%;
+    height: 390px;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #e9e9e9;
+    isolation: isolate;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+/* Image occupies the complete card */
+#all-products .bsmain .s1 .img2,
+#all-products .bsmain .s1 > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    max-width: none;
+    max-height: none;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    background: #e9e9e9;
+}
+
+/*
+   For the supplied product photos, contain preserves the complete product
+   photograph. The photograph itself fills the card; no white information
+   panel is created underneath it.
+*/
+#all-products .bsmain .s1 .img2 {
+    object-fit: cover;
+}
+
+/* Subtle dark gradient only behind the overlaid text */
+#all-products .bsmain .s1::after {
+    content: "";
+    position: absolute;
+    inset: 38% 0 0 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0) 0%,
+        rgba(0,0,0,.08) 22%,
+        rgba(0,0,0,.58) 100%
+    );
+}
+
+/* Heart */
+#all-products .bsmain .s1 .hrt {
+    position: absolute;
+    top: 12px;
+    right: 13px;
+    z-index: 4;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,.88);
+    color: #0b2b1d;
+    font-size: 21px;
+    line-height: 1;
+}
+
+/* Information sits ON the image */
+#all-products .bsmain .s1 .info {
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 145px;
+    min-height: 145px;
+    max-height: 145px;
+    padding: 42px 16px 15px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    box-sizing: border-box;
+    overflow: hidden;
+    color: #fff;
+    background: transparent;
+}
+
+/* Text inside overlay */
+#all-products .bsmain .s1 .info .bld,
+#all-products .bsmain .s1 .info b,
+#all-products .bsmain .s1 .info div {
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0,0,0,.75);
+}
+
+#all-products .bsmain .s1 .info .bld {
+    margin: 0 0 5px;
+    line-height: 1.25;
+}
+
+#all-products .bsmain .s1 .info b {
+    margin: 1px 0 6px;
+    font-size: 16px;
+}
+
+#all-products .bsmain .s1 .info > div:last-child {
+    font-size: 15px;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+#all-products .bsmain .s1:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,.18);
+}
+
+/* Desktop / laptop */
+@media (max-width: 1200px) {
+    #all-products .bsmain {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    #all-products .bsmain {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    #all-products .bsmain .s1 {
+        height: 360px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    #all-products .bsmain {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    #all-products .bsmain .s1 {
+        height: 390px;
+    }
+}
+
+</style>
 </head>
 
 
