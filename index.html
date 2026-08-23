@@ -2282,6 +2282,233 @@ transition:
     }
 }
 </style>
+
+<style id="exact-all-products-layout">
+/* =========================================================
+   ALL PRODUCTS — EXACT 6-COLUMN UNIFORM PRODUCT CARDS
+   Matches the supplied reference layout.
+   ========================================================= */
+
+#all-products {
+    width: 100%;
+    padding: 28px 50px 55px;
+    background: #ffffff;
+}
+
+#all-products .head {
+    max-width: 1500px;
+    margin: 0 auto 38px;
+    text-align: center;
+}
+
+#all-products .head h2 {
+    margin: 0;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 30px;
+    line-height: 1.15;
+    font-weight: 600;
+    color: #17271c;
+}
+
+#all-products .head::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    margin: 12px auto 0;
+    background: #b48a4c;
+}
+
+#all-products .bsmain {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 30px 50px;
+    align-items: stretch;
+}
+
+#all-products .bsmain > .arrow {
+    display: none !important;
+}
+
+#all-products .s1 {
+    position: relative;
+    width: 100%;
+    height: 292px;
+    min-width: 0;
+    min-height: 292px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 0;
+    border-radius: 7px;
+    background: #f7f7f7;
+    box-shadow: none;
+    transform: none;
+}
+
+#all-products .s1:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+}
+
+/* Fixed image frame: identical for every product */
+#all-products .s1 > img.img2,
+#all-products .s1 > a > img.img2 {
+    display: block;
+    flex: 0 0 178px;
+    width: 100%;
+    height: 178px;
+    min-width: 100%;
+    min-height: 178px;
+    max-width: 100%;
+    max-height: 178px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: #e9e9e9;
+    object-fit: contain;
+    object-position: center center;
+}
+
+/* If an image is wrapped in a link, the link itself is the same fixed frame. */
+#all-products .s1 > a {
+    display: block;
+    flex: 0 0 178px;
+    width: 100%;
+    height: 178px;
+    min-height: 178px;
+    max-height: 178px;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    overflow: hidden;
+    background: #e9e9e9;
+}
+
+#all-products .s1 > a > img.img2 {
+    width: 100%;
+    height: 178px;
+}
+
+/* Identical information panel on every card */
+#all-products .s1 > .info {
+    flex: 0 0 114px;
+    width: 100%;
+    height: 114px;
+    min-height: 114px;
+    max-height: 114px;
+    margin: 0;
+    padding: 13px 14px 11px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow: hidden;
+    background: #f7f7f7;
+    color: #111111;
+}
+
+#all-products .s1 .bld {
+    display: block;
+    width: 100%;
+    margin: 0 0 4px;
+    font-size: 13px;
+    line-height: 1.35;
+    color: #111111;
+}
+
+#all-products .s1 .info b.bld {
+    margin-top: 2px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#all-products .s1 .info > div:last-child {
+    white-space: nowrap;
+    font-size: 13px;
+    line-height: 1.2;
+    color: #102719;
+}
+
+#all-products .s1 .hrt {
+    position: absolute;
+    top: 9px;
+    right: 10px;
+    z-index: 10;
+    margin: 0;
+    padding: 0;
+    font-size: 22px;
+    line-height: 1;
+    color: #17301f;
+}
+
+/* Desktop / laptop */
+@media (max-width: 1250px) {
+    #all-products {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    #all-products .bsmain {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 24px 24px;
+    }
+}
+
+/* Tablet */
+@media (max-width: 1023px) {
+    #all-products .bsmain {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    #all-products {
+        padding: 30px 20px 45px;
+    }
+
+    #all-products .head {
+        margin-bottom: 28px;
+    }
+
+    #all-products .head h2 {
+        font-size: 25px;
+    }
+
+    #all-products .bsmain {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    #all-products .s1 {
+        height: 292px;
+        min-height: 292px;
+    }
+}
+
+@media (max-width: 450px) {
+    #all-products .bsmain {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    #all-products .s1 {
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+</style>
+
 </head>
 
 
