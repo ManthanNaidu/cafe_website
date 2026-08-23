@@ -3134,6 +3134,247 @@ transition:
 
 </style>
 
+
+<style id="final-best-sellers-image-only-fix">
+
+/* ============================================================
+   BEST SELLERS — SAME IMAGE-ONLY CARD DESIGN
+   ============================================================ */
+
+/* Best Seller product row */
+.bsmain {
+    width: 100% !important;
+    max-width: 1500px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+
+    display: grid !important;
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+    gap: 18px !important;
+
+    align-items: stretch !important;
+}
+
+/* Ignore arrow items for card geometry */
+.bsmain .arrow {
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    align-self: center !important;
+    justify-self: center !important;
+    z-index: 20 !important;
+}
+
+/* Equal Best Seller cards */
+.bsmain .s1 {
+    position: relative !important;
+    width: 100% !important;
+    aspect-ratio: 1 / 1 !important;
+    height: auto !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    overflow: hidden !important;
+    border-radius: 10px !important;
+    background: transparent !important;
+
+    display: block !important;
+    isolation: isolate !important;
+
+    transition: transform .25s ease, box-shadow .25s ease !important;
+}
+
+/* The product image is the ONLY background */
+.bsmain .s1 > a > .img2,
+.bsmain .s1 > .img2 {
+    position: absolute !important;
+    inset: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    min-width: 100% !important;
+    min-height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+
+    display: block !important;
+
+    object-fit: fill !important;
+    object-position: center center !important;
+
+    background: transparent !important;
+}
+
+/* Remove extra background/gradient */
+.bsmain .s1::after {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+}
+
+/* Heart */
+.bsmain .s1 .hrt {
+    position: absolute !important;
+    top: 12px !important;
+    right: 12px !important;
+
+    width: 38px !important;
+    height: 38px !important;
+
+    z-index: 10 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 50% !important;
+    background: rgba(255,255,255,.94) !important;
+
+    color: #062a20 !important;
+    font-size: 23px !important;
+    line-height: 1 !important;
+
+    box-shadow: 0 1px 5px rgba(0,0,0,.10) !important;
+}
+
+/* Text directly on the image */
+.bsmain .s1 .info {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+
+    width: 100% !important;
+    height: 40% !important;
+
+    z-index: 8 !important;
+
+    margin: 0 !important;
+    padding: 12px 16px 14px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-end !important;
+
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+
+    background: transparent !important;
+    color: #000 !important;
+}
+
+/* Force all Best Seller text to black */
+.bsmain .s1 .info,
+.bsmain .s1 .info *,
+.bsmain .s1 .info .bld,
+.bsmain .s1 .info b,
+.bsmain .s1 .info > div:last-child {
+    color: #000 !important;
+    background: transparent !important;
+    text-shadow: none !important;
+}
+
+/* Consistent text */
+.bsmain .s1 .info .bld {
+    margin: 0 0 4px !important;
+    padding: 0 !important;
+    line-height: 1.25 !important;
+}
+
+.bsmain .s1 .info b {
+    margin: 1px 0 6px !important;
+    font-size: 17px !important;
+    line-height: 1.2 !important;
+}
+
+.bsmain .s1 .info > div:last-child {
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    font-size: 15px !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+}
+
+/* Best Seller hover */
+.bsmain .s1:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 10px 24px rgba(0,0,0,.16) !important;
+}
+
+/*
+   Best Sellers has 6 products plus arrows.
+   The arrow is positioned over the row so it does not create
+   an extra narrow card/column.
+*/
+.bsmain {
+    position: relative !important;
+}
+
+.bsmain .arrow:first-child {
+    position: absolute !important;
+    left: -8px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    margin: 0 !important;
+}
+
+.bsmain .arrow:last-child {
+    position: absolute !important;
+    right: -8px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    margin: 0 !important;
+}
+
+/* Keep six equal product cards */
+.bsmain .s1 {
+    grid-column: auto !important;
+}
+
+/* Laptop */
+@media (max-width: 1200px) {
+    .bsmain {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        gap: 16px !important;
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .bsmain {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 16px !important;
+    }
+
+    .bsmain .arrow {
+        display: none !important;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .bsmain {
+        grid-template-columns: 1fr !important;
+        max-width: 430px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+
+</style>
+
 </head>
 
 
