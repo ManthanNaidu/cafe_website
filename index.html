@@ -2101,171 +2101,7 @@ transition:
     </style>
 
 
-<style id="product-card-final">
-/* =========================================================
-   PRODUCT CARDS — FINAL UNIFORM VERSION
-   Complete images, no cropping, no stretching, equal cards
-   ========================================================= */
 
-.bsmain .s1 {
-    width: 100% !important;
-    height: 440px !important;
-    min-height: 440px !important;
-    max-height: 440px !important;
-    min-width: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    overflow: hidden !important;
-    box-sizing: border-box !important;
-    background: #f8f8f8 !important;
-    border-radius: 6px !important;
-}
-
-.bsmain .s1 > a,
-.bsmain .s1 > img.img2 {
-    width: 100% !important;
-    height: 290px !important;
-    min-height: 290px !important;
-    max-height: 290px !important;
-    flex: 0 0 290px !important;
-    display: block !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border: 0 !important;
-    line-height: 0 !important;
-    overflow: hidden !important;
-    box-sizing: border-box !important;
-    background: #eeeeee !important;
-}
-
-.bsmain .s1 > a > img.img2,
-.bsmain .s1 > img.img2 {
-    width: 100% !important;
-    height: 100% !important;
-    min-width: 0 !important;
-    min-height: 0 !important;
-    max-width: 100% !important;
-    max-height: 100% !important;
-    display: block !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border: 0 !important;
-    box-sizing: border-box !important;
-
-    /* Keep the COMPLETE source image visible. */
-    object-fit: contain !important;
-    object-position: center center !important;
-    background: #eeeeee !important;
-}
-
-.bsmain .s1 > .info {
-    width: 100% !important;
-    height: 150px !important;
-    min-height: 150px !important;
-    max-height: 150px !important;
-    flex: 0 0 150px !important;
-
-    padding: 14px 12px !important;
-    margin: 0 !important;
-
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    justify-content: flex-start !important;
-
-    box-sizing: border-box !important;
-    background: #f8f8f8 !important;
-    overflow: hidden !important;
-}
-
-.bsmain .s1 .bld {
-    margin-bottom: 4px !important;
-    line-height: 1.3 !important;
-}
-
-.bsmain .s1 .info > a {
-    display: block !important;
-    width: 100% !important;
-    line-height: normal !important;
-}
-
-.bsmain .s1 .hrt {
-    z-index: 20 !important;
-}
-
-/* BEST SELLERS — 6 cards between the two arrows. */
-#products > .bsmain {
-    grid-template-columns: 30px repeat(6, minmax(0, 1fr)) 30px !important;
-    gap: 12px !important;
-    align-items: stretch !important;
-}
-
-/* Tablet */
-@media (max-width: 1023px) {
-    #products > .bsmain {
-        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-        gap: 15px !important;
-    }
-
-    #products > .bsmain > .arrow {
-        display: none !important;
-    }
-
-    #all-products .bsmain {
-        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-        gap: 15px !important;
-    }
-}
-
-/* Mobile */
-@media (max-width: 767px) {
-    .bsmain .s1 {
-        height: 400px !important;
-        min-height: 400px !important;
-        max-height: 400px !important;
-    }
-
-    .bsmain .s1 > a,
-    .bsmain .s1 > img.img2 {
-        height: 250px !important;
-        min-height: 250px !important;
-        max-height: 250px !important;
-        flex: 0 0 250px !important;
-    }
-
-    .bsmain .s1 > .info {
-        height: 150px !important;
-        min-height: 150px !important;
-        max-height: 150px !important;
-        flex: 0 0 150px !important;
-    }
-
-    #products > .bsmain {
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        gap: 15px !important;
-    }
-
-    #products > .bsmain > .arrow {
-        display: none !important;
-    }
-
-    #all-products .bsmain {
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        gap: 15px !important;
-    }
-}
-
-/* Small phones */
-@media (max-width: 450px) {
-    #products > .bsmain,
-    #all-products .bsmain {
-        grid-template-columns: 1fr !important;
-        gap: 18px !important;
-    }
-}
-</style>
 
 <style id="exact-all-products-layout">
 /* =========================================================
@@ -2669,6 +2505,204 @@ transition:
 }
 
 </style>
+
+<style id="all-products-final">
+/* =========================================================
+   ALL PRODUCTS — UNIFORM IMAGE CARDS
+   Complete image + text directly over image + black text
+   ========================================================= */
+
+#all-products {
+    width: 100%;
+}
+
+#all-products .bsmain {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    align-items: stretch;
+}
+
+/* EXACT SAME CARD SIZE */
+#all-products .bsmain .s1 {
+    position: relative !important;
+    width: 100% !important;
+    aspect-ratio: 1 / 1 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+    border-radius: 8px !important;
+    background: #eeeeee !important;
+    isolation: isolate;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+/* IMAGE FILLS THE WHOLE CARD.
+   contain keeps the complete source image visible because the card
+   and source image use the same square geometry. */
+#all-products .bsmain .s1 .img2,
+#all-products .bsmain .s1 > img.img2 {
+    position: absolute !important;
+    inset: 0 !important;
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 100% !important;
+    min-height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    background: #eeeeee !important;
+    box-sizing: border-box !important;
+}
+
+/* Bottom readability layer — does not create a separate information card */
+#all-products .bsmain .s1::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 48%;
+    pointer-events: none;
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,.25) 28%,
+        rgba(255,255,255,.92) 100%
+    );
+}
+
+/* HEART */
+#all-products .bsmain .s1 .hrt {
+    position: absolute !important;
+    top: 12px !important;
+    right: 12px !important;
+    z-index: 5 !important;
+    width: 34px !important;
+    height: 34px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 50% !important;
+    background: rgba(255,255,255,.90) !important;
+    color: #102719 !important;
+    font-size: 21px !important;
+    line-height: 1 !important;
+    box-sizing: border-box !important;
+}
+
+/* TEXT IS DIRECTLY ON THE IMAGE */
+#all-products .bsmain .s1 .info {
+    position: absolute !important;
+    z-index: 4 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 45% !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 18px 16px 16px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-end !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    background: transparent !important;
+    color: #000000 !important;
+}
+
+/* FORCE ALL PRODUCT TEXT TO BLACK */
+#all-products .bsmain .s1 .info,
+#all-products .bsmain .s1 .info *,
+#all-products .bsmain .s1 .info .bld,
+#all-products .bsmain .s1 .info b,
+#all-products .bsmain .s1 .info div {
+    color: #000000 !important;
+    text-shadow: none !important;
+}
+
+#all-products .bsmain .s1 .info .bld {
+    margin: 0 0 5px !important;
+    font-size: 14px !important;
+    line-height: 1.25 !important;
+}
+
+#all-products .bsmain .s1 .info b {
+    margin: 1px 0 6px !important;
+    font-size: 16px !important;
+    line-height: 1.2 !important;
+}
+
+#all-products .bsmain .s1 .info > div:last-child {
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+}
+
+/* Keep every card visually identical on hover */
+#all-products .bsmain .s1:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,.16);
+}
+
+/* LAPTOP */
+@media (max-width: 1100px) {
+    #all-products .bsmain {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+    }
+}
+
+/* TABLET */
+@media (max-width: 768px) {
+    #all-products .bsmain {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    #all-products .bsmain .s1 .info .bld {
+        font-size: 13px !important;
+    }
+
+    #all-products .bsmain .s1 .info b {
+        font-size: 15px !important;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+    #all-products .bsmain {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        max-width: 420px;
+    }
+
+    #all-products .bsmain .s1 {
+        width: 100% !important;
+        aspect-ratio: 1 / 1 !important;
+    }
+}
+</style>
+
 </head>
 
 
