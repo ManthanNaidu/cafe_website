@@ -1,27 +1,3754 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Cosmic Cafe - Promotions & Trust</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <link rel="stylesheet" href="cafe.css">
+    <title>COSMIC CAFE</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,500&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         ALL CSS — UNIFIED INTO ONE FILE
+    ====================================================== -->
+
+    <style>
+
+        /* =====================================================
+           GLOBAL
+        ====================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', Arial, sans-serif;
+            background: #ffffff;
+            color: #17271c;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+
+        /* =====================================================
+           TOP OFFER BAR
+        ====================================================== */
+
+        .top-bar {
+            width: 100%;
+            min-height: 40px;
+
+            padding: 0 5%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+
+            background: #102719;
+            color: #ffffff;
+
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .offer {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+
+            white-space: nowrap;
+        }
+
+
+        /* =====================================================
+           HEADER / NAVIGATION
+        ====================================================== */
+
+        .header {
+            width: 100%;
+            min-height: 82px;
+
+            padding: 0 5%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 30px;
+
+            background: #ffffff;
+
+            border-bottom: 1px solid #eeeeee;
+
+            position: relative;
+            z-index: 100;
+        }
+
+
+        /* LOGO */
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+
+            min-width: 190px;
+        }
+
+        .logo-icon {
+            font-size: 38px;
+
+            transform: rotate(-10deg);
+        }
+
+        .logo-name {
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 26px;
+            line-height: 1;
+            font-weight: 700;
+        }
+
+        .logo-subtitle {
+            margin-top: 4px;
+
+            font-size: 8px;
+            letter-spacing: 3px;
+            font-weight: 700;
+        }
+
+
+        /* NAVIGATION */
+
+        .navigation {
+            list-style: none;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 28px;
+        }
+
+        .navigation li {
+            list-style: none;
+        }
+
+        .navigation a {
+            position: relative;
+
+            font-size: 10px;
+            font-weight: 700;
+
+            color: #222222;
+        }
+
+        .navigation a::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: -7px;
+
+            width: 0;
+            height: 2px;
+
+            background: #b48a4c;
+
+            transition: width 0.25s ease;
+        }
+
+        .navigation a:hover::after {
+            width: 100%;
+        }
+
+        .sale a {
+            color: #b48a4c;
+        }
+
+
+        /* HEADER ICONS */
+
+        .icons {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .icon {
+            position: relative;
+
+            font-size: 23px;
+
+            transition:
+                color 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .icon:hover {
+            color: #b48a4c;
+
+            transform: translateY(-2px);
+        }
+
+        .cart-count {
+            position: absolute;
+
+            top: -7px;
+            right: -8px;
+
+            min-width: 15px;
+            height: 15px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #b48a4c;
+
+            color: #ffffff;
+
+            font-size: 8px;
+            font-weight: 700;
+        }
+
+
+        /* =====================================================
+           HERO SECTION
+        ====================================================== */
+
+        .hero {
+            width: 100%;
+            height: 530px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background: #102719;
+            color: #ffffff;
+        }
+
+        .hero input {
+            display: none;
+        }
+
+        .slides {
+            width: 100%;
+            height: 100%;
+
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            opacity: 0;
+
+            pointer-events: none;
+
+            transition:
+                opacity 0.6s ease;
+        }
+
+        #slide1:checked ~ .slides .slide1,
+        #slide2:checked ~ .slides .slide2,
+        #slide3:checked ~ .slides .slide3 {
+            opacity: 1;
+
+            pointer-events: auto;
+        }
+
+        .slide-media {
+            width: 100%;
+            height: 100%;
+
+            position: absolute;
+            inset: 0;
+        }
+
+        .slide-media img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+
+        /* HERO OVERLAY */
+
+        .overlay {
+            position: absolute;
+
+            inset: 0;
+
+            pointer-events: none;
+        }
+
+        .overlay-side {
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(16,39,25,0.98) 0%,
+                    rgba(16,39,25,0.88) 25%,
+                    rgba(16,39,25,0.25) 65%,
+                    transparent 100%
+                );
+        }
+
+        .overlay-bottom {
+            background:
+                linear-gradient(
+                    0deg,
+                    rgba(16,39,25,0.88),
+                    transparent 65%
+                );
+        }
+
+
+        /* HERO CONTENT */
+
+        .hero-content {
+            position: absolute;
+
+            z-index: 5;
+
+            left: 5%;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            width: 45%;
+
+            max-width: 570px;
+        }
+
+        .eyebrow {
+            display: flex;
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 16px;
+
+            color: #d3b477;
+
+            font-size: 10px;
+
+            font-weight: 600;
+
+            letter-spacing: 0.7px;
+
+            text-transform: uppercase;
+        }
+
+        .rule {
+            width: 25px;
+            height: 1px;
+
+            background: #d3b477;
+        }
+
+        .hero-content h1 {
+            margin-bottom: 18px;
+
+            font-family: 'Fraunces', Georgia, serif;
+
+            font-size: clamp(45px, 5vw, 72px);
+
+            line-height: 0.98;
+
+            letter-spacing: -2px;
+        }
+
+        .hero-content h1 em {
+            color: #d3a866;
+
+            font-style: normal;
+        }
+
+        .description {
+            max-width: 450px;
+
+            margin-bottom: 25px;
+
+            color: #e4e9e5;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+        }
+
+
+        /* HERO BUTTONS */
+
+        .buttons {
+            display: flex;
+            align-items: center;
+
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            min-height: 42px;
+
+            padding: 0 22px;
+
+            font-size: 10px;
+
+            font-weight: 600;
+
+            transition:
+                background 0.25s ease,
+                color 0.25s ease,
+                border-color 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .btn-primary {
+            background: #b48a4c;
+
+            color: #ffffff;
+
+            border: 1px solid #b48a4c;
+        }
+
+        .btn-primary:hover {
+            background: #8d6738;
+
+            border-color: #8d6738;
+
+            transform: translateY(-2px);
+        }
+
+        .btn-text {
+            color: #ffffff;
+
+            border: 1px solid rgba(255,255,255,0.75);
+        }
+
+        .btn-text:hover {
+            background: #ffffff;
+
+            color: #17301f;
+
+            transform: translateY(-2px);
+        }
+
+        .btn-text span {
+            margin-left: 8px;
+        }
+
+
+        /* CENTERED HERO */
+
+        .hero-content--centered {
+            left: 50%;
+
+            width: 60%;
+
+            text-align: center;
+
+            transform: translate(-50%, -50%);
+        }
+
+        .eyebrow--centered {
+            justify-content: center;
+        }
+
+        .buttons--centered {
+            justify-content: center;
+        }
+
+
+        /* HERO CARD */
+
+        .card {
+            position: absolute;
+
+            z-index: 5;
+
+            left: 8%;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            width: 420px;
+
+            padding: 42px;
+
+            background: rgba(16,39,25,0.78);
+
+            backdrop-filter: blur(5px);
+
+            color: #ffffff;
+        }
+
+        .bracket {
+            position: absolute;
+
+            width: 30px;
+            height: 30px;
+        }
+
+        .bracket-tl {
+            top: 15px;
+            left: 15px;
+
+            border-top: 1px solid #d3b477;
+            border-left: 1px solid #d3b477;
+        }
+
+        .bracket-br {
+            bottom: 15px;
+            right: 15px;
+
+            border-bottom: 1px solid #d3b477;
+            border-right: 1px solid #d3b477;
+        }
+
+
+        /* HERO NAVIGATION */
+
+        .hero-nav {
+            position: absolute;
+
+            z-index: 10;
+
+            left: 5%;
+
+            bottom: 30px;
+
+            width: 90%;
+
+            display: flex;
+            align-items: center;
+        }
+
+        .progress-track {
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+        }
+
+        .progress {
+            width: 35px;
+            height: 3px;
+
+            display: block;
+
+            background: rgba(255,255,255,0.35);
+
+            cursor: pointer;
+        }
+
+        .progress span {
+            display: block;
+
+            width: 0;
+            height: 100%;
+
+            background: #d3b477;
+        }
+
+        #slide1:checked ~ .hero-nav .progress1,
+        #slide2:checked ~ .hero-nav .progress2,
+        #slide3:checked ~ .hero-nav .progress3 {
+            background: #d3b477;
+        }
+
+
+        /* =====================================================
+           FEATURES
+        ====================================================== */
+
+        .features {
+            width: 100%;
+
+            min-height: 78px;
+
+            padding: 13px 5%;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(5, 1fr);
+
+            gap: 20px;
+
+            background: #ffffff;
+
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .feature {
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 10px;
+        }
+
+        .feature > span {
+            font-size: 22px;
+        }
+
+        .feature strong {
+            display: block;
+
+            margin-bottom: 3px;
+
+            font-size: 8px;
+
+            letter-spacing: 0.2px;
+        }
+
+        .feature small {
+            display: block;
+
+            color: #777777;
+
+            font-size: 8px;
+        }
+
+
+        /* =====================================================
+           SHOP BY CATEGORY
+        ====================================================== */
+
+        .main {
+            width: 100%;
+
+            padding: 45px 5% 50px;
+
+            background: #ffffff;
+        }
+
+        .head {
+            text-align: center;
+
+            margin-bottom: 25px;
+        }
+
+        .head h2 {
+            font-size: 21px;
+
+            letter-spacing: 0.2px;
+        }
+
+        .head::after {
+            content: "";
+
+            display: block;
+
+            width: 45px;
+            height: 3px;
+
+            margin: 9px auto 0;
+
+            background: #b48a4c;
+        }
+
+
+        /* CATEGORY GRID */
+
+        .catmain {
+            max-width: 1250px;
+
+            margin: 0 auto 45px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(8, 1fr);
+
+            gap: 15px;
+        }
+
+        .cat1 {
+            text-align: center;
+
+            transition:
+                transform 0.25s ease;
+        }
+
+        .cat1:hover {
+            transform: translateY(-5px);
+        }
+
+        .img1 {
+            width: 100px;
+            height: 100px;
+
+            margin: 0 auto 10px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            background: #f3f1ed;
+        }
+
+        .bt {
+            display: block;
+
+            margin-bottom: 5px;
+
+            color: #222222;
+
+            font-size: 8px;
+
+            font-weight: 700;
+        }
+
+        .cat1 > div {
+            color: #777777;
+
+            font-size: 8px;
+        }
+
+        .cat1 a:hover .bt {
+            color: #b48a4c;
+        }
+
+
+        /* =====================================================
+           BEST SELLERS
+        ====================================================== */
+
+        .bs {
+            max-width: 1250px;
+
+            margin: 0 auto 18px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+        .bs h2 {
+            font-size: 20px;
+        }
+
+        .bs a {
+            font-size: 10px;
+
+            font-weight: 700;
+        }
+
+        .bs a:hover {
+            color: #b48a4c;
+        }
+
+
+        /* PRODUCT ROW */
+
+        .bsmain {
+            max-width: 1250px;
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns:
+                30px
+                repeat(6, 1fr)
+                30px;
+
+            gap: 12px;
+
+            align-items: stretch;
+        }
+
+        .s1 {
+            position: relative;
+
+            background: #f8f8f8;
+
+            border-radius: 5px;
+
+            overflow: hidden;
+
+            padding-bottom: 14px;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .s1:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 10px 25px rgba(0,0,0,0.10);
+        }
+
+        .hrt {
+            position: absolute;
+
+            top: 8px;
+            right: 9px;
+
+            z-index: 5;
+
+            font-size: 19px;
+
+            color: #333333;
+
+            cursor: pointer;
+        }
+
+        .img2 {
+            width: 100%;
+
+            height: 180px;
+
+            object-fit: cover;
+
+            background: #f0eee9;
+        }
+
+        .info {
+            padding: 10px;
+        }
+
+        .info a:hover {
+            color: #a67c3d;
+        }
+
+        .bld {
+            margin-bottom: 4px;
+
+            font-size: 9px;
+
+            line-height: 1.3;
+        }
+
+        .info b {
+            font-size: 11px;
+        }
+
+        .arrow {
+            min-height: 100%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+        .arrow div {
+            width: 25px;
+            height: 25px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid #dddddd;
+
+            border-radius: 50%;
+
+            color: #333333;
+
+            font-size: 18px;
+
+            cursor: pointer;
+
+            transition:
+                background 0.2s ease,
+                color 0.2s ease;
+        }
+
+        .arrow div:hover {
+            background: #102719;
+
+            color: #ffffff;
+        }
+
+
+        /* =====================================================
+           SECTION 4 — PROMOTIONS & TRUST
+        ====================================================== */
+
+        .promotions-section {
+            width: 100%;
+
+            background: #ffffff;
+        }
+
+        .promotion-container {
+            width: 92%;
+            max-width: 1250px;
+
+            margin: 0 auto;
+
+            padding: 30px 0;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 18px;
+        }
+
+        .promotion-card {
+            position: relative;
+
+            min-height: 205px;
+
+            overflow: hidden;
+
+            border-radius: 5px;
+
+            display: flex;
+
+            align-items: center;
+
+            isolation: isolate;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .promotion-card:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .subscribe-card {
+            background: #102719;
+
+            color: #ffffff;
+        }
+
+        .discount-card {
+            background: #eee6d9;
+
+            color: #171717;
+        }
+
+        .promotion-content {
+            position: relative;
+
+            z-index: 5;
+
+            width: 60%;
+
+            padding:
+                25px 10px 25px 28px;
+        }
+
+        .small-label {
+            margin-bottom: 8px;
+
+            font-size: 9px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.6px;
+        }
+
+        .subscribe-card .small-label {
+            color: #d3b477;
+        }
+
+        .discount-card .small-label {
+            color: #555555;
+        }
+
+        .promotion-content h2 {
+            margin-bottom: 9px;
+
+            font-family: 'Fraunces', Georgia, serif;
+
+            font-size: clamp(20px, 2vw, 29px);
+
+            line-height: 1.05;
+        }
+
+        .promotion-description {
+            margin-bottom: 17px;
+
+            font-size: 11px;
+
+            line-height: 1.55;
+        }
+
+        .subscribe-card .promotion-description {
+            color: #e7e7e7;
+        }
+
+        .discount-card .promotion-description {
+            color: #303030;
+        }
+
+        .promotion-button {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            min-height: 37px;
+
+            padding: 0 17px;
+
+            background: #b48a4c;
+
+            border: 1px solid #b48a4c;
+
+            border-radius: 3px;
+
+            color: #ffffff;
+
+            font-size: 9px;
+
+            font-weight: 700;
+
+            transition:
+                background 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .promotion-button:hover {
+            background: #8d6738;
+
+            transform: translateY(-2px);
+        }
+
+        .promotion-image {
+            position: absolute;
+
+            top: 0;
+            right: 0;
+
+            width: 48%;
+            height: 100%;
+        }
+
+        .promotion-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition:
+                transform 0.6s ease;
+        }
+
+        .promotion-card:hover .promotion-image img {
+            transform: scale(1.07);
+        }
+
+        .promotion-image::before {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            z-index: 2;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(16,39,25,0.9),
+                    rgba(16,39,25,0.4) 30%,
+                    transparent 65%
+                );
+        }
+
+        .discount-card .promotion-image::before {
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(238,230,217,0.95),
+                    rgba(238,230,217,0.4) 30%,
+                    transparent 65%
+                );
+        }
+
+
+        /* FEATURED BAR */
+
+        .featured-section {
+            min-height: 72px;
+
+            padding:
+                14px 5%;
+
+            border-top:
+                1px solid #e3e3e3;
+
+            border-bottom:
+                1px solid #e3e3e3;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 38px;
+
+            background: #ffffff;
+        }
+
+        .featured-heading {
+            font-size: 9px;
+
+            font-weight: 700;
+
+            white-space: nowrap;
+        }
+
+        .featured-brands {
+            width: min(900px, 100%);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 28px;
+        }
+
+        .brand {
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 16px;
+
+            font-weight: 700;
+
+            white-space: nowrap;
+
+            transition:
+                color 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .brand:hover {
+            color: #9c743c;
+
+            transform: translateY(-2px);
+        }
+
+        .bon-appetit {
+            font-weight: 400;
+        }
+
+        .delicious {
+            font-weight: 400;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        .footer {
+            width: 100%;
+
+            background: #102719;
+
+            color: #ffffff;
+
+            padding:
+                45px 5%
+                20px;
+        }
+
+        .footer-container {
+            max-width: 1250px;
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns:
+                1.5fr
+                1fr
+                1fr
+                1fr
+                1.3fr;
+
+            gap: 35px;
+        }
+
+        .footer-brand h2 {
+            margin-bottom: 15px;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 25px;
+        }
+
+        .footer-brand p {
+            max-width: 250px;
+
+            margin-bottom: 18px;
+
+            color: #c8d0c9;
+
+            font-size: 10px;
+
+            line-height: 1.7;
+        }
+
+        .social-icons {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+        }
+
+        .social-icons a {
+            width: 27px;
+            height: 27px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #ffffff;
+        }
+
+        .social-icons img {
+            width: 16px;
+            height: 16px;
+
+            object-fit: contain;
+        }
+
+        .footer-column {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 9px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 7px;
+
+            color: #d3b477;
+
+            font-size: 9px;
+
+            letter-spacing: 0.5px;
+        }
+
+        .footer-column a {
+            color: #c8d0c9;
+
+            font-size: 9px;
+
+            transition:
+                color 0.2s ease;
+        }
+
+        .footer-column a:hover {
+            color: #ffffff;
+        }
+
+
+        /* NEWSLETTER */
+
+        .newsletter p {
+            margin-bottom: 12px;
+
+            color: #c8d0c9;
+
+            font-size: 9px;
+
+            line-height: 1.5;
+        }
+
+        .email-box {
+            width: 100%;
+
+            display: flex;
+
+            border:
+                1px solid rgba(255,255,255,0.25);
+        }
+
+        .email-box input {
+            width: 100%;
+
+            min-width: 0;
+
+            padding:
+                11px;
+
+            border: none;
+
+            outline: none;
+
+            background: #ffffff;
+
+            color: #222222;
+
+            font-size: 10px;
+        }
+
+        .email-box button {
+            width: 42px;
+
+            border: none;
+
+            background: #b48a4c;
+
+            color: #ffffff;
+
+            cursor: pointer;
+
+            font-size: 18px;
+        }
+
+        .email-box button:hover {
+            background: #8d6738;
+        }
+
+
+        /* FOOTER BOTTOM */
+
+        .footer-bottom {
+            max-width: 1250px;
+
+            margin:
+                35px auto 0;
+
+            padding-top: 18px;
+
+            border-top:
+                1px solid rgba(255,255,255,0.15);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            color: #aeb8b0;
+
+            font-size: 8px;
+        }
+
+        .footer-links {
+            display: flex;
+
+            gap: 15px;
+        }
+
+        .footer-links a:hover {
+            color: #ffffff;
+        }
+
+        .payment {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+        }
+
+        .payment img {
+            width: 45px;
+            height: 25px;
+
+            object-fit: contain;
+
+            background: #ffffff;
+
+            border-radius: 3px;
+        }
+
+
+        /* =====================================================
+           TABLET
+        ====================================================== */
+
+        @media (max-width: 1023px) {
+
+            .navigation {
+                gap: 17px;
+            }
+
+            .navigation a {
+                font-size: 9px;
+            }
+
+            .features {
+                grid-template-columns:
+                    repeat(3, 1fr);
+            }
+
+            .feature:nth-child(4),
+            .feature:nth-child(5) {
+                display: none;
+            }
+
+            .catmain {
+                grid-template-columns:
+                    repeat(4, 1fr);
+
+                row-gap: 25px;
+            }
+
+            .bsmain {
+                grid-template-columns:
+                    repeat(3, 1fr);
+            }
+
+            .bsmain .arrow {
+                display: none;
+            }
+
+            .footer-container {
+                grid-template-columns:
+                    repeat(3, 1fr);
+            }
+        }
+
+
+        /* =====================================================
+           TABLET / SMALL LAPTOP
+        ====================================================== */
+
+        @media (max-width: 900px) {
+
+            .top-bar {
+                font-size: 8px;
+            }
+
+            .header {
+                min-height: 72px;
+            }
+
+            .logo {
+                min-width: auto;
+            }
+
+            .logo-name {
+                font-size: 22px;
+            }
+
+            .navigation {
+                gap: 13px;
+            }
+
+            .icons {
+                gap: 12px;
+            }
+
+            .hero {
+                height: 470px;
+            }
+
+            .hero-content {
+                width: 55%;
+            }
+
+            .hero-content h1 {
+                font-size: 47px;
+            }
+
+            .promotion-content {
+                width: 63%;
+                padding-left: 21px;
+            }
+
+            .promotion-content h2 {
+                font-size: 19px;
+            }
+
+            .promotion-image {
+                width: 44%;
+            }
+
+            .featured-section {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .featured-brands {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 16px 28px;
+            }
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ====================================================== */
+
+        @media (max-width: 767px) {
+
+            .top-bar {
+                min-height: 32px;
+
+                padding:
+                    6px 4%;
+
+                justify-content: center;
+            }
+
+            .offer {
+                display: none;
+            }
+
+            .offer:first-child {
+                display: flex;
+            }
+
+
+            /* HEADER */
+
+            .header {
+                min-height: 70px;
+
+                padding:
+                    0 5%;
+            }
+
+            .logo-name {
+                font-size: 21px;
+            }
+
+            .logo-subtitle {
+                font-size: 7px;
+            }
+
+            .logo-icon {
+                font-size: 31px;
+            }
+
+            .navigation {
+                display: none;
+            }
+
+            .icons {
+                margin-left: auto;
+
+                gap: 11px;
+            }
+
+            .icon {
+                font-size: 20px;
+            }
+
+
+            /* HERO */
+
+            .hero {
+                height: 620px;
+            }
+
+            .slide {
+                display: flex;
+
+                flex-direction: column;
+            }
+
+            .slide-media {
+                position: absolute;
+            }
+
+            .hero-content {
+                left: 7%;
+
+                top: auto;
+                bottom: 60px;
+
+                width: 86%;
+
+                transform: none;
+            }
+
+            .hero-content h1 {
+                font-size: 43px;
+            }
+
+            .description {
+                font-size: 12px;
+            }
+
+            .buttons {
+                flex-wrap: wrap;
+            }
+
+            .btn {
+                min-height: 40px;
+
+                padding:
+                    0 16px;
+            }
+
+            .card {
+                left: 5%;
+
+                top: auto;
+                bottom: 55px;
+
+                width: 90%;
+
+                padding: 30px;
+            }
+
+            .hero-content--centered {
+                left: 7%;
+
+                width: 86%;
+
+                transform: none;
+
+                text-align: center;
+            }
+
+            .eyebrow--centered {
+                justify-content: center;
+            }
+
+            .buttons--centered {
+                justify-content: center;
+            }
+
+
+            /* FEATURES */
+
+            .features {
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                padding:
+                    18px 5%;
+            }
+
+            .feature {
+                justify-content: flex-start;
+            }
+
+            .feature:nth-child(4),
+            .feature:nth-child(5) {
+                display: flex;
+            }
+
+
+            /* CATEGORY */
+
+            .main {
+                padding:
+                    35px 5%
+                    40px;
+            }
+
+            .catmain {
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                row-gap: 25px;
+            }
+
+            .img1 {
+                width: 90px;
+                height: 90px;
+            }
+
+
+            /* BEST SELLERS */
+
+            .bsmain {
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 15px;
+            }
+
+            .s1 {
+                width: 100%;
+            }
+
+            .img2 {
+                height: 200px;
+            }
+
+            .bsmain .arrow {
+                display: none;
+            }
+
+
+            /* PROMOTIONS */
+
+            .promotion-container {
+                width: 92%;
+
+                grid-template-columns: 1fr;
+
+                gap: 14px;
+
+                padding:
+                    20px 0;
+            }
+
+            .promotion-card {
+                min-height: 185px;
+            }
+
+            .promotion-content {
+                width: 65%;
+
+                padding:
+                    20px
+                    5px
+                    20px
+                    18px;
+            }
+
+            .promotion-content h2 {
+                font-size: 18px;
+            }
+
+            .promotion-description {
+                font-size: 9px;
+            }
+
+            .promotion-image {
+                width: 43%;
+            }
+
+            .featured-section {
+                padding:
+                    18px 20px;
+            }
+
+            .featured-brands {
+                display: grid;
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap:
+                    14px 8px;
+
+                text-align: center;
+            }
+
+            .brand {
+                font-size: 12px;
+            }
+
+
+            /* FOOTER */
+
+            .footer {
+                padding:
+                    38px 5%
+                    20px;
+            }
+
+            .footer-container {
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap:
+                    30px 20px;
+            }
+
+            .footer-brand {
+                grid-column:
+                    1 / -1;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+        }
+
+
+        /* =====================================================
+           SMALL MOBILE
+        ====================================================== */
+
+        @media (max-width: 450px) {
+
+            .hero {
+                height: 590px;
+            }
+
+            .hero-content h1 {
+                font-size: 37px;
+            }
+
+            .hero-content {
+                bottom: 55px;
+            }
+
+            .buttons {
+                flex-direction: column;
+
+                align-items: stretch;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .feature {
+                justify-content: center;
+            }
+
+            .catmain {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .img1 {
+                width: 82px;
+                height: 82px;
+            }
+
+            .bsmain {
+                grid-template-columns: 1fr;
+            }
+
+            .promotion-content h2 {
+                font-size: 16px;
+            }
+
+            .promotion-button {
+                font-size: 7px;
+
+                padding:
+                    0 9px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-brand {
+                grid-column: auto;
+            }
+
+            .footer-bottom {
+                gap: 15px;
+            }
+
+            .payment {
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+        }
+
+
+        /* =====================================================
+           VERY SMALL MOBILE
+        ====================================================== */
+
+        @media (max-width: 360px) {
+
+            .logo-name {
+                font-size: 18px;
+            }
+
+            .logo-icon {
+                font-size: 27px;
+            }
+
+            .icons {
+                gap: 7px;
+            }
+
+            .hero-content h1 {
+                font-size: 33px;
+            }
+
+            .head h2 {
+                font-size: 18px;
+            }
+
+            .bt {
+                font-size: 7px;
+            }
+
+            .promotion-content {
+                padding-left: 14px;
+            }
+
+            .featured-brands {
+                gap:
+                    12px 5px;
+            }
+
+            .brand {
+                font-size: 10px;
+            }
+        }
+
+
+        /* =====================================================
+           REDUCED MOTION
+        ====================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition: none !important;
+            }
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
+
     <!-- =====================================================
-         SECTION 4 : PROMOTIONS & TRUST
+         SECTION 1 — TOP BAR + HEADER
     ====================================================== -->
 
-    <section class="promotions-section" id="promotions">
+    <div class="top-bar">
 
-        <!-- ================= PROMOTIONAL CARDS ================= -->
+        <div class="offer">
+            🚚
+            <span>
+                FREE SHIPPING ON ORDERS OVER $49
+            </span>
+        </div>
+
+        <div class="offer">
+            🏷️
+            <span>
+                10% OFF YOUR FIRST ORDER
+                &nbsp; | &nbsp;
+                USE CODE: BREW10
+            </span>
+        </div>
+
+        <div class="offer">
+            ↻
+            <span>
+                30-DAY HASSLE FREE RETURNS
+            </span>
+        </div>
+
+    </div>
+
+
+    <header class="header">
+
+
+        <!-- LOGO -->
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                ☕
+            </div>
+
+            <div>
+
+                <div class="logo-name">
+                    COSMIC CAFE
+                </div>
+
+                <div class="logo-subtitle">
+                    COFFEE CO.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <ul class="navigation">
+
+            <li>
+                <a href="#shop">
+                    SHOP
+                </a>
+            </li>
+
+            <li>
+                <a href="#coffee">
+                    COFFEE
+                </a>
+            </li>
+
+            <li>
+                <a href="#equipment">
+                    EQUIPMENT
+                </a>
+            </li>
+
+            <li>
+                <a href="#subscriptions">
+                    SUBSCRIPTIONS
+                </a>
+            </li>
+
+            <li>
+                <a href="#gifts">
+                    GIFTS
+                </a>
+            </li>
+
+            <li class="sale">
+                <a href="#sale">
+                    SALE
+                </a>
+            </li>
+
+        </ul>
+
+
+        <!-- SEARCH / ACCOUNT / CART -->
+
+        <div class="icons">
+
+            <a href="#search" class="icon">
+                ⌕
+            </a>
+
+            <a href="#account" class="icon">
+                ♙
+            </a>
+
+            <a href="#cart" class="icon cart">
+
+                🛒
+
+                <span class="cart-count">
+                    0
+                </span>
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         SECTION 2 — HERO
+    ====================================================== -->
+
+    <section class="hero">
+
+
+        <input
+            type="radio"
+            name="slider"
+            id="slide1"
+            checked
+        >
+
+        <input
+            type="radio"
+            name="slider"
+            id="slide2"
+        >
+
+        <input
+            type="radio"
+            name="slider"
+            id="slide3"
+        >
+
+
+        <div class="slides">
+
+
+            <!-- SLIDE 1 -->
+
+            <div class="slide slide1">
+
+                <div class="slide-media">
+
+                    <img
+                        src="coffee.jpg"
+                        alt="Coffee"
+                    >
+
+                </div>
+
+                <div class="overlay overlay-side"></div>
+
+
+                <div class="hero-content">
+
+                    <p class="eyebrow">
+
+                        <span class="rule"></span>
+
+                        Roasted in small batches, weekly
+
+                    </p>
+
+
+                    <h1>
+                        Good Coffee.
+                        <br>
+                        <em>Better days.</em>
+                    </h1>
+
+
+                    <p class="description">
+
+                        Single-origin beans, bought straight
+                        from the farms that grow them. We roast
+                        in small batches, here, every week.
+
+                    </p>
+
+
+                    <div class="buttons">
+
+                        <a
+                            href="#shop"
+                            class="btn btn-primary"
+                        >
+                            Shop coffee
+                        </a>
+
+                        <a
+                            href="#subscriptions"
+                            class="btn btn-text"
+                        >
+                            Explore subscriptions
+                            <span>&rarr;</span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SLIDE 2 -->
+
+            <div class="slide slide2">
+
+                <div class="slide-media">
+
+                    <img
+                        src="coffee2.jpg"
+                        alt="Coffee and cookies"
+                    >
+
+                </div>
+
+
+                <div class="card">
+
+                    <span class="bracket bracket-tl"></span>
+
+                    <span class="bracket bracket-br"></span>
+
+
+                    <p class="eyebrow">
+
+                        <span class="rule"></span>
+
+                        Coffee, and something sweet
+                        on the side
+
+                    </p>
+
+
+                    <h1>
+                        Coffee.
+                        <br>
+                        <em>Made for moments.</em>
+                    </h1>
+
+
+                    <p class="description">
+
+                        Get a rich cup and something sweet
+                        from the case next door. Simple as that.
+
+                    </p>
+
+
+                    <div class="buttons">
+
+                        <a
+                            href="#shop"
+                            class="btn btn-primary"
+                        >
+                            Shop coffee
+                        </a>
+
+                        <a
+                            href="#gifts"
+                            class="btn btn-text"
+                        >
+                            View menu
+                            <span>&rarr;</span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SLIDE 3 -->
+
+            <div class="slide slide3">
+
+                <div class="slide-media">
+
+                    <img
+                        src="./coffee3.jpg"
+                        alt="Milk Cream Coffee"
+                    >
+
+                </div>
+
+
+                <div class="overlay overlay-bottom"></div>
+
+
+                <div class="hero-content hero-content--centered">
+
+                    <p class="eyebrow eyebrow--centered">
+
+                        <span class="rule"></span>
+
+                        Slow-poured, every time
+
+                        <span class="rule"></span>
+
+                    </p>
+
+
+                    <h1>
+                        Rich Flavor.
+                        <br>
+                        <em>Pure comfort.</em>
+                    </h1>
+
+
+                    <p class="description">
+
+                        Smooth, creamy, slow-poured —
+                        the kind of cup that makes getting
+                        up early feel worth it.
+
+                    </p>
+
+
+                    <div class="buttons buttons--centered">
+
+                        <a
+                            href="#shop"
+                            class="btn btn-primary"
+                        >
+                            Shop now
+                        </a>
+
+                        <a
+                            href="#about"
+                            class="btn btn-text"
+                        >
+                            Our story
+                            <span>&rarr;</span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- HERO NAVIGATION -->
+
+        <div class="hero-nav">
+
+            <div class="progress-track">
+
+                <label
+                    for="slide1"
+                    class="progress progress1"
+                >
+                    <span></span>
+                </label>
+
+                <label
+                    for="slide2"
+                    class="progress progress2"
+                >
+                    <span></span>
+                </label>
+
+                <label
+                    for="slide3"
+                    class="progress progress3"
+                >
+                    <span></span>
+                </label>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FEATURES / TRUST
+    ====================================================== -->
+
+    <section class="features">
+
+
+        <div class="feature">
+
+            <span>
+                &#128175;
+            </span>
+
+            <div>
+
+                <strong>
+                    FRESHLY ROASTED
+                </strong>
+
+                <small>
+                    Roasted in small batches
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="feature">
+
+            <span>
+                &#9749;
+            </span>
+
+            <div>
+
+                <strong>
+                    ETHICALLY SOURCED
+                </strong>
+
+                <small>
+                    Fairly traded from farmers
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="feature">
+
+            <span>
+                &#128666;
+            </span>
+
+            <div>
+
+                <strong>
+                    FREE SHIPPING
+                </strong>
+
+                <small>
+                    On orders over ₹999
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="feature">
+
+            <span>
+                &#128274;
+            </span>
+
+            <div>
+
+                <strong>
+                    SECURE PAYMENT
+                </strong>
+
+                <small>
+                    Checkout you can actually trust
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="feature">
+
+            <span>
+                &#128257;
+            </span>
+
+            <div>
+
+                <strong>
+                    30-DAY RETURNS
+                </strong>
+
+                <small>
+                    Love it or return it
+                </small>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SECTION 3 — SHOP BY CATEGORY
+    ====================================================== -->
+
+    <section
+        class="main"
+        id="shop"
+    >
+
+
+        <div class="head">
+
+            <h2>
+                SHOP BY CATEGORY
+            </h2>
+
+        </div>
+
+
+        <div class="catmain">
+
+
+            <div class="cat1">
+
+                <a href="#products">
+
+                    <img
+                        class="img1"
+                        src="images/COFFEE BEANS.jpg"
+                        alt="COFFEE BEANS"
+                    >
+
+                </a>
+
+                <a href="#products">
+
+                    <b class="bt">
+                        COFFEE BEANS
+                    </b>
+
+                </a>
+
+                <div>
+                    Shop Now
+                </div>
+
+            </div>
+
+
+
+            <div class="cat1">
+
+                <a href="#products">
+
+                    <img
+                        class="img1"
+                        src="images/GROUND COFFEE.jpg"
+                        alt="GROUND COFFEE"
+                    >
+
+                </a>
+
+                <a href="#products">
+
+                    <b class="bt">
+                        GROUND COFFEE
+                    </b>
+
+                </a>
+
+                <div>
+                    Shop Now
+                </div>
+
+            </div>
+
+
+
+            <div class="cat1">
+
+                <a href="#products">
+
+                    <img
+                        class="img1"
+                        src="images/COFFEE CAPSULE.jpg"
+                        alt="COFFEE CAPSULES"
+                    >
+
+                </a>
+
+                <a href="#products">
+
+                    <b class="bt">
+                        COFFEE CAPSULES
+                    </b>
+
+                </a>
+
+                <div>
+                    Shop Now
+                </div>
+
+            </div>
+
+
+
+            <div
+                class="cat1"
+                id="equipment"
+            >
+
+                <a href="#products">
+
+                    <img
+                        class="img1"
+                        src="images/BREWING EQUIPMENTS.jpg"
+                        alt="BREWING EQUIPMENT"
+                    >
+
+                </a>
+
+                <a href="#products">
+
+                    <b class="bt">
+                        BREWING EQUIPMENT
+                    </b>
+
+                </a>
+
+                <div>
+                    Shop Now
+                </div>
+
+            </div>
+
+
+
+            <div class="cat1">
+
+                <a href="#products">
+
+                    <img
+                        class="img1"
+                        src="images/MUGS & DRINKWARE.jpg"
+                        alt="MUGS & DRINKWARE"
+                    >
+
+                </a>
+
+                <a href="#products">
+
+                    <b class="bt">
+                        MUGS & DRINKWARE
+                    </b>
+
+                </a>
+
+                <div>
+                    Shop Now
+                </div>
+
+            </div>
+
+
+
+            <div
+                class="cat1"
+                id="gifts"
+            >
+
+                <a href="#products">
+
+                    <img
+                        class="img1"
+                        src="images/GIFTS & BUNDLES.jpg"
+                        alt="GIFT & BUNDLES"
+                    >
+
+                </a>
+
+                <a href="#products">
+
+                    <b class="bt">
+                        GIFT & BUNDLES
+                    </b>
+
+                </a>
+
+                <div>
+                    Shop Now
+                </div>
+
+            </div>
+
+
+
+            <div class="cat1">
+
+                <a href="#products">
+
+                    <img
+                        class="img1"
+                        src="images/COLD COFFEE.jpg"
+                        alt="COLD BREW"
+                    >
+
+                </a>
+
+                <a href="#products">
+
+                    <b class="bt">
+                        COLD BREW
+                    </b>
+
+                </a>
+
+                <div>
+                    Shop Now
+                </div>
+
+            </div>
+
+
+
+            <div class="cat1">
+
+                <a href="#products">
+
+                    <img
+                        class="img1"
+                        src="images/ACCESSORIES.jpg"
+                        alt="ACCESSORIES"
+                    >
+
+                </a>
+
+                <a href="#products">
+
+                    <b class="bt">
+                        ACCESSORIES
+                    </b>
+
+                </a>
+
+                <div>
+                    Shop Now
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             BEST SELLERS
+        ================================================== -->
+
+        <div
+            id="products"
+        >
+
+            <div class="bs">
+
+                <h2>
+                    BEST SELLERS
+                </h2>
+
+                <a href="#all-products">
+                    <div>
+                        VIEW ALL &#10132;
+                    </div>
+                </a>
+
+            </div>
+
+
+            <div class="bsmain">
+
+
+                <div class="arrow">
+                    <b>
+                        <div>
+                            &lsaquo;
+                        </div>
+                    </b>
+                </div>
+
+
+                <!-- PRODUCT 1 -->
+
+                <div class="s1">
+
+                    <div class="hrt">
+                        &#9825;
+                    </div>
+
+                    <a href="#all-products">
+
+                        <img
+                            class="img2"
+                            src="images/fe90ed15-fbf6-47f8-9847-a2dde9e97590.jpg"
+                            alt="Colombia Supremo"
+                        >
+
+                    </a>
+
+                    <div class="info">
+
+                        <a href="#all-products">
+
+                            <div class="bld">
+                                Colombia Supremo
+                            </div>
+
+                        </a>
+
+                        <div class="bld">
+                            Single Origin
+                        </div>
+
+                        <b class="bld">
+                            $16.99
+                        </b>
+
+                        <div>
+                            &#9733;&#9733;&#9733;&#9733;&#9733;
+                            (1254)
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PRODUCT 2 -->
+
+                <div class="s1">
+
+                    <div class="hrt">
+                        &#9825;
+                    </div>
+
+                    <a href="#all-products">
+
+                        <img
+                            class="img2"
+                            src="images/HOUSE BLEND.jpg"
+                            alt="House Blend"
+                        >
+
+                    </a>
+
+                    <div class="info">
+
+                        <a href="#all-products">
+
+                            <div class="bld">
+                                House Blend
+                            </div>
+
+                        </a>
+
+                        <div class="bld">
+                            Medium Roast
+                        </div>
+
+                        <b class="bld">
+                            $15.99
+                        </b>
+
+                        <div>
+                            &#9733;&#9733;&#9733;&#9733;&#9733;
+                            (987)
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PRODUCT 3 -->
+
+                <div class="s1">
+
+                    <div class="hrt">
+                        &#9825;
+                    </div>
+
+                    <a href="#all-products">
+
+                        <img
+                            class="img2"
+                            src="images/ETHIOPIA YIRGACHEFFE.jpg"
+                            alt="Ethiopia Yirgacheffe"
+                        >
+
+                    </a>
+
+                    <div class="info">
+
+                        <a href="#all-products">
+
+                            <div class="bld">
+                                Ethiopia Yirgacheffe
+                            </div>
+
+                        </a>
+
+                        <div class="bld">
+                            Light Roast
+                        </div>
+
+                        <b class="bld">
+                            $17.99
+                        </b>
+
+                        <div>
+                            &#9733;&#9733;&#9733;&#9733;&#9733;
+                            (1103)
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PRODUCT 4 -->
+
+                <div class="s1">
+
+                    <div class="hrt">
+                        &#9825;
+                    </div>
+
+                    <a href="#all-products">
+
+                        <img
+                            class="img2"
+                            src="images/POUR OVER.jpg"
+                            alt="Pour Over Kettle"
+                        >
+
+                    </a>
+
+                    <div class="info">
+
+                        <a href="#all-products">
+
+                            <div class="bld">
+                                Pour Over Kettle
+                            </div>
+
+                        </a>
+
+                        <div class="bld">
+                            600ml
+                        </div>
+
+                        <b class="bld">
+                            $39.99
+                        </b>
+
+                        <div>
+                            &#9733;&#9733;&#9733;&#9733;&#9733;
+                            (746)
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PRODUCT 5 -->
+
+                <div class="s1">
+
+                    <div class="hrt">
+                        &#9825;
+                    </div>
+
+                    <a href="#all-products">
+
+                        <img
+                            class="img2"
+                            src="images/CERAMIC POUR.jpg"
+                            alt="Ceramic Pour Over"
+                        >
+
+                    </a>
+
+                    <div class="info">
+
+                        <a href="#all-products">
+
+                            <div class="bld">
+                                Ceramic Pour Over
+                            </div>
+
+                        </a>
+
+                        <div class="bld">
+                            Coffee Dripper
+                        </div>
+
+                        <b class="bld">
+                            $24.99
+                        </b>
+
+                        <div>
+                            &#9733;&#9733;&#9733;&#9733;&#9733;
+                            (652)
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PRODUCT 6 -->
+
+                <div class="s1">
+
+                    <div class="hrt">
+                        &#9825;
+                    </div>
+
+                    <a href="#all-products">
+
+                        <img
+                            class="img2"
+                            src="images/FRENCH PRESS.jpg"
+                            alt="French Press"
+                        >
+
+                    </a>
+
+                    <div class="info">
+
+                        <a href="#all-products">
+
+                            <div class="bld">
+                                French Press
+                            </div>
+
+                        </a>
+
+                        <div class="bld">
+                            Coffee Maker
+                        </div>
+
+                        <b class="bld">
+                            $29.99
+                        </b>
+
+                        <div>
+                            &#9733;&#9733;&#9733;&#9733;&#9733;
+                            (532)
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="arrow">
+
+                    <b>
+
+                        <div>
+                            &rsaquo;
+                        </div>
+
+                    </b>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ALL PRODUCTS
+    ====================================================== -->
+
+    <section
+        id="all-products"
+        class="main"
+    >
+
+        <div class="head">
+
+            <h2>
+                ALL PRODUCTS
+            </h2>
+
+        </div>
+
+
+        <div class="bsmain"
+             style="
+                grid-template-columns:
+                repeat(4, 1fr);
+             ">
+
+
+            <!-- PRODUCT -->
+
+            <div class="s1">
+
+                <div class="hrt">
+                    &#9825;
+                </div>
+
+                <img
+                    class="img2"
+                    src="images/HOUSE BLEND.jpg"
+                    alt="House Blend"
+                >
+
+                <div class="info">
+
+                    <div class="bld">
+                        House Blend
+                    </div>
+
+                    <div class="bld">
+                        Medium Roast
+                    </div>
+
+                    <b class="bld">
+                        $15.99
+                    </b>
+
+                    <div>
+                        &#9733;&#9733;&#9733;&#9733;&#9733;
+                        (987)
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="s1">
+
+                <div class="hrt">
+                    &#9825;
+                </div>
+
+                <img
+                    class="img2"
+                    src="images/ETHIOPIA YIRGACHEFFE.jpg"
+                    alt="Ethiopia Yirgacheffe"
+                >
+
+                <div class="info">
+
+                    <div class="bld">
+                        Ethiopia Yirgacheffe
+                    </div>
+
+                    <div class="bld">
+                        Light Roast
+                    </div>
+
+                    <b class="bld">
+                        $17.99
+                    </b>
+
+                    <div>
+                        &#9733;&#9733;&#9733;&#9733;&#9733;
+                        (1103)
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="s1">
+
+                <div class="hrt">
+                    &#9825;
+                </div>
+
+                <img
+                    class="img2"
+                    src="images/POUR OVER.jpg"
+                    alt="Pour Over Kettle"
+                >
+
+                <div class="info">
+
+                    <div class="bld">
+                        Pour Over Kettle
+                    </div>
+
+                    <div class="bld">
+                        600ml
+                    </div>
+
+                    <b class="bld">
+                        $39.99
+                    </b>
+
+                    <div>
+                        &#9733;&#9733;&#9733;&#9733;&#9733;
+                        (746)
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="s1">
+
+                <div class="hrt">
+                    &#9825;
+                </div>
+
+                <img
+                    class="img2"
+                    src="images/CERAMIC POUR.jpg"
+                    alt="Ceramic Pour Over"
+                >
+
+                <div class="info">
+
+                    <div class="bld">
+                        Ceramic Pour Over
+                    </div>
+
+                    <div class="bld">
+                        Coffee Dripper
+                    </div>
+
+                    <b class="bld">
+                        $24.99
+                    </b>
+
+                    <div>
+                        &#9733;&#9733;&#9733;&#9733;&#9733;
+                        (652)
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="s1">
+
+                <div class="hrt">
+                    &#9825;
+                </div>
+
+                <img
+                    class="img2"
+                    src="images/FRENCH PRESS.jpg"
+                    alt="French Press"
+                >
+
+                <div class="info">
+
+                    <div class="bld">
+                        French Press
+                    </div>
+
+                    <div class="bld">
+                        Coffee Maker
+                    </div>
+
+                    <b class="bld">
+                        $29.99
+                    </b>
+
+                    <div>
+                        &#9733;&#9733;&#9733;&#9733;&#9733;
+                        (532)
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="s1">
+
+                <div class="hrt">
+                    &#9825;
+                </div>
+
+                <img
+                    class="img2"
+                    src="images/fe90ed15-fbf6-47f8-9847-a2dde9e97590.jpg"
+                    alt="Colombia Supremo"
+                >
+
+                <div class="info">
+
+                    <div class="bld">
+                        Colombia Supremo
+                    </div>
+
+                    <div class="bld">
+                        Single Origin
+                    </div>
+
+                    <b class="bld">
+                        $16.99
+                    </b>
+
+                    <div>
+                        &#9733;&#9733;&#9733;&#9733;&#9733;
+                        (1254)
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="s1">
+
+                <div class="hrt">
+                    &#9825;
+                </div>
+
+                <img
+                    class="img2"
+                    src="images/ARABICA.jpg"
+                    alt="Arabica Coffee"
+                >
+
+                <div class="info">
+
+                    <div class="bld">
+                        Arabica Coffee
+                    </div>
+
+                    <div class="bld">
+                        Medium Roast
+                    </div>
+
+                    <b class="bld">
+                        $15.99
+                    </b>
+
+                    <div>
+                        &#9733;&#9733;&#9733;&#9733;&#9733;
+                        (987)
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="s1">
+
+                <div class="hrt">
+                    &#9825;
+                </div>
+
+                <img
+                    class="img2"
+                    src="images/MUG.jpg"
+                    alt="Coffee Mug"
+                >
+
+                <div class="info">
+
+                    <div class="bld">
+                        Coffee Mug
+                    </div>
+
+                    <div class="bld">
+                        Ceramic
+                    </div>
+
+                    <b class="bld">
+                        $17.99
+                    </b>
+
+                    <div>
+                        &#9733;&#9733;&#9733;&#9733;&#9733;
+                        (1103)
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="s1">
+
+                <div class="hrt">
+                    &#9825;
+                </div>
+
+                <img
+                    class="img2"
+                    src="images/ROTATE.jpg"
+                    alt="Coffee Grinder"
+                >
+
+                <div class="info">
+
+                    <div class="bld">
+                        Coffee Grinder
+                    </div>
+
+                    <div class="bld">
+                        Manual
+                    </div>
+
+                    <b class="bld">
+                        $39.99
+                    </b>
+
+                    <div>
+                        &#9733;&#9733;&#9733;&#9733;&#9733;
+                        (746)
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="s1">
+
+                <div class="hrt">
+                    &#9825;
+                </div>
+
+                <img
+                    class="img2"
+                    src="images/COFFMUG.jpg"
+                    alt="Coffee Mug"
+                >
+
+                <div class="info">
+
+                    <div class="bld">
+                        Coffee Mug
+                    </div>
+
+                    <div class="bld">
+                        Coffee Dripper
+                    </div>
+
+                    <b class="bld">
+                        $24.99
+                    </b>
+
+                    <div>
+                        &#9733;&#9733;&#9733;&#9733;&#9733;
+                        (652)
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="s1">
+
+                <div class="hrt">
+                    &#9825;
+                </div>
+
+                <img
+                    class="img2"
+                    src="images/COFFPOWDER.jpg"
+                    alt="Coffee Powder"
+                >
+
+                <div class="info">
+
+                    <div class="bld">
+                        Coffee Powder
+                    </div>
+
+                    <div class="bld">
+                        Fine Roast
+                    </div>
+
+                    <b class="bld">
+                        $29.99
+                    </b>
+
+                    <div>
+                        &#9733;&#9733;&#9733;&#9733;&#9733;
+                        (532)
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="s1">
+
+                <div class="hrt">
+                    &#9825;
+                </div>
+
+                <img
+                    class="img2"
+                    src="images/COFFMAKER.jpg"
+                    alt="Coffee Maker"
+                >
+
+                <div class="info">
+
+                    <div class="bld">
+                        Coffee Maker
+                    </div>
+
+                    <div class="bld">
+                        Automatic
+                    </div>
+
+                    <b class="bld">
+                        $16.99
+                    </b>
+
+                    <div>
+                        &#9733;&#9733;&#9733;&#9733;&#9733;
+                        (1254)
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="s1">
+
+                <div class="hrt">
+                    &#9825;
+                </div>
+
+                <img
+                    class="img2"
+                    src="images/COLDCOFF.jpg"
+                    alt="Cold Coffee"
+                >
+
+                <div class="info">
+
+                    <div class="bld">
+                        Cold Coffee
+                    </div>
+
+                    <div class="bld">
+                        Cold Brew
+                    </div>
+
+                    <b class="bld">
+                        $15.99
+                    </b>
+
+                    <div>
+                        &#9733;&#9733;&#9733;&#9733;&#9733;
+                        (987)
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="s1">
+
+                <div class="hrt">
+                    &#9825;
+                </div>
+
+                <img
+                    class="img2"
+                    src="images/DESINER.jpg"
+                    alt="Designer Coffee"
+                >
+
+                <div class="info">
+
+                    <div class="bld">
+                        Designer Coffee
+                    </div>
+
+                    <div class="bld">
+                        Premium
+                    </div>
+
+                    <b class="bld">
+                        $17.99
+                    </b>
+
+                    <div>
+                        &#9733;&#9733;&#9733;&#9733;&#9733;
+                        (1103)
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="s1">
+
+                <div class="hrt">
+                    &#9825;
+                </div>
+
+                <img
+                    class="img2"
+                    src="images/GROUND.jpg"
+                    alt="Ground Coffee"
+                >
+
+                <div class="info">
+
+                    <div class="bld">
+                        Ground Coffee
+                    </div>
+
+                    <div class="bld">
+                        Medium Roast
+                    </div>
+
+                    <b class="bld">
+                        $39.99
+                    </b>
+
+                    <div>
+                        &#9733;&#9733;&#9733;&#9733;&#9733;
+                        (746)
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="s1">
+
+                <div class="hrt">
+                    &#9825;
+                </div>
+
+                <img
+                    class="img2"
+                    src="images/HOTCOFF.jpg"
+                    alt="Hot Coffee"
+                >
+
+                <div class="info">
+
+                    <div class="bld">
+                        Hot Coffee
+                    </div>
+
+                    <div class="bld">
+                        Single Origin
+                    </div>
+
+                    <b class="bld">
+                        $16.99
+                    </b>
+
+                    <div>
+                        &#9733;&#9733;&#9733;&#9733;&#9733;
+                        (1254)
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SECTION 4 — PROMOTIONS & TRUST
+    ====================================================== -->
+
+    <section
+        class="promotions-section"
+        id="promotions"
+    >
+
 
         <div class="promotion-container">
 
-            <!-- ================= SUBSCRIBE CARD ================= -->
+
+            <!-- SUBSCRIBE -->
 
             <div class="promotion-card subscribe-card">
 
@@ -36,19 +3763,24 @@
                     </h2>
 
                     <p class="promotion-description">
+
                         Save up to 15% on every order
                         <br>
                         + free shipping.
+
                     </p>
 
-                    <a href="subscription.html" class="promotion-button">
+                    <a
+                        href="#subscriptions"
+                        class="promotion-button"
+                    >
                         SHOP SUBSCRIPTIONS
                     </a>
 
                 </div>
 
 
-                <div class="promotion-image subscribe-image">
+                <div class="promotion-image">
 
                     <img
                         src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=85"
@@ -60,7 +3792,8 @@
             </div>
 
 
-            <!-- ================= DISCOUNT CARD ================= -->
+
+            <!-- DISCOUNT -->
 
             <div class="promotion-card discount-card">
 
@@ -71,25 +3804,34 @@
                     </p>
 
                     <h2>
+
                         GET 10% OFF
                         <br>
                         YOUR FIRST ORDER
+
                     </h2>
 
                     <p class="promotion-description">
+
                         Use code:
-                        <strong>BREW10</strong>
+                        <strong>
+                            BREW10
+                        </strong>
                         at checkout
+
                     </p>
 
-                    <a href="shop.html" class="promotion-button">
+                    <a
+                        href="#shop"
+                        class="promotion-button"
+                    >
                         SHOP NOW
                     </a>
 
                 </div>
 
 
-                <div class="promotion-image discount-image">
+                <div class="promotion-image">
 
                     <img
                         src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85"
@@ -100,10 +3842,12 @@
 
             </div>
 
+
         </div>
 
 
-        <!-- ================= TRUST / FEATURED BAR ================= -->
+
+        <!-- FEATURED IN -->
 
         <div class="featured-section">
 
@@ -123,7 +3867,6 @@
                     Food&amp;Wine
                 </a>
 
-
                 <a
                     href="https://www.forbes.com/"
                     target="_blank"
@@ -132,7 +3875,6 @@
                 >
                     Forbes
                 </a>
-
 
                 <a
                     href="https://www.bonappetit.com/"
@@ -143,32 +3885,29 @@
                     bon appétit
                 </a>
 
-
                 <a
                     href="https://www.menshealth.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="brand mens-health"
+                    class="brand"
                 >
                     Men'sHealth
                 </a>
-
 
                 <a
                     href="https://www.delish.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="brand delicious"
+                    class="brand"
                 >
                     delicious.
                 </a>
-
 
                 <a
                     href="https://www.inc.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="brand inc"
+                    class="brand"
                 >
                     Inc.
                 </a>
@@ -181,7 +3920,395 @@
 
 
 
-   
+    <!-- =====================================================
+         SUBSCRIPTIONS ANCHOR
+    ====================================================== -->
+
+    <section
+        id="subscriptions"
+        style="
+            padding:70px 5%;
+            background:#102719;
+            color:#ffffff;
+            text-align:center;
+        "
+    >
+
+        <span
+            style="
+                color:#d3b477;
+                font-size:10px;
+                letter-spacing:2px;
+                font-weight:700;
+            "
+        >
+            COSMIC CAFE
+        </span>
+
+        <h2
+            style="
+                margin:12px 0;
+                font-family:Georgia,serif;
+                font-size:38px;
+            "
+        >
+            Coffee Subscriptions
+        </h2>
+
+        <p
+            style="
+                max-width:600px;
+                margin:0 auto 25px;
+                color:#c8d0c9;
+                line-height:1.7;
+            "
+        >
+            Freshly roasted coffee delivered regularly,
+            so you never run out of your favorite cup.
+        </p>
+
+        <a
+            href="#shop"
+            style="
+                display:inline-flex;
+                padding:13px 25px;
+                background:#b48a4c;
+                color:#ffffff;
+                border-radius:4px;
+                font-size:10px;
+                font-weight:700;
+            "
+        >
+            EXPLORE COFFEE
+        </a>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SALE ANCHOR
+    ====================================================== -->
+
+    <section
+        id="sale"
+        style="
+            padding:55px 5%;
+            background:#eee6d9;
+            color:#17271c;
+            text-align:center;
+        "
+    >
+
+        <h2
+            style="
+                font-family:Georgia,serif;
+                font-size:35px;
+                margin-bottom:10px;
+            "
+        >
+            Special Offers
+        </h2>
+
+        <p>
+            Use code <strong>BREW10</strong>
+            for 10% off your first order.
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ABOUT ANCHOR
+    ====================================================== -->
+
+    <section
+        id="about"
+        style="
+            padding:65px 5%;
+            background:#f5f1e9;
+            color:#17271c;
+            text-align:center;
+        "
+    >
+
+        <h2
+            style="
+                font-family:Georgia,serif;
+                font-size:35px;
+                margin-bottom:15px;
+            "
+        >
+            Our Story
+        </h2>
+
+        <p
+            style="
+                max-width:650px;
+                margin:0 auto;
+                line-height:1.8;
+                color:#555555;
+            "
+        >
+            COSMIC CAFE is built around the simple idea that
+            good coffee can make ordinary moments feel special.
+            We focus on carefully selected beans, thoughtful
+            roasting and memorable coffee experiences.
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+
+        <div class="footer-container">
+
+
+            <!-- BRAND -->
+
+            <div class="footer-brand">
+
+                <h2>
+                    COSMIC CAFE
+                </h2>
+
+                <p>
+
+                    Freshly roasted coffee,
+                    ethically sourced and crafted
+                    for better days.
+
+                </p>
+
+
+                <div class="social-icons">
+
+                    <a
+                        href="#"
+                        aria-label="Instagram"
+                    >
+
+                        <img
+                            src="https://cdn-icons-png.flaticon.com/128/15707/15707749.png"
+                            alt="Instagram"
+                        >
+
+                    </a>
+
+
+                    <a
+                        href="#"
+                        aria-label="Facebook"
+                    >
+
+                        <img
+                            src="https://cdn-icons-png.flaticon.com/128/15047/15047435.png"
+                            alt="Facebook"
+                        >
+
+                    </a>
+
+
+                    <a
+                        href="#"
+                        aria-label="Twitter"
+                    >
+
+                        <img
+                            src="https://cdn-icons-png.flaticon.com/128/5968/5968830.png"
+                            alt="Twitter"
+                        >
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SHOP -->
+
+            <div class="footer-column">
+
+                <h3>
+                    SHOP
+                </h3>
+
+                <a href="#shop">
+                    All Coffee
+                </a>
+
+                <a href="#products">
+                    Best Sellers
+                </a>
+
+                <a href="#products">
+                    Coffee Beans
+                </a>
+
+                <a href="#subscriptions">
+                    Subscriptions
+                </a>
+
+                <a href="#gifts">
+                    Gifts
+                </a>
+
+            </div>
+
+
+
+            <!-- CUSTOMER CARE -->
+
+            <div class="footer-column">
+
+                <h3>
+                    CUSTOMER CARE
+                </h3>
+
+                <a href="#">
+                    Contact Us
+                </a>
+
+                <a href="#">
+                    Shipping
+                </a>
+
+                <a href="#">
+                    Returns
+                </a>
+
+                <a href="#">
+                    FAQs
+                </a>
+
+                <a href="#">
+                    Track Your Order
+                </a>
+
+            </div>
+
+
+
+            <!-- ABOUT -->
+
+            <div class="footer-column">
+
+                <h3>
+                    ABOUT US
+                </h3>
+
+                <a href="#about">
+                    Our Story
+                </a>
+
+                <a href="#">
+                    Sustainability
+                </a>
+
+                <a href="#">
+                    Locations
+                </a>
+
+                <a href="#">
+                    Careers
+                </a>
+
+            </div>
+
+
+
+            <!-- NEWSLETTER -->
+
+            <div class="footer-column newsletter">
+
+                <h3>
+                    STAY CONNECTED
+                </h3>
+
+                <p>
+                    Get coffee news and special offers.
+                </p>
+
+
+                <div class="email-box">
+
+                    <input
+                        type="email"
+                        placeholder="Your email"
+                    >
+
+                    <button>
+                        →
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 COSMIC CAFE.
+                All Rights Reserved.
+            </p>
+
+
+            <div class="footer-links">
+
+                <a href="#">
+                    Privacy Policy
+                </a>
+
+                <a href="#">
+                    Terms &amp; Conditions
+                </a>
+
+            </div>
+
+
+            <div class="payment">
+
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC4mvBvjY8mWM0EVQ68gRbJzAZayakO7ZMB5CdeLnbsA&s=10"
+                    alt="PhonePe"
+                >
+
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6CPEhAxpC6mawzelx5tXOQgJBU9dS7tuXJuDBGeEIcQ&s=10"
+                    alt="Google Pay"
+                >
+
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoResYC9ZPmwkRIgpJzkQSLCKa9tS12lTVsdgLvdzQ-A&s=10"
+                    alt="UPI"
+                >
+
+            </div>
+
+
+        </div>
+
+
+    </footer>
+
 
 </body>
+
 </html>
+```
